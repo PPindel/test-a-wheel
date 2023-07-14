@@ -30,7 +30,6 @@ body {
 .shop-now-button {
     background: black;
     color: white;
-    min-width: 260px;
 }
 
 .btn-black {
@@ -326,4 +325,11 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
+}
+
+.center-banner {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
