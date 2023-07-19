@@ -1,13 +1,13 @@
+/* Google font link */
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,600&family=NTR&display=swap');
+
 html {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Lato';
+    font-family: Exo, NTR, sans-serif;
 }
 
 /* from Bulma */
@@ -173,6 +173,50 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+.center-banner {
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-image {
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* footer */
+
+.margin-top-zero {
+    margin-top: 0;
+}
+
+.footer-style {
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-style li {
+    display: inline;
+    margin: 5%;
+}
+
+.footer-style i {
+    font-size: 450%;
+}
+
+.footer-style a {
+    color: black;
+}
+
+.footer-style a:hover i {
+    transform: rotate(-15deg) scale(1.5);
+    color: grey;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -321,11 +365,4 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
-}
-
-.center-banner {
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

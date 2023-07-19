@@ -11,18 +11,44 @@
 
 {% block content %}
 <div class="container">
-    <div class="col-12 text-center center-banner">
-        <h1 class="logo-font text-black">
-            Buying a used car can be stressful...
-            <hr>
-            But not with us!
-        </h1>
-    </div>
-    <div class="col-12 text-center">
-        <h4>
-            <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
-                Book your test now!</a>
-        </h4>
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-lg-6">
+            <div class="text-center">
+                <h2 class="font-weight-bolder">
+                    Buying a used car can be stressful...
+                </h2>
+                <hr>
+                <h3 class="font-weight-bold">But not with us!</h3>
+                <hr>
+                <p class="text-left font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vitae odio volutpat finibus vel non mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vitae odio volutpat finibus vel non mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vitae odio volutpat finibus vel non mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vitae odio volutpat finibus vel non mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vitae odio volutpat finibus vel non mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vitae odio volutpat finibus vel non mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vitae odio volutpat finibus vel non mauris.
+                </p>
+                <hr>
+                <div class="text-center">
+                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
+                        Book your test now!
+                    </a>
+                </div>
+            </div>
+            <div class="mt-5">
+                <!-- Example Customer Review -->
+                <h4>Customer Review</h4>
+                <blockquote class="blockquote">
+                    <p class="mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ligula vitae odio volutpat finibus vel non mauris."</p>
+                    <p class="blockquote-footer">John Doe</p>
+                </blockquote>
+            </div>
+        </div>
+        <!-- Right Column -->
+        <div class="col-lg-6 d-flex align-items-center center-banner">
+            <img src="{% static 'images/index_mechanic.jpg' %}" alt="Service Image" class="img-fluid w-100 index-image rounded">
+        </div>
     </div>
 </div>
 {% endblock %}
