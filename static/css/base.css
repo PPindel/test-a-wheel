@@ -187,10 +187,6 @@ input[name='q']::placeholder {
 
 /* footer */
 
-.margin-top-zero {
-    margin-top: 0;
-}
-
 .footer-style {
     bottom: 0;
     width: 100%;
@@ -201,7 +197,7 @@ input[name='q']::placeholder {
 
 .footer-style li {
     display: inline;
-    margin: 5%;
+    margin: 0.5% 5%;
 }
 
 .footer-style i {
