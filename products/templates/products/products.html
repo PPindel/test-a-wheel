@@ -68,6 +68,29 @@
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
+                                            <div>
+                                                <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Detailed check of the car by our expert</small>
+                                            </div>
+                                            {% if product.history_check %}
+                                            <div>
+                                                <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Full history check</small>
+                                            </div>
+                                            {% endif %}
+                                            {% if product.garage_check %}
+                                            <div>
+                                                <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Proffesional garage inspection</small>
+                                            </div>
+                                            {% endif %}
+                                            {% if product.premium_check %}
+                                            <div>
+                                                <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Additional points of check, extra photos</small>
+                                            </div>
+                                            {% endif %}
+                                            {% if product.extra_warranty %}
+                                            <div>
+                                                <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Additional warranty for a car bought with us!</small>
+                                            </div>
+                                            {% endif %}
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
                                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
