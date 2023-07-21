@@ -16,7 +16,7 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.image.url %}
-                <img src="https://www.pexels.com/photo/red-coupe-near-trees-under-white-clouds-1280553/" width="100%">
+                <img src="{{ MEDIA_URL }}placeholder.jpg" width="100%">
                 {% else %}
                 <img src="{{ post.image.url }}" width="100%">
                 {% endif %}

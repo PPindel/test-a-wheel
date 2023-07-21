@@ -15,7 +15,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.image.url %}
                                 <img class="card-img-top"
-                                    src="https://www.pexels.com/photo/red-coupe-near-trees-under-white-clouds-1280553/">
+                                    src="{{ MEDIA_URL }}placeholder.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.image.url }}">
                                 {% endif %}
