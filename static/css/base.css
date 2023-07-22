@@ -197,6 +197,75 @@ input[name='q']::placeholder {
     object-fit: cover;
 }
 
+/* From Django Blog project */
+
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 40vh;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background: black;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
+}
+
+.post-title {
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+.btn-like {
+    color: black;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: black;
+    background: transparent;
+    border: none;
+}
+
+.post-link {
+    text-decoration: none;
+    color: black;
+}
+
+.post-link:hover,
+.page-link {
+    color: grey;
+}
+
 /* footer */
 
 .footer-style {
