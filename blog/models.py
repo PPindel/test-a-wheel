@@ -5,9 +5,15 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
+    SECTIONS = [
+        ('Cars', 'Cars'),
+        ('Tips', 'Tips'),
+        ('Guides', 'Guides'),
+    ]
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now=True)
+    section = models.CharField(max_length=25, choices=SECTIONS, default='Cars')
     content = models.TextField()
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
