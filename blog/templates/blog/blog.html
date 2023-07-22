@@ -1,21 +1,20 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="mb-4">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.image.url %}
-                                <img class="card-img-top"
-                                    src="{{ MEDIA_URL }}placeholder.jpg">
+                                <img class="card-img-top" src="{{ MEDIA_URL }}placeholder.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.image.url }}">
                                 {% endif %}
@@ -24,13 +23,26 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="fa-regular fa-thumbs-up"></i>
+                            <hr>
+                            <p class="card-text text-muted h6">{{ post.created_on}} <i
+                                    class="fa-regular fa-thumbs-up"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-md-8">
+                    <div class="mb-8">
+                        <div class="card-text-top">
+                            {{ post.content | safe }}
+                        </div>
+                        <hr>
+                        <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                            <p class="card-title font-italic">Read more...</p>
+                        </a>
+                        <hr>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:1 %}
             </div>
             <div class="row">
                 {% endif %}

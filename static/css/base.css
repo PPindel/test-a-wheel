@@ -197,6 +197,13 @@ input[name='q']::placeholder {
     object-fit: cover;
 }
 
+.card-text-top {
+    width: 100%;
+    height: 20vw;
+    overflow: hidden;
+    vertical-align: top;
+}
+
 /* From Django Blog project */
 
 .masthead {
@@ -204,7 +211,7 @@ input[name='q']::placeholder {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 40vh;
+    height: 50vh;
     width: 100%;
 }
 
