@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -10,6 +11,7 @@ class Review(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now=True)
     review_text = models.TextField()
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)], default=5)  # noqa E501
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
