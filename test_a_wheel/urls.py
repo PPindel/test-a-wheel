@@ -31,6 +31,7 @@ urlpatterns = [
     path('reviews/', include('reviews.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('editor/', include('django_summernote.urls')),
+    path('ratings/', include('star_ratings.urls', namespace='ratings')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'test_a_wheel.views.handler404'
