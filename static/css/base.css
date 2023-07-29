@@ -14,6 +14,9 @@ html {
 
 body {
     font-family: Exo, NTR, sans-serif;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    font-weight: 400;
 }
 
 /* from Bulma */
@@ -480,4 +483,26 @@ input[name='q']::placeholder {
     .card-img-top {
         height: 50vw;
     }
+
+    body {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        letter-spacing: 0.3px;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .my-0 {
+        font-size: 0.8rem;
+    }
+
+    .footer-style i {
+        font-size: 250%;
+    }
+
+    :root {
+        --star-size: 40px;
+    }
+    
 }
