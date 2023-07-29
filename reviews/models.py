@@ -1,18 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User
-from products.models import Product
 from checkout.models import Order
+from products.models import Product
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Review(models.Model):
-
     title = models.CharField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now=True)
     review_text = models.TextField()
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='order', unique=True)  # noqa E501
+    order = models.OneToOneField(Order, on_delete=models.CASCADE, related_name='order', unique=True)  # noqa E501
     service = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='service')  # noqa E501
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)], default=5)  # noqa E501
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="team_ad", default=0)  # noqa E501
