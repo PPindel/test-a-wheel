@@ -32,31 +32,38 @@
                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                        <hr>
                     {% else %}
                         <small class="text-muted">No Rating</small>
+                        <hr>
                     {% endif %}
-                    <div>
-                        <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Detailed check of the car by our expert</small>
+                    <div class="row">
+                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-black col-10">Detailed check of the car by our expert</div>
                     </div>
+                    <hr>
                     {% if product.history_check %}
-                    <div>
-                        <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Full history check</small>
+                    <div class="row">
+                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="col-10">Full history check</div>
                     </div>
+                    <hr>
                     {% endif %}
                     {% if product.garage_check %}
-                    <div>
-                        <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Proffesional garage inspection</small>
+                    <div class="row">
+                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="col-10">Proffesional garage inspection</div>
                     </div>
+                    <hr>
                     {% endif %}
                     {% if product.premium_check %}
-                    <div>
-                        <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Additional points of check, extra photos</small>
+                    <div class="row">
+                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="col-10">Additional points of check, extra photos</div>
                     </div>
+                    <hr>
                     {% endif %}
                     {% if product.extra_warranty %}
-                    <div>
-                        <small class="text-muted"><i class="fa-regular fa-circle-check"></i> Additional warranty for a car bought with us!</small>
+                    <div class="row">
+                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="col-10">Additional warranty for a car bought with us!</div>
                     </div>
+                    <hr>
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <small class="ml-3">

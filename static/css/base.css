@@ -1,5 +1,5 @@
-/* Google font link */
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,600&family=NTR&display=swap');
+/* Import Montserrat and Roboto fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 /* Reset browser maring and padding */
 * {
@@ -12,14 +12,19 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Body styles */
 body {
-    font-family: Exo, NTR, sans-serif;
-    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
     line-height: 2.2rem;
     font-weight: 400;
 }
 
-/* from Bulma */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+/* Styles from Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -71,6 +76,10 @@ body {
 
 .text-black {
     color: #000 !important;
+}
+
+.green-check {
+    color: green;
 }
 
 .border-black {
