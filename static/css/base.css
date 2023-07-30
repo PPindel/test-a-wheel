@@ -22,7 +22,13 @@ body {
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-  }
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: #53565A;
+}
 
 /* Styles from Bulma */
 .icon {
@@ -75,7 +81,14 @@ h1, h2, h3 {
 }
 
 .text-black {
-    color: #000 !important;
+    font-size: 1.8rem;
+    color: black
+}
+
+.text-sub {
+    color: #53565A;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
 }
 
 .green-check {
@@ -269,12 +282,14 @@ input[name='q']::placeholder {
     /* Add a subtle text shadow for better visibility */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 5);
     z-index: 11;
+    text-align: center;
 }
 
 .post-subtitle {
     /* Add a subtle text shadow for better visibility */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 5);
     z-index: 11;
+    text-align: center;
 }
 
 /* Gradient overlay */
@@ -284,7 +299,7 @@ input[name='q']::placeholder {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     z-index: 10;
 }
 
@@ -314,7 +329,7 @@ input[name='q']::placeholder {
 /* stars */
 
 :root {
-    --star-size: 60px;
+    --star-size: 2.5rem;
     --star-color: #fff;
     --star-background: #fc0;
   }
@@ -534,10 +549,6 @@ input[name='q']::placeholder {
 
     .footer-style i {
         font-size: 250%;
-    }
-
-    :root {
-        --star-size: 40px;
     }
     
 }
