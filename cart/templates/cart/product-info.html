@@ -1,1 +1,30 @@
-<p class="my-0"><strong>{{ item.product.name }}</strong></p>
+<div class="text-black"><strong>{{ item.product.name }}</strong></div>
+<hr>
+<div class="row">
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Detailed check of the car by our expert</div>
+</div>
+<hr>
+{% if item.product.history_check %}
+<div class="row">
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Full history check</div>
+</div>
+<hr>
+{% endif %}
+{% if item.product.garage_check %}
+<div class="row">
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Proffesional garage inspection</div>
+</div>
+<hr>
+{% endif %}
+{% if item.product.premium_check %}
+<div class="row">
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Additional points of check, extra photos</div>
+</div>
+<hr>
+{% endif %}
+{% if item.product.extra_warranty %}
+<div class="row">
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Additional warranty for a car bought with us!</div>
+</div>
+<hr>
+{% endif %}
