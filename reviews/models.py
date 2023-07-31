@@ -14,7 +14,7 @@ class Review(models.Model):
     order = models.OneToOneField(Order, on_delete=models.CASCADE, related_name='order', unique=True)  # noqa E501
     service = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='service')  # noqa E501
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)], default=5)  # noqa E501
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="team_ad", default=0)  # noqa E501
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="review", default=0)  # noqa E501
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
