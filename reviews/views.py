@@ -68,14 +68,11 @@ def update_review(request, review_id):
     return render(request, template, context)
 
 
-# @login_required
-# def delete_review(request, review_id):
-#     """ Delete a product from the store """
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Sorry, only store owners can do that.')
-#         return redirect(reverse('home'))
+@login_required
+def delete_review(request, review_id):
+    """ Delete a product from the store """
 
-#     product = get_object_or_404(Product, pk=product_id)
-#     product.delete()
-#     messages.success(request, 'Product deleted!')
-#     return redirect(reverse('products'))
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('reviews'))

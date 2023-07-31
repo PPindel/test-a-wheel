@@ -41,6 +41,7 @@
                             {% if user.is_authenticated and user.id == review.author.id %}
                                 <small class="ml-3">
                                     <a href="{% url 'update_review' review.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
                                 </small>
                             {% endif %}
                         </div>
