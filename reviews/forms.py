@@ -12,7 +12,7 @@ class ReviewForm(forms.ModelForm):
     """
     class Meta:
         model = Review
-        fields = ('title', 'review_text', 'rating')
+        fields = ('title', 'order', 'service', 'review_text', 'rating')
 
 
 # class ReviewEdit(forms.ModelForm):
