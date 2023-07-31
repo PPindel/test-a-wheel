@@ -3,6 +3,7 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.ReviewList.as_view(), name='reviews'),
-    # path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
-    # path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
+    path('add-review/', views.add_review, name='add_review'),
+    path('update-review/<int:review_id>/', views.update_review, name='update_review'),
+    path('delete-review/<int:review_id>/', views.delete_review, name='delete_review'),  # noqa E501
 ]
