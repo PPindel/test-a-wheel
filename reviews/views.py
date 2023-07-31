@@ -20,11 +20,9 @@ def add_review(request):
     """
     Allows to create a new ad
     """
-    form = ReviewForm(request.POST or None, request.FILES or None)
+    form = ReviewForm(request.POST, request.FILES)
     if request.method == 'POST':
-
         if form.is_valid():
-
             review = form.save(commit=False)
             review.author = request.user
             review.save()
@@ -43,59 +41,31 @@ def add_review(request):
 
     return render(request, template, context)
 
-# @login_required
-# def add_review(request):
-#     """ Add a product to the store """
-#     # if not request.user.is_superuser:
-#     #     messages.error(request, 'Sorry, only store owners can do that.')
-#     #     return redirect(reverse('home'))
 
-#     if request.method == 'POST':
-#         form = ReviewForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             review = form.save()
-#             messages.success(request, 'Successfully added review!')
-#             return redirect(reverse('reviews'))
-#         else:
-#             messages.error(request, 'Failed to add review. Please ensure the form is valid.')  # noqa E501
-#     else:
-#         form = ReviewForm()
+@login_required
+def update_review(request, review_id):
+    """ Edit a product in the store """
 
-#     template = 'reviews/add_review.html'
-#     context = {
-#         'form': form,
-#     }
+    review = get_object_or_404(Review, pk=review_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated review!')
+            return redirect(reverse('reviews'))
+        else:
+            messages.error(request, 'Failed to update review. Please ensure the form is valid.')  # noqa E501
+    else:
+        form = ReviewForm(instance=review)
+        messages.info(request, f'You are editing {review.title}')
 
-#     return render(request, template, context)
+    template = 'reviews/update_review.html'
+    context = {
+        'form': form,
+        'review': review,
+    }
 
-
-# @login_required
-# def update_review(request, review_id):
-#     """ Edit a product in the store """
-#     if not request.user.is_superuser:
-#         messages.error(request, 'Sorry, only store owners can do that.')
-#         return redirect(reverse('home'))
-
-#     product = get_object_or_404(Product, pk=product_id)
-#     if request.method == 'POST':
-#         form = ProductForm(request.POST, request.FILES, instance=product)
-#         if form.is_valid():
-#             form.save()
-#             messages.success(request, 'Successfully updated product!')
-#             return redirect(reverse('product_detail', args=[product.id]))
-#         else:
-#             messages.error(request, 'Failed to update product. Please ensure the form is valid.')  # noqa E501
-#     else:
-#         form = ProductForm(instance=product)
-#         messages.info(request, f'You are editing {product.name}')
-
-#     template = 'products/edit_product.html'
-#     context = {
-#         'form': form,
-#         'product': product,
-#     }
-
-#     return render(request, template, context)
+    return render(request, template, context)
 
 
 # @login_required

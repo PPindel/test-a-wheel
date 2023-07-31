@@ -10,20 +10,21 @@
 {% endblock %}
 
 {% block content %}
+{% if user.is_authenticated and user.id == review.author.id %}
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                <h2 class="logo-font mb-4">Product Management</h2>
-                <h5 class="text-muted">Edit a Product</h5>
+                <h2 class="logo-font mb-4">Review Form</h2>
+                <h5 class="text-muted">Edit a review</h5>
                 <hr>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'update_review' review.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         {% if field.name != 'image' %}
@@ -33,13 +34,18 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Update Product</button>
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'reviews' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Update Review</button>
                     </div>
                 </form>
             </div>            
         </div>
     </div>
+{% else %}
+<div class="container header-container">
+    <h2>YOU SHOULD NOT</h2>
+</div>
+{% endif %}
 {% endblock %}
 
 {% block postloadjs %}
