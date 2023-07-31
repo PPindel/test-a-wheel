@@ -18,7 +18,7 @@ class ReviewList(generic.ListView):
 @login_required
 def add_review(request):
     """
-    Allows to create a new ad
+    Allows to create a review
     """
     form = ReviewForm(request.POST, request.FILES)
     if request.method == 'POST':
@@ -44,7 +44,7 @@ def add_review(request):
 
 @login_required
 def update_review(request, review_id):
-    """ Edit a product in the store """
+    """ Update a review in the store """
 
     review = get_object_or_404(Review, pk=review_id)
     if request.method == 'POST':
@@ -57,7 +57,7 @@ def update_review(request, review_id):
             messages.error(request, 'Failed to update review. Please ensure the form is valid.')  # noqa E501
     else:
         form = ReviewForm(instance=review)
-        messages.info(request, f'You are editing {review.title}')
+        messages.info(request, f'You are updating {review.title}')
 
     template = 'reviews/update_review.html'
     context = {
@@ -70,7 +70,7 @@ def update_review(request, review_id):
 
 @login_required
 def delete_review(request, review_id):
-    """ Delete a product from the store """
+    """ Delete a review from the store """
 
     review = get_object_or_404(Review, pk=review_id)
     review.delete()
