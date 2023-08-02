@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Are you sure you want to delete your review?</h2>
+            <hr class="mb-1">
+            <div class="container-fluid">
+                {% if user.is_authenticated and user.id == review.author.id %}
+                <div class="card-container my-5">
+                    <div class="col-12">
+                        <form method="POST" action=".">
+                            {% csrf_token %}
+                            <div class="text-center">
+                                <input class="btn btn-outline-black rounded-0" type="submit" value="Yes!" />
+                            </div>
+                            <br>
+                            <div class="text-center">
+                                <a class="btn btn-outline-black rounded-0" href="{% url 'reviews' %}">No, go back!</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
