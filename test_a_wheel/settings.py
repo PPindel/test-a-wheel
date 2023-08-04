@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ppindel-testawheel-fmsy5ct7l7j.ws-eu102.gitpod.io', 'test-a-wheel-8a5bbb245942.herokuapp.com/']  # noqa E501
+ALLOWED_HOSTS = ['8000-ppindel-testawheel-fmsy5ct7l7j.ws-eu102.gitpod.io', 'test-a-wheel-8a5bbb245942.herokuapp.com']  # noqa E501
 
 
 # Application definition
