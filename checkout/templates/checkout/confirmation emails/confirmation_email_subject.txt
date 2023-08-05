@@ -1,1 +1,1 @@
-Boutique Ado Confirmation for Order Number {{ order.order_number }}
+Test a Wheel Confirmation for Order Number {{ order.order_number }}
