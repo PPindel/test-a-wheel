@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Contact Information</h3>
+                    <p><strong>Company Name:</strong> Test a Wheel</p>
+                    <p><strong>Address:</strong> 10A Mountpleasant Ave Lower, Ranelagh, Dublin</p>
+                    <p><strong>Mobile Number:</strong> +353 806 123 444</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Location</h3>
+                    <!-- Embedded Google Maps -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2383.509100361377!2d-6.252166784195316!3d53.3282719799745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e15f082fe7f%3A0x26e435f4f70d3b59!2s10A%20Mountpleasant%20Ave%20Lower%2C%20Ranelagh%2C%20Dublin!5e0!3m2!1sen!2sie!4v1632720187681!5m2!1sen!2sie" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
+</div>
+{% endblock %}
