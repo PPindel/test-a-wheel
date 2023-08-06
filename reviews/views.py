@@ -28,7 +28,7 @@ def add_review(request):
             review.author = request.user
             review.save()
             form = ReviewForm()
-            messages.success(request, 'Successfully created')
+            messages.success(request, 'Your review was successfully created and now is waiting for approval by the administrator.')  # noqa E501
             return redirect(reverse('reviews'))
         else:
             messages.error(request, 'Failed to add review. Please ensure the form is valid.')  # noqa E501
