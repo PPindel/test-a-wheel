@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
-        content="Test a Wheel offers pre purchase used car inspections throughout the Ireland. Experienced, vetted techs are standing by to perform a 270-point inspection usually within 48 hours or less.">
+        content="Test a Wheel offers pre purchase used car inspections throughout the Ireland. Experienced, vetted techs are standing by to perform a professional car inspection.">
     <meta name="keywords"
         content="used car inspection, pre-purchase vehicle inspections, mobile mechanic inspections, automobile inspection, on-site car inspection">
     <meta name="author" content="Przemyslaw Pindel">
@@ -40,10 +40,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+    
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
     </script>
+
+    <!-- Mailchimp -->
     <script type="text/javascript">
         (function ($) {
             window.fnames = new Array();
@@ -63,11 +70,7 @@
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
     </script>
-    <script type="text/javascript">
-        $('.btt-link').click(function(e) {
-            window.scrollTo(0,0)
-        })
-    </script>
+
     {% endblock %}
 
     {% block extra_js %}
@@ -178,9 +181,7 @@
     {% endblock %}
 
     {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-    </script>
+    
     {% endblock %}
 
     <!-- Footer -->
@@ -249,11 +250,6 @@
             </div>
 
         </footer>
-        <div class="btt-button shadow-sm rounded-0 border border-black">
-            <a class="btt-link d-flex h-100">
-                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-            </a>	
-        </div>
     </div>
 </body>
 
