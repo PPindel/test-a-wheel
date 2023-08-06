@@ -42,8 +42,16 @@
         </div>
     </div>
 {% else %}
-<div class="container header-container">
-    <h2>YOU SHOULD NOT</h2>
+<h2 class="display-4 logo-font text-black">
+    You're not allowed to access this page
+</h2>
+<div class="my-5">
+    <h4>
+        <a href="{% url 'products' %}" 
+            class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
+                Return to shop
+        </a>
+    </h4>
 </div>
 {% endif %}
 {% endblock %}
