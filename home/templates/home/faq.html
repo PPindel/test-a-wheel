@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Frequently Asked Questions</h2>
+            <hr class="mb-1">
+        </div>
+    </div>
+    <div class="accordion" id="faqAccordion">
+        <!-- Question 1 -->
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link text-black" type="button" data-toggle="collapse"
+                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Why should I read these FAQs?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    These FAQs are here because we want you to understand how we operate and what you can expect from
+                    us. Please feel free to call us at +353 806 123 555 if you have questions about any of these FAQs.
+                    We
+                    want to make this an enjoyable experience for everyone and we look forward to working with you!
+                </div>
+            </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        When will my report be ready?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Inspectors are out in the field during the day doing inspections. When they get home, after we are
+                    closed, that is when they upload their reports. We start reviewing reports at 8:00 am central time
+                    and review them one at a time until they are all out. Keep an eye on your email. You'll receive
+                    notification of when you can log in and view it.
+                </div>
+            </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        How soon after I place my order will I get my report?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Inspections are typically completed within two business days, depending on the inspector's schedule,
+                    the seller's schedule, and the weather. Inspections that are completed on Friday will have the
+                    report reviewed on Saturday morning, starting at 8:00 am. We do our best to complete inspections by
+                    the next business day as long as the seller makes the car available for review and the inspection is
+                    ordered early enough the day before. Our hours of operation are M-F 8:00 to 5:00 Irish time.
+                    Occasionally, the seller's schedule, the inspector's schedule, or the weather may cause a delay.
+                    Please note we cannot guarantee a date of an inspection due to factors outside our control.
+                    Customers are encouraged to plan accordingly and make arrangements to hold a vehicle if necessary.
+                    We have a better chance of getting the inspection done faster, the sooner you place your order. We
+                    do not schedule inspections on weekends. Reports can not be expedited. We do our very best to get
+                    them out as soon as possible.
+                </div>
+            </div>
+        </div>
+        <!-- Question 4 -->
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black" type="button" data-toggle="collapse"
+                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        When do I pay for the inspection?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                <div class="card-body">
+                    We are a pre-pay service. You pay for the inspection when you place your order. If the vehicle sells
+                    before we dispatch an inspector, we will put your order on hold and you can use the amount paid
+                    towards inspection of another vehicle.
+                </div>
+            </div>
+        </div>
+        <!-- Question 5 -->
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-black" type="button" data-toggle="collapse"
+                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        What is the cancellation policy?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Because we strive to get inspectors on site very quickly, we begin working on your order
+                    immediately. Once your order has been placed we cannot offer a refund. PLEASE BE SURE OF YOUR
+                    VEHICLE BEFORE PLACING YOUR ORDER. If your vehicle sells before we dispatch an inspector, we will
+                    put your order on hold and you can use the amount paid towards inspection of another vehicle. If you
+                    purchase a vehicle before we can get to it, we will not offer a cancellation for a refund.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

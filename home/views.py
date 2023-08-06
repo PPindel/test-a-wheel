@@ -13,3 +13,9 @@ def contact(request):
     """ A view to render contact page """
 
     return render(request, 'home/contact.html')
+
+
+def faq(request):
+    """ A view to render contact page """
+
+    return render(request, 'home/faq.html')
