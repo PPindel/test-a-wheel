@@ -30,6 +30,13 @@ p {
     color: #53565A;
 }
 
+.header-style {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Styles from Bulma */
 .icon {
     align-items: center;
