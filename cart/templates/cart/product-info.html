@@ -1,30 +1,55 @@
+<!-- Display the product name -->
 <div class="text-black"><strong>{{ item.product.name }}</strong></div>
 <hr>
+<!-- Display the detailed check section -->
 <div class="row">
-    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Detailed check of the car by our expert</div>
+    <!-- Green checkmark icon -->
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+    <!-- Description of the detailed check -->
+    <div class="text-sub col-10">Detailed check of the car by our expert</div>
 </div>
 <hr>
+<!-- Check if the product has a history check -->
 {% if item.product.history_check %}
+<!-- Display the full history check section -->
 <div class="row">
-    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Full history check</div>
+    <!-- Green checkmark icon -->
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+    <!-- Description of the full history check -->
+    <div class="text-sub col-10">Full history check</div>
 </div>
 <hr>
 {% endif %}
+<!-- Check if the product has a garage check -->
 {% if item.product.garage_check %}
+<!-- Display the professional garage inspection section -->
 <div class="row">
-    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Proffesional garage inspection</div>
+    <!-- Green checkmark icon -->
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+    <!-- Description of the professional garage inspection -->
+    <div class="text-sub col-10">Professional garage inspection</div>
 </div>
 <hr>
 {% endif %}
+<!-- Check if the product has a premium check -->
 {% if item.product.premium_check %}
+<!-- Display the additional points of check section -->
 <div class="row">
-    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Additional points of check, extra photos</div>
+    <!-- Green checkmark icon -->
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+    <!-- Description of the additional points of check -->
+    <div class="text-sub col-10">Additional points of check, extra photos</div>
 </div>
 <hr>
 {% endif %}
+<!-- Check if the product has an extra warranty -->
 {% if item.product.extra_warranty %}
+<!-- Display the additional warranty section -->
 <div class="row">
-    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Additional warranty for a car bought with us!</div>
+    <!-- Green checkmark icon -->
+    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+    <!-- Description of the additional warranty -->
+    <div class="text-sub col-10">Additional warranty for a car bought with us!</div>
 </div>
 <hr>
 {% endif %}

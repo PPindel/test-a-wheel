@@ -1,27 +1,33 @@
 {% extends 'base.html' %}
+<!-- Extend the 'base.html' template -->
+
 {% load static %}
+<!-- Load static files like CSS and JavaScript -->
 {% block content %}
+<!-- Define a block for the main content of the page -->
 {% load crispy_forms_tags %}
+<!-- Load crispy_forms_tags for rendering forms -->
 
 <div class="masthead">
     <div class="masthead-content">
         <div class="masthead-image">
             {% if "placeholder" in post.image.url %}
             <img src="{{ MEDIA_URL }}placeholder.jpg" alt="Placeholder Image">
+            <!-- Display a placeholder image if no actual image -->
             {% else %}
             <img src="{{ post.image.url }}" alt="{{ post.title }}">
+            <!-- Display the post image with its title as alt text -->
             {% endif %}
             <div class="gradient-overlay"></div>
         </div>
         <div class="masthead-text">
             <div class="masthead-text-inner">
-                <!-- Post title goes in this h1 tag -->
+                <!-- Display the post title, author, and section -->
                 <h1 class="post-title">
                     {{ post.title }}
                 </h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.created_on}}</p>
-                <p class="post-subtitle">{{ post.section }}</p>
+                <p class="post-subtitle">{{ post.created_on}}</p> <!-- Display the post's created date -->
+                <p class="post-subtitle">{{ post.section }}</p> <!-- Display the post's section/category -->
             </div>
         </div>
     </div>
@@ -31,33 +37,30 @@
     <div class="row">
         <div class="col mb-4 mt-3 left top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
+                <!-- Display the post content inside the card-text, use the | safe filter to render HTML -->
                 <p class="card-text">{{ post.content | safe }}</p>
                 <div class="row">
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                <!-- Form for liking/unliking the post -->
                                 {% csrf_token %}
                                 {% if liked %}
-
+                                <!-- Display the like button with appropriate icon based on whether the user has liked the post -->
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
                                         class="fa-solid fa-thumbs-up"></i></button>
-
                                 {% else %}
-
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
                                         class="fa-regular fa-thumbs-up"></i></button>
-
                                 {% endif %}
-
                             </form>
                             {% else %}
-
                             <span class="text-secondary"><i class="fa-regular fa-thumbs-up"></i></span>
+                            <!-- Display a like icon for unauthenticated users -->
                             {% endif %}
                             <span class="text-secondary">{{ post.number_of_likes }}</span>
+                            <!-- Display the number of likes for the post -->
                         </strong>
                     </div>
                 </div>
@@ -66,9 +69,10 @@
     </div>
     <div class="row">
         <div class="col">
-            <hr>
+            <hr> <!-- Add a horizontal line for separation -->
         </div>
     </div>
 </div>
 
 {% endblock content %}
+<!-- End of the content block -->
