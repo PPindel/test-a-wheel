@@ -3,16 +3,22 @@ from django.contrib import admin
 from .models import Order, OrderLineItem
 
 
-# Inline class for displaying OrderLineItem within OrderAdmin
 class OrderLineItemAdminInline(admin.TabularInline):
+    """
+    Inline class for displaying OrderLineItem within OrderAdmin
+    """
+
     # Set the model for the inline class to OrderLineItem
     model = OrderLineItem
     # Specify fields to be displayed as read-only
     readonly_fields = ('lineitem_total',)
 
 
-# Admin class for configuring the display and behavior of Order model in the admin panel # noqa E501
 class OrderAdmin(admin.ModelAdmin):
+    """
+    Admin class for configuring the display and behavior of Order model in the admin panel # noqa E501
+    """
+
     # Include the OrderLineItemAdminInline class within the OrderAdmin
     inlines = (OrderLineItemAdminInline,)
 

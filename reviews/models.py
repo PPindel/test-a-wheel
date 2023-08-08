@@ -8,6 +8,10 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Review(models.Model):
+    """
+    Define the Review model
+    """
+
     title = models.CharField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now=True)
     review_text = models.TextField()

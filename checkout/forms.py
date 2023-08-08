@@ -3,8 +3,11 @@ from django import forms
 from .models import Order
 
 
-# Form class for creating and customizing Order form
 class OrderForm(forms.ModelForm):
+    """
+    Form class for creating and customizing Order form
+    """
+
     class Meta:
         # Set the model to use for the form
         model = Order

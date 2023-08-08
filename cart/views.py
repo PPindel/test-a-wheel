@@ -6,13 +6,11 @@ from django.contrib import messages
 from products.models import Product
 
 
-# View to render the cart contents page
 def view_cart(request):
     """ A view that renders the cart contents page """
     return render(request, 'cart/cart.html')
 
 
-# View to add a product to the cart
 def add_to_cart(request, item_id):
     """ Add a quantity of the specified product to the shopping cart """
     product = get_object_or_404(Product, pk=item_id)
@@ -30,7 +28,6 @@ def add_to_cart(request, item_id):
     return redirect(redirect_url)
 
 
-# View to adjust the quantity of a product in the cart
 def adjust_cart(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
     product = get_object_or_404(Product, pk=item_id)
@@ -48,7 +45,6 @@ def adjust_cart(request, item_id):
     return redirect(reverse('view_cart'))
 
 
-# View to remove an item from the cart
 def remove_from_cart(request, item_id):
     """Remove the item from the shopping cart"""
     try:

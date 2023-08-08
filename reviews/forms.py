@@ -13,13 +13,3 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('title', 'order', 'service', 'review_text', 'rating')
-
-
-# class ReviewEdit(forms.ModelForm):
-#     """
-#     Review edit class
-#     Allows to edit a Review
-#     """
-#     class Meta:
-#         model = Review
-#         fields = ('body',)

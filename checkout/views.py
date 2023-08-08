@@ -16,9 +16,12 @@ import stripe
 import json
 
 
-# View for handling cached checkout data
 @require_POST
 def cache_checkout_data(request):
+    """
+    View for handling cached checkout data
+    """
+
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -34,8 +37,11 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
-# Checkout view for processing the checkout process
 def checkout(request):
+    """
+    Checkout view for processing the checkout process
+    """
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 

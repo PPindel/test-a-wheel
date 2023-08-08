@@ -5,8 +5,10 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 
 
-# Function to calculate and return cart contents for rendering in templates
 def cart_contents(request):
+    """
+    Function to calculate and return cart contents for rendering in templates
+    """
 
     cart_items = []  # List to store cart item details
     total = 0  # Initialize total cost of items in the cart

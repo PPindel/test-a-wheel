@@ -3,9 +3,11 @@ from .models import Post
 from django_summernote.admin import SummernoteModelAdmin
 
 
-# Register the 'Post' model with the admin site
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
+    """
+    Register the 'Post' model with the admin site
+    """
 
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']

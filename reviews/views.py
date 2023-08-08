@@ -10,6 +10,10 @@ from .forms import ReviewForm
 
 
 class ReviewList(generic.ListView):
+    """
+    Class to show existing reviews
+    """
+
     model = Review
     queryset = Review.objects.filter(status=1).order_by('-created_on')
     template_name = 'reviews/reviews.html'
@@ -69,15 +73,6 @@ def update_review(request, review_id):
     return render(request, template, context)
 
 
-# @login_required
-# def delete_review(request, review_id):
-#     """ Delete a review from the store """
-
-#     review = get_object_or_404(Review, pk=review_id)
-#     review.delete()
-#     messages.success(request, 'Review deleted!')
-#     return redirect(reverse('reviews'))
-
 class DeleteReview(LoginRequiredMixin, generic.DeleteView):
     """
     View that allows logged in users to delete a review.
@@ -98,6 +93,3 @@ class DeleteReview(LoginRequiredMixin, generic.DeleteView):
     def get_success_url(self, *args, **kwargs):
         messages.success(self.request, 'You have deleted a review!')
         return reverse_lazy('reviews')
-
-    # def handle_no_permission(self):
-    #     return render(self.request, '403.html', status=403)
