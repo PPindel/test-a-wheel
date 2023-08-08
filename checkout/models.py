@@ -1,3 +1,4 @@
+# Import necessary modules and packages
 import uuid
 
 from django.db import models
@@ -10,6 +11,7 @@ from products.models import Product
 from profiles.models import UserProfile
 
 
+# Model representing an order
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
@@ -29,12 +31,14 @@ class Order(models.Model):
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')  # noqa E501
 
+    # Method to generate a random order number
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
 
+    # Method to update order totals
     def update_total(self):
         """
         Update grand total each time a line item is added.
@@ -43,6 +47,7 @@ class Order(models.Model):
         self.grand_total = self.order_total
         self.save()
 
+    # Customized save method to set the order number if not already set
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number
@@ -56,12 +61,14 @@ class Order(models.Model):
         return self.order_number
 
 
+# Model representing individual items in an order
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')  # noqa E501
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)  # noqa E501
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)  # noqa E501
 
+    # Customized save method to set the lineitem total and update order total
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total

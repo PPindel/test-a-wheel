@@ -1,3 +1,4 @@
+# Import necessary modules and models from Django
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse  # noqa E501
 from django.views.decorators.http import require_POST
 from django.contrib import messages
@@ -15,6 +16,7 @@ import stripe
 import json
 
 
+# View for handling cached checkout data
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -32,6 +34,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+# Checkout view for processing the checkout process
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -51,6 +54,7 @@ def checkout(request):
             'county': request.POST['county'],
         }
 
+        # Create and validate the order form
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
