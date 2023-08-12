@@ -74,7 +74,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         return context
 
     def get_success_url(self):
-        return reverse('profile')
+        return reverse('reviews')
 
 
 @login_required
