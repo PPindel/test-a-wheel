@@ -6,7 +6,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
 from .models import Review
-from .forms import ReviewForm
+from django.views.generic import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import ReviewForm, AddReviewForm
 
 
 class ReviewList(generic.ListView):
@@ -20,31 +22,59 @@ class ReviewList(generic.ListView):
     paginate_by = 6
 
 
-@login_required
-def add_review(request):
-    """
-    Allows to create a review
-    """
-    form = ReviewForm(request.POST, request.FILES)
-    if request.method == 'POST':
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.author = request.user
-            review.save()
-            form = ReviewForm()
-            messages.success(request, 'Your review was successfully created and now is waiting for approval by the administrator.')  # noqa E501
-            return redirect(reverse('reviews'))
-        else:
-            messages.error(request, 'Failed to add review. Please ensure the form is valid.')  # noqa E501
-    else:
-        form = ReviewForm()
+# @login_required
+# def add_review(request):
+#     """
+#     Allows to create a review
+#     """
+#     form = ReviewForm(request.POST, request.FILES)
+#     if request.method == 'POST':
+#         if form.is_valid():
+#             review = form.save(commit=False)
+#             review.author = request.user
+#             review.save()
+#             form = ReviewForm()
+#             messages.success(request, 'Your review was successfully created and now is waiting for approval by the administrator.')  # noqa E501
+#             return redirect(reverse('reviews'))
+#         else:
+#             messages.error(request, 'Failed to add review. Please ensure the form is valid.')  # noqa E501
+#     else:
+#         form = ReviewForm()
 
-    template = 'reviews/add_review.html'
-    context = {
-        'form': form,
-    }
+#     template = 'reviews/add_review.html'
+#     context = {
+#         'form': form,
+#     }
 
-    return render(request, template, context)
+#     return render(request, template, context)
+
+class ReviewCreateView(LoginRequiredMixin, CreateView):
+    """
+    VIEW TO CREATE A REVIEW
+    """
+
+    form_class = AddReviewForm
+    template_name = 'reviews/add_review.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        from checkout.models import Order, OrderLineItem
+        from products.models import Product
+        order = Order.objects.get(order_number=self.kwargs['order_number'])  # noqa
+        form.instance.order = order
+        service = OrderLineItem.objects.get(order=order)
+        form.instance.service_id = service.product.pk
+        super().form_valid(form)
+        messages.success(self.request, "Added a new Review!")
+        return HttpResponseRedirect(self.get_success_url())
+
+    def get_context_data(self, **kwargs):
+        context = super(ReviewCreateView, self).get_context_data(**kwargs)
+        context['order_number'] = self.kwargs['order_number']
+        return context
+
+    def get_success_url(self):
+        return reverse('profile')
 
 
 @login_required

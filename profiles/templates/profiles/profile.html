@@ -78,7 +78,7 @@
                             <td>${{ order.grand_total }}</td>
                             <td>
                                 <!-- Link for adding a review for the order -->
-                                <a class="text-success" href="{% url 'add_review' %}">Rate me!</a>
+                                <a class="text-success" href="{% url 'add_review' order.order_number %}">Rate me!</a>
                             </td>
                         </tr>
                         {% endfor %}
