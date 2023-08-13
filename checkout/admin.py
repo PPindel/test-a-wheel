@@ -32,7 +32,7 @@ class OrderAdmin(admin.ModelAdmin):
               'email', 'phone_number', 'country',
               'postcode', 'town_or_city', 'street_address1',
               'street_address2', 'county', 'order_total',
-              'grand_total', 'original_bag', 'stripe_pid')
+              'grand_total', 'original_bag', 'stripe_pid', 'status')
 
     # Define fields to be displayed in the list view of the admin panel
     list_display = ('order_number', 'date', 'full_name',

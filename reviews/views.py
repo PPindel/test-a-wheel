@@ -60,12 +60,12 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         from checkout.models import Order, OrderLineItem
         from products.models import Product
-        order = Order.objects.get(order_number=self.kwargs['order_number'])  # noqa
+        order = Order.objects.get(order_number=self.kwargs['order_number'])  # noqa E501
         form.instance.order = order
         service = OrderLineItem.objects.get(order=order)
         form.instance.service_id = service.product.pk
         super().form_valid(form)
-        messages.success(self.request, "Added a new Review!")
+        messages.success(self.request, "Added a new Review! Please wait for our admin to accept and publish.")  # noqa E501
         return HttpResponseRedirect(self.get_success_url())
 
     def get_context_data(self, **kwargs):

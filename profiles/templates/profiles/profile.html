@@ -78,12 +78,8 @@
                             <td>${{ order.grand_total }}</td>
                             <td>
                                 <!-- Link for adding a review for the order -->
-                                {% if order.get_reviews %}
-                                {# NEED TO ADD CHECK IF USER IS SUPER USER OR OWNS REVIEW #}
-                                <a class="text-success" href="{% url 'update_review' order.get_reviews.pk %}">Update
-                                    Review!</a>
-                                <a class="text-success" href="{% url 'delete_review' order.get_reviews.pk %}">Delete
-                                    Review!</a>
+                                {% if order.status == 1 %}
+                                <p class="text-success">REVIEWED!</p>
                                 {% else %}
                                 <a class="text-success" href="{% url 'add_review' order.order_number %}">Rate me!</a>
                                 {% endif %}
