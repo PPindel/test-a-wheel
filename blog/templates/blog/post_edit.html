@@ -19,17 +19,17 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <hr>
-            <!-- Heading for the review edit form -->
-            <h2 class="logo-font mb-4">Review Form</h2>
-            <h5 class="text-muted">Edit a review</h5>
+            <!-- Heading for the post edit form -->
+            <h2 class="logo-font mb-4">Edit the post</h2>
+            <h5 class="text-muted">Remember to save your changes by submitting the form!</h5>
             <hr>
         </div>
     </div>
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <!-- Form to edit the review -->
-            <form method="POST" action="{% url 'update_review' review.id %}" class="form mb-2"
+            <!-- Form to edit the post -->
+            <form method="POST" action="{% url 'post_edit' post.slug %}" class="form mb-2"
                 enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
@@ -42,13 +42,13 @@
                 {% endfor %}
                 <!-- Buttons for form submission and cancellation -->
                 <div class="text-right">
-                    <a class="btn btn-outline-black rounded-0" href="{% url 'reviews' %}">Cancel</a>
-                    <button class="btn btn-black rounded-0" type="submit">Update Review</button>
+                    <a class="btn btn-outline-black rounded-0" href="{% url 'blog' %}">Cancel</a>
+                    <button class="btn btn-black rounded-0" type="submit">Update Post</button>
                 </div>
             </form>
         </div>
     </div>
-    <!-- If the user is not authenticated or not the review's author -->
+    <!-- If the user is not authenticated or not the post's author -->
     {% else %}
     <h2 class="display-4 logo-font text-black">
         You're not allowed to access this page

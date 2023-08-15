@@ -72,19 +72,6 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))  # Redirect to the post detail page # noqa E501
 
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             review = form.save(commit=False)
-#             review.author = request.user
-#             review.save()
-#             form = ReviewForm()
-#             messages.success(request, 'Your review was successfully created and now is waiting for approval by the administrator.')  # noqa E501
-#             return redirect(reverse('reviews'))
-#         else:
-#             messages.error(request, 'Failed to add review. Please ensure the form is valid.')  # noqa E501
-#     else:
-#         form = ReviewForm()
-
 
 @login_required
 def add_post(request):
@@ -108,6 +95,32 @@ def add_post(request):
     template = 'blog/post_add.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def update_post(request, slug):
+    """ Update a post in the blog """
+
+    post = get_object_or_404(Post, slug=slug)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated post!')
+            return redirect(reverse('blog'))
+        else:
+            messages.error(request, 'Failed to update the post. Please ensure the form is valid.')  # noqa E501
+    else:
+        form = PostForm(instance=post)
+        messages.info(request, f'You are updating {post.title}')
+
+    template = 'blog/post_edit.html'
+    context = {
+        'form': form,
+        'post': post,
     }
 
     return render(request, template, context)
