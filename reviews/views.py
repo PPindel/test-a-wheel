@@ -43,8 +43,8 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
 
         form.instance.order = order
         form.instance.status = 1  # this line is to publish review instantly ------------------------------------- TO BE DELETED LATER  # noqa
-        service = OrderLineItem.objects.get(order=order)
-        form.instance.service_id = service.product.pk
+        # service = OrderLineItem.objects.get(order=order)
+        # form.instance.service_id = service.product.pk
         super().form_valid(form)
         if not order.reviewed:
             order.reviewed = True
