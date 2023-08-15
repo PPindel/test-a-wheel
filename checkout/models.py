@@ -10,8 +10,6 @@ from django_countries.fields import CountryField
 from products.models import Product
 from profiles.models import UserProfile
 
-STATUS = ((0, "Not reviewed"), (1, "Reviewed"))
-
 
 class Order(models.Model):
     """
@@ -35,7 +33,6 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)  # noqa E501
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')  # noqa E501
-    status = models.IntegerField(choices=STATUS, default=0)
     reviewed = models.BooleanField(default=False)
 
     def _generate_order_number(self):

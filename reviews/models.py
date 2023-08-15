@@ -20,7 +20,7 @@ class Review(models.Model):
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)], default=5)  # noqa E501
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="review", default=0)  # noqa E501
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)  # probably to be deleted *************************************************** TO BE DELETED? ************# noqa
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['-created_on']
