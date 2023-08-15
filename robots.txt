@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Sitemap: https://test-a-wheel-8a5bbb245942.herokuapp.com/sitemap.xml
