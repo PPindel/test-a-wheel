@@ -1,9 +1,10 @@
 # Import necessary modules from Django
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post
+from django.contrib.auth.decorators import login_required
 
 
 class PostList(generic.ListView):
@@ -69,3 +70,16 @@ class PostLike(View):
             post.likes.add(request.user)  # If user hasn't liked, add their like # noqa E501
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))  # Redirect to the post detail page # noqa E501
+
+
+@login_required
+def delete_post(request, slug):
+    """ Delete a post from the blog """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins can do that.')
+        return redirect(reverse('home'))
+
+    post = get_object_or_404(Post, slug=slug)
+    post.delete()
+    messages.success(request, 'Post deleted!')
+    return redirect(reverse('blog'))

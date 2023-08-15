@@ -62,6 +62,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         from products.models import Product
         order = Order.objects.get(order_number=self.kwargs['order_number'])  # noqa E501
         form.instance.order = order
+        form.instance.status = 1  # this line is to publish review instantly
         service = OrderLineItem.objects.get(order=order)
         form.instance.service_id = service.product.pk
         super().form_valid(form)
