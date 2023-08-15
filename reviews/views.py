@@ -22,32 +22,6 @@ class ReviewList(generic.ListView):
     paginate_by = 6
 
 
-# @login_required
-# def add_review(request):
-#     """
-#     Allows to create a review
-#     """
-#     form = ReviewForm(request.POST, request.FILES)
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             review = form.save(commit=False)
-#             review.author = request.user
-#             review.save()
-#             form = ReviewForm()
-#             messages.success(request, 'Your review was successfully created and now is waiting for approval by the administrator.')  # noqa E501
-#             return redirect(reverse('reviews'))
-#         else:
-#             messages.error(request, 'Failed to add review. Please ensure the form is valid.')  # noqa E501
-#     else:
-#         form = ReviewForm()
-
-#     template = 'reviews/add_review.html'
-#     context = {
-#         'form': form,
-#     }
-
-#     return render(request, template, context)
-
 class ReviewCreateView(LoginRequiredMixin, CreateView):
     """
     VIEW TO CREATE A REVIEW
@@ -62,10 +36,14 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         from products.models import Product
         order = Order.objects.get(order_number=self.kwargs['order_number'])  # noqa E501
         form.instance.order = order
-        form.instance.status = 1  # this line is to publish review instantly
+        form.instance.status = 1  # this line is to publish review instantly ------------------------------------- TO BE DELETED LATER  # noqa
         service = OrderLineItem.objects.get(order=order)
         form.instance.service_id = service.product.pk
         super().form_valid(form)
+        if not order.reviewed:
+            order.reviewed = True
+            order.save()
+
         messages.success(self.request, "Added a new Review! Please wait for our admin to accept and publish.")  # noqa E501
         return HttpResponseRedirect(self.get_success_url())
 
