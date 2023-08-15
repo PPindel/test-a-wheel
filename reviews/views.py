@@ -34,7 +34,13 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         from checkout.models import Order, OrderLineItem
         from products.models import Product
-        order = Order.objects.get(order_number=self.kwargs['order_number'])  # noqa E501
+        order = Order.objects.get(order_number=self.kwargs['order_number'])
+
+        # Check if the order has already been reviewed
+        if order.reviewed:
+            messages.error(self.request, "This order has already been reviewed.")  # noqa E501
+            return redirect('profile')  # Redirect to the profile page or another appropriate page # noqa E501
+
         form.instance.order = order
         form.instance.status = 1  # this line is to publish review instantly ------------------------------------- TO BE DELETED LATER  # noqa
         service = OrderLineItem.objects.get(order=order)
