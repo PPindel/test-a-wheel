@@ -16,7 +16,7 @@
             <!-- Input field for the quantity -->
             <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }} 
                 {% if item.size %}size_{{ item.item_id }}_{{ item.size }}{% endif %}" type="number" name="quantity"
-                value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
+                value="{{ item.quantity }}" min="1" max="3" data-item_id="{{ item.item_id }}"
                 data-size="{{ item.size }}">
             <!-- Button to increment the quantity -->
             <div class="input-group-append">
