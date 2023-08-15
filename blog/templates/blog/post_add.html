@@ -13,22 +13,21 @@
 {% block content %}
     <!-- Overlay element -->
     <div class="overlay"></div>
-    {% if request.user.is_authenticated %}
+    {% if request.user.is_authenticated and request.user.is_superuser %}
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
                 <!-- Heading for the review form section -->
-                <h2 class="logo-font mb-4">Review Form</h2>
-                <h3 class="text-muted">Add a review</h3>
-                <p>Order: {{ order_number }}</p>
+                <h2 class="logo-font mb-4">Post Form</h2>
+                <h3 class="text-muted">Add a post to our blog</h3>
                 <hr>
             </div>
         </div>
         
         <div class="row">
             <div class="col-12 col-md-6">
-                <!-- Form for submitting a new review -->
+                <!-- Form for submitting a new post -->
                 <form method="POST" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -41,7 +40,7 @@
                     
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'reviews' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Add Review</button>
+                        <button class="btn btn-black rounded-0" type="submit">Add Post</button>
                     </div>
                 </form>
             </div>            

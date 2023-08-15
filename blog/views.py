@@ -4,6 +4,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post
+from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -70,6 +71,46 @@ class PostLike(View):
             post.likes.add(request.user)  # If user hasn't liked, add their like # noqa E501
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))  # Redirect to the post detail page # noqa E501
+
+#     if request.method == 'POST':
+#         if form.is_valid():
+#             review = form.save(commit=False)
+#             review.author = request.user
+#             review.save()
+#             form = ReviewForm()
+#             messages.success(request, 'Your review was successfully created and now is waiting for approval by the administrator.')  # noqa E501
+#             return redirect(reverse('reviews'))
+#         else:
+#             messages.error(request, 'Failed to add review. Please ensure the form is valid.')  # noqa E501
+#     else:
+#         form = ReviewForm()
+
+
+@login_required
+def add_post(request):
+    """
+    Allows to create a post
+    """
+    form = PostForm(request.POST, request.FILES)
+
+    if request.method == 'POST':
+
+        if form.is_valid():
+
+            post = form.save(commit=False)
+            post.save()
+            form = PostForm()
+            messages.success(request, 'Successfully created post')
+            return redirect('post_detail', post.slug)
+        else:
+            messages.error(request, 'Failed to add post. Please ensure the form is valid.')  # noqa E501
+
+    template = 'blog/post_add.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
 
 
 @login_required
