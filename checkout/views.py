@@ -171,19 +171,26 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     # confirmation email
-    email_to = order.email
-    subject = render_to_string(
-        'checkout/confirmation_emails/confirmation_email_subject.txt',
-        {'order': order})
-    body = render_to_string(
-        'checkout/confirmation_emails/confirmation_email_body.txt',
-        {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-    recipient_list = [email_to, ]
-    send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, recipient_list)
+    if not order.confirmation_sent:
+        email_to = order.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        recipient_list = [email_to, ]
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, recipient_list)
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        messages.success(request, f'Order successfully processed! \
+            Your order number is {order_number}. A confirmation \
+            email will be sent to {order.email}.')
+        order.confirmation_sent = True
+        order.save()
+    else:
+        messages.error(request, f'This order is already processed! \
+            Your order number is {order_number}. A confirmation \
+            email has been sent to {order.email}.')
 
     if 'cart' in request.session:
         del request.session['cart']
