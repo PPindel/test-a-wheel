@@ -33,6 +33,7 @@ def profile(request):
     return render(request, template, context)
 
 
+@login_required
 def order_history(request, order_number):
     """
     Displays order history
@@ -41,10 +42,15 @@ def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     order_str = str(order_number)
 
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_str[:6]}... '  # noqa E501
-        'A confirmation email was sent on the order date.'
-    ))
+    if (request.user.is_authenticated and request.user.id == order.user_profile.id):  # noqa E501
+        messages.info(request, (
+            f'This is a past confirmation for order number {order_str[:6]}... '  # noqa E501
+            'A confirmation email was sent on the order date.'
+        ))
+    else:
+        messages.error(request, (
+            f'You are not permitted to view this page.'
+        ))
 
     template = 'checkout/checkout_success.html'
     context = {
