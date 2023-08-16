@@ -8,7 +8,7 @@ from django.urls import reverse, reverse_lazy
 from .models import Review
 from django.views.generic import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import ReviewForm, AddReviewForm
+from .forms import ReviewForm
 
 
 class ReviewList(generic.ListView):
@@ -27,7 +27,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
     VIEW TO CREATE A REVIEW
     """
 
-    form_class = AddReviewForm
+    form_class = ReviewForm
     template_name = 'reviews/add_review.html'
 
     def form_valid(self, form):

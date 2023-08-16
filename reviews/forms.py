@@ -12,13 +12,4 @@ class ReviewForm(forms.ModelForm):
     """
     class Meta:
         model = Review
-        fields = ('title', 'order', 'service', 'review_text', 'rating')
-
-
-class AddReviewForm(forms.ModelForm):
-    """
-    Add Review
-    """
-    class Meta:
-        model = Review
         fields = ('title', 'service', 'review_text', 'rating')
