@@ -78,7 +78,7 @@
                             <td>${{ order.grand_total }}</td>
                             <td>
                                 {% if order.reviewed %}
-                                <p class="text-success">REVIEWED!</p>
+                                <p class="text-info">REVIEWED!</p>
                                 {% else %}
                                 <a id="review-link-{{ order.order_number }}" class="text-success"
                                     href="{% url 'add_review' order.order_number %}">

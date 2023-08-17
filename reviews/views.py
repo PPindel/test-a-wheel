@@ -36,7 +36,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         from products.models import Product
         order = Order.objects.get(order_number=self.kwargs['order_number'])
 
-        if form.instance.author != order.user_profile.id:
+        if form.instance.author.id != order.user_profile.id:
             messages.error(self.request, "Logged user does not match the order details.")  # noqa E501
             return redirect('profile')  # Redirect to the profile page or another appropriate page # noqa E501
 
