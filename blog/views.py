@@ -80,24 +80,29 @@ def add_post(request):
     """
     form = PostForm(request.POST, request.FILES)
 
-    if request.method == 'POST':
+    if request.user.is_superuser:
+        if request.method == 'POST':
 
-        if form.is_valid():
+            if form.is_valid():
 
-            post = form.save(commit=False)
-            post.save()
-            form = PostForm()
-            messages.success(request, 'Successfully created post')
-            return redirect('post_detail', post.slug)
-        else:
-            messages.error(request, 'Failed to add post. Please ensure the form is valid.')  # noqa E501
+                post = form.save(commit=False)
+                post.save()
+                form = PostForm()
+                messages.success(request, 'Successfully created post')
+                return redirect('post_detail', post.slug)
+            else:
+                messages.error(request, 'Failed to add post. Please ensure the form is valid.')  # noqa E501
 
-    template = 'blog/post_add.html'
-    context = {
-        'form': form,
-    }
+        template = 'blog/post_add.html'
+        context = {
+            'form': form,
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
+
+    else:
+        messages.error(request, 'Sorry, only admins can do that.')
+        return redirect(reverse('home'))
 
 
 @login_required
@@ -105,25 +110,30 @@ def update_post(request, slug):
     """ Update a post in the blog """
 
     post = get_object_or_404(Post, slug=slug)
-    if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES, instance=post)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Successfully updated post!')
-            return redirect(reverse('blog'))
+
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = PostForm(request.POST, request.FILES, instance=post)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Successfully updated post!')
+                return redirect(reverse('blog'))
+            else:
+                messages.error(request, 'Failed to update the post. Please ensure the form is valid.')  # noqa E501
         else:
-            messages.error(request, 'Failed to update the post. Please ensure the form is valid.')  # noqa E501
+            form = PostForm(instance=post)
+            messages.info(request, f'You are updating {post.title}')
+
+        template = 'blog/post_edit.html'
+        context = {
+            'form': form,
+            'post': post,
+        }
+
+        return render(request, template, context)
     else:
-        form = PostForm(instance=post)
-        messages.info(request, f'You are updating {post.title}')
-
-    template = 'blog/post_edit.html'
-    context = {
-        'form': form,
-        'post': post,
-    }
-
-    return render(request, template, context)
+        messages.error(request, 'Sorry, only admins can do that.')
+        return redirect(reverse('home'))
 
 
 @login_required

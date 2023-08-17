@@ -68,29 +68,29 @@ def update_review(request, review_id):
     """ Update a review in the store """
 
     review = get_object_or_404(Review, pk=review_id)
-    if request.method == 'POST':
-        form = ReviewForm(request.POST, request.FILES, instance=review)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Successfully updated review!')
+    if review.author == request.user:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST, request.FILES, instance=review)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Successfully updated review!')
+                return redirect(reverse('reviews'))
+            else:
+                messages.error(request, 'Failed to update review. Please ensure the form is valid.')  # noqa E501
+        else:
+            messages.error(request, 'Something went wrong.')
             return redirect(reverse('reviews'))
-        else:
-            messages.error(request, 'Failed to update review. Please ensure the form is valid.')  # noqa E501
+
+        template = 'reviews/update_review.html'
+        context = {
+            'form': form,
+            'review': review,
+        }
+
+        return render(request, template, context)
     else:
-        if review.author == request.user:
-            form = ReviewForm(instance=review)
-            messages.info(request, f'You are updating {review.title}')
-        else:
-            form = ReviewForm(instance=review)
-            messages.error(request, f'Logged user is not the author of this review. Update request denied.')  # noqa E501
-
-    template = 'reviews/update_review.html'
-    context = {
-        'form': form,
-        'review': review,
-    }
-
-    return render(request, template, context)
+        messages.error(request, 'Logged user is not the author of this review. Update request denied.')  # noqa E501
+        return redirect(reverse('reviews'))
 
 
 class DeleteReview(LoginRequiredMixin, generic.DeleteView):
