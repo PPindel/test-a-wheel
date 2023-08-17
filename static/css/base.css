@@ -87,6 +87,12 @@ p {
     color: white;
 }
 
+.mobile-logo {
+    max-width: 90%; /* Ensure the image does not exceed the column width */
+    height: auto; /* Maintain the aspect ratio */
+    width: 100%; /* Occupy the entire width of the column */
+}
+
 .text-black {
     font-size: 1.8rem;
     color: black
