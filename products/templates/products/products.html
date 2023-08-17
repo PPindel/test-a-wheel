@@ -54,8 +54,8 @@
             </div>
             <div class="row">
                 {% for product in products %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                    <div class="card h-100 border-0">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 py-2">
+                    <div class="card h-100 border-1">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -67,16 +67,16 @@
                         </a>
                         {% endif %}
                         <div class="card-header pb-0">
-                            <a class="mb-0 text-black"
-                                href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
-                            <hr>
+                            <a class="mb-0 text-black py-2"
+                                href="{% url 'product_detail' product.id %}">{{ product.name }} <i class="fa-solid fa-cart-plus"></i></a>
+                            <br>
                             <div class="stars" style="--rating: {{ product.rating }};"
                                 aria-label="Rating of this product is {{ product.rating }} out of 5."></div>
                         </div>
-                        <div class="card-body bg-white pt-0 border-0 text-left">
+                        <div class="card-header bg-white pt-0 border-0 text-left">
                             <div class="row">
-                                <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                <div class="colpy-2">
+                                    <p class="lead mb-0 text-left text-black font-weight-bold py-2">${{ product.price }}</p>
                                     {% if product.rating %}
                                     <small class="text-sub"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
                                         5</small>
@@ -89,36 +89,36 @@
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
                                         <div class="text-sub col-10">Detailed check of the car by our expert</div>
                                     </div>
-                                    <hr>
                                     {% if product.history_check %}
+                                    <hr>
                                     <div class="row">
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
                                         <div class="text-sub col-10">Full history check</div>
                                     </div>
-                                    <hr>
                                     {% endif %}
                                     {% if product.garage_check %}
+                                    <hr>
                                     <div class="row">
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
                                         <div class="text-sub col-10">Proffesional garage inspection</div>
                                     </div>
-                                    <hr>
                                     {% endif %}
                                     {% if product.premium_check %}
+                                    <hr>
                                     <div class="row">
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
                                         <div class="text-sub col-10">Additional points of check, extra photos</div>
                                     </div>
-                                    <hr>
                                     {% endif %}
                                     {% if product.extra_warranty %}
+                                    <hr>
                                     <div class="row">
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
                                         <div class="text-sub col-10">Additional warranty for a car bought with us!</div>
                                     </div>
-                                    <hr>
                                     {% endif %}
                                     {% if request.user.is_superuser %}
+                                    <hr>
                                     <small class="ml-3">
                                         <a href="{% url 'edit_product' product.id %}">Edit</a> |
                                         <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
