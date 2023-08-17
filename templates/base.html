@@ -187,7 +187,15 @@
 
     {% block postloadjs %}
     <script type="text/javascript">
-        $('.toast').toast('show');
+        $(document).ready(function () {
+            // Show the toast
+            $('.toast').toast('show');
+
+            // Hide the toast after 3 seconds
+            setTimeout(function () {
+                $('.toast').toast('hide');
+            }, 5000); // 5000 milliseconds = 5 seconds
+        });
     </script>
     {% endblock %}
 
