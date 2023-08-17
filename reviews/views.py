@@ -36,15 +36,16 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         from products.models import Product
         order = Order.objects.get(order_number=self.kwargs['order_number'])
 
+        if form.instance.author != order.user_profile.id:
+            messages.error(self.request, "Logged user does not match the order details.")  # noqa E501
+            return redirect('profile')  # Redirect to the profile page or another appropriate page # noqa E501
+
         # Check if the order has already been reviewed
         if order.reviewed:
             messages.error(self.request, "This order has already been reviewed.")  # noqa E501
             return redirect('profile')  # Redirect to the profile page or another appropriate page # noqa E501
 
         form.instance.order = order
-        form.instance.status = 1  # this line is to publish review instantly ------------------------------------- TO BE DELETED LATER  # noqa
-        # service = OrderLineItem.objects.get(order=order)
-        # form.instance.service_id = service.product.pk
         super().form_valid(form)
         if not order.reviewed:
             order.reviewed = True
@@ -76,8 +77,12 @@ def update_review(request, review_id):
         else:
             messages.error(request, 'Failed to update review. Please ensure the form is valid.')  # noqa E501
     else:
-        form = ReviewForm(instance=review)
-        messages.info(request, f'You are updating {review.title}')
+        if review.author == request.user:
+            form = ReviewForm(instance=review)
+            messages.info(request, f'You are updating {review.title}')
+        else:
+            form = ReviewForm(instance=review)
+            messages.error(request, f'Logged user is not the author of this review. Update request denied.')  # noqa E501
 
     template = 'reviews/update_review.html'
     context = {
