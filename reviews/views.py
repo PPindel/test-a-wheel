@@ -72,8 +72,9 @@ def update_review(request, review_id):
         if request.method == 'POST':
             form = ReviewForm(request.POST, request.FILES, instance=review)
             if form.is_valid():
+                review.status = 0
                 form.save()
-                messages.success(request, 'Successfully updated review!')
+                messages.success(request, 'Successfully updated review! Please wait for our admin to accept and publish.')  # noqa E501
                 return redirect(reverse('reviews'))
             else:
                 messages.error(request, 'Failed to update review. Please ensure the form is valid.')  # noqa E501
