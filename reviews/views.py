@@ -78,19 +78,19 @@ def update_review(request, review_id):
             else:
                 messages.error(request, 'Failed to update review. Please ensure the form is valid.')  # noqa E501
         else:
-            messages.error(request, 'Something went wrong.')
-            return redirect(reverse('reviews'))
-
-        template = 'reviews/update_review.html'
-        context = {
-            'form': form,
-            'review': review,
-        }
-
-        return render(request, template, context)
+            form = ReviewForm(instance=review)
+            messages.info(request, f'You are updating {review.title}')
     else:
         messages.error(request, 'Logged user is not the author of this review. Update request denied.')  # noqa E501
         return redirect(reverse('reviews'))
+
+    template = 'reviews/update_review.html'
+    context = {
+        'form': form,
+        'review': review,
+    }
+
+    return render(request, template, context)
 
 
 class DeleteReview(LoginRequiredMixin, generic.DeleteView):

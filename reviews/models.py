@@ -27,12 +27,3 @@ class Review(models.Model):
 
     def __str__(self):
         return self.title
-
-    # @property
-    # def get_reviews(self):
-    #     """
-    #     Method to get review associated with order
-    #     """
-    #     from reviews.models import Review
-    #     review = Review.objects.get(order=self)
-    #     return review
