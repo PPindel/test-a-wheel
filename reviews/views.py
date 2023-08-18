@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views import generic, View
+from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse, reverse_lazy
 from .models import Review
 from django.views.generic import CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ReviewForm
 
 
@@ -32,8 +31,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        from checkout.models import Order, OrderLineItem
-        from products.models import Product
+        from checkout.models import Order
         order = Order.objects.get(order_number=self.kwargs['order_number'])
 
         if form.instance.author.id != order.user_profile.id:
