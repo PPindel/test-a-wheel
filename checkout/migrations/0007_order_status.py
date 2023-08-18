@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='order',
             name='status',
-            field=models.IntegerField(choices=[(0, 'Not reviewed'), (1, 'Reviewed')], default=0),
+            field=models.IntegerField(choices=[(0, 'Not reviewed'), (1, 'Reviewed')], default=0),  # noqa E501
         ),
     ]

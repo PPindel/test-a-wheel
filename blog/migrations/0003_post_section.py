@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='section',
-            field=models.CharField(choices=[('Cars', 'Cars'), ('Tips', 'Tips'), ('Guides', 'Guides')], default='Cars', max_length=25),
+            field=models.CharField(choices=[('Cars', 'Cars'), ('Tips', 'Tips'), ('Guides', 'Guides')], default='Cars', max_length=25),  # noqa E501
         ),
     ]

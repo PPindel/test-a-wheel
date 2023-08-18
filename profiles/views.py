@@ -48,9 +48,7 @@ def order_history(request, order_number):
             'A confirmation email was sent on the order date.'
         ))
     else:
-        messages.error(request, (
-            f'You are not permitted to view this page.'
-        ))
+        messages.error(request, ('You are not permitted to view this page.'))
 
     template = 'checkout/checkout_success.html'
     context = {

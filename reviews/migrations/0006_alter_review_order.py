@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='review',
             name='order',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='order', to='checkout.order'),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='order', to='checkout.order'),  # noqa E501
         ),
     ]

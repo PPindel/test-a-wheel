@@ -1,6 +1,6 @@
 # Import necessary modules
-from decimal import Decimal
-from django.conf import settings
+from decimal import Decimal  # noqa
+from django.conf import settings  # noqa
 from django.shortcuts import get_object_or_404
 from products.models import Product
 

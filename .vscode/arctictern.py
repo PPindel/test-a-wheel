@@ -45,10 +45,10 @@ UPGRADE_FILE_LIST = [{"filename": ".vscode/settings.json",
                       },
                      {"filename": ".vscode/make_url.py",
                       "url": ".vscode/make_url.py"
-                     },
+                     },  # noqa
                      {"filename": ".vscode/arctictern.py",
                       "url": ".vscode/arctictern.py"
-                     }]
+                     }]  # noqa
 
 FINAL_LINES = "\nexport POST_UPGRADE_RUN=1\nsource ~/.bashrc\n"
 
@@ -61,7 +61,7 @@ def get_versions():
     else:
         with open(".vscode/version.txt", "w") as f:
             f.write(str(THIS_VERSION))
-    
+
     r = requests.get(BASE_URL + ".vscode/version.txt")
     CURRENT_VERSION = float(r.content)
 
@@ -77,7 +77,7 @@ def needs_upgrade():
     """
 
     versions = get_versions()
-    
+
     print(f"Upstream version: {versions['current_version']}")
     print(f"Local version: {versions['this_version']}")
 
@@ -98,7 +98,7 @@ def build_post_upgrade():
     upgrades = json.loads(r.content.decode("utf-8"))
     content = ""
 
-    for k,v in upgrades.items():
+    for k, v in upgrades.items():
         if float(k) > THIS_VERSION:
             print(f"Adding version changes for {k} to post_upgrade.sh")
             content += v
@@ -107,8 +107,8 @@ def build_post_upgrade():
         content += FINAL_LINES
         with open(".vscode/post_upgrade.sh", "w") as f:
             f.writelines(content)
-    
-    print("Built post_upgrade.sh. Restart your workspace for it to take effect.")
+
+    print("Built post_upgrade.sh. Restart your workspace for it to take effect.")  # noqa E501
 
 
 def process(file, suffix):
@@ -134,7 +134,7 @@ def process(file, suffix):
         if result != 0:
             os.remove(f"{file}.tmp")
             return True
-    
+
     return False
 
 
@@ -152,9 +152,9 @@ def start_migration():
     for file in UPGRADE_FILE_LIST:
         print(f"Processing: {file['filename']}")
         result = process(file["filename"], file["url"])
-        if result == True:
+        if result == True:  # noqa
             push_and_recreate = True
-    
+
     if push_and_recreate:
         write_version()
 
@@ -167,7 +167,7 @@ def start_migration():
     print("the changes to take effect.\n")
 
     if push_and_recreate:
-        print(f"{COLOURS['red']}{COLOURS['bold']}*** IMPORTANT INFORMATION ***{COLOURS['reset']}")
+        print(f"{COLOURS['red']}{COLOURS['bold']}*** IMPORTANT INFORMATION ***{COLOURS['reset']}")  # noqa E501
         print("The files used to create this workspace have been updated")
         print("Please download any files that are in .gitignore and")
         print("recreate this workspace by clicking on the Gitpod button")
@@ -176,7 +176,7 @@ def start_migration():
 
 if __name__ == "__main__":
 
-    print(f"\n🐦 {COLOURS['blue']}{COLOURS['bold']}ArcticTern version 0.3{COLOURS['reset']}")
+    print(f"\n🐦 {COLOURS['blue']}{COLOURS['bold']}ArcticTern version 0.3{COLOURS['reset']}")  # noqa E501
     print("CI Template Migration Utility")
     print("-----------------------------")
     print("Upgrades the workspace to the latest version.\n")

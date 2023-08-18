@@ -16,13 +16,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='review',
             name='order',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, related_name='order', to='checkout.order', unique=True),
+            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, related_name='order', to='checkout.order', unique=True),  # noqa E501
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='review',
             name='service',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, related_name='service', to='products.product'),
+            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, related_name='service', to='products.product'),  # noqa E501
             preserve_default=False,
         ),
     ]

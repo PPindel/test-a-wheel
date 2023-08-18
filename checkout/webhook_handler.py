@@ -54,7 +54,7 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
 
         # Get the Charge object
-        stripe_charge = stripe.Charge.retrieve(
+        stripe_charge = stripe.Charge.retrieve(  # noqa
             intent.latest_charge
         )
 
