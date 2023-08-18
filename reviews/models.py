@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from checkout.models import Order
 from products.models import Product
 from django.core.validators import MinValueValidator, MaxValueValidator
+import bleach
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -21,6 +22,10 @@ class Review(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="review", default=0)  # noqa E501
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+
+    def save(self, *args, **kwargs):
+        self.review_text = bleach.clean(self.review_text, tags=[], attributes={}, protocols=[], strip=True)  # noqa E501
+        super(Review, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['-created_on']
