@@ -95,11 +95,23 @@
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
                                         <div class="text-sub col-10">Full history check</div>
                                     </div>
+                                    {% else %}
+                                    <hr>
+                                    <div class="row">
+                                        <div class="red-check col-2"><i class="fa-regular fa-circle-xmark"></i></div>
+                                        <div class="text-sub col-10">Full history check</div>
+                                    </div>
                                     {% endif %}
                                     {% if product.garage_check %}
                                     <hr>
                                     <div class="row">
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+                                        <div class="text-sub col-10">Proffesional garage inspection</div>
+                                    </div>
+                                    {% else %}
+                                    <hr>
+                                    <div class="row">
+                                        <div class="red-check col-2"><i class="fa-regular fa-circle-xmark"></i></div>
                                         <div class="text-sub col-10">Proffesional garage inspection</div>
                                     </div>
                                     {% endif %}
@@ -109,11 +121,23 @@
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
                                         <div class="text-sub col-10">Additional points of check, extra photos</div>
                                     </div>
+                                    {% else %}
+                                    <hr>
+                                    <div class="row">
+                                        <div class="red-check col-2"><i class="fa-regular fa-circle-xmark"></i></div>
+                                        <div class="text-sub col-10">Additional points of check, extra photos</div>
+                                    </div>
                                     {% endif %}
                                     {% if product.extra_warranty %}
                                     <hr>
                                     <div class="row">
                                         <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+                                        <div class="text-sub col-10">Additional warranty for a car bought with us!</div>
+                                    </div>
+                                    {% else %}
+                                    <hr>
+                                    <div class="row">
+                                        <div class="red-check col-2"><i class="fa-regular fa-circle-xmark"></i></div>
                                         <div class="text-sub col-10">Additional warranty for a car bought with us!</div>
                                     </div>
                                     {% endif %}

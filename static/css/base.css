@@ -108,6 +108,10 @@ p {
     color: green;
 }
 
+.red-check {
+    color: red;
+}
+
 .border-black {
     border: 1px solid black !important;
 }
