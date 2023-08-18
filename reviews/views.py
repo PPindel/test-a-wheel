@@ -108,7 +108,8 @@ class DeleteReview(LoginRequiredMixin, generic.DeleteView):
         """
         review = self.get_object()
         if review.author != request.user:
-            return PermissionDenied()
+            messages.error(self.request, 'You are not the author!')
+            return redirect(reverse('reviews'))
         return super(DeleteReview, self).delete(request, *args, **kwargs)
 
     def get_success_url(self, *args, **kwargs):

@@ -7,7 +7,7 @@ import json
 import os
 import requests
 import shutil
-import subprocess
+import subprocess  # noqa
 import sys
 from os.path import exists
 
@@ -17,7 +17,7 @@ COLOURS = {"red": "\033[31m",
            "reset": "\033[0m",
            "bold": "\033[1m"}
 
-BASE_URL = "https://raw.githubusercontent.com/Code-Institute-Org/gitpod-full-template/main/"
+BASE_URL = "https://raw.githubusercontent.com/Code-Institute-Org/gitpod-full-template/main/"  # noqa E501
 CURRENT_VERSION = 1.0
 THIS_VERSION = 1.0
 
@@ -67,6 +67,7 @@ def get_versions():
 
     return {"this_version": THIS_VERSION,
             "current_version": CURRENT_VERSION}
+
 
 def needs_upgrade():
     """
