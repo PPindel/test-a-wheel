@@ -5,13 +5,15 @@
 <!-- Load static files like CSS and JavaScript -->
 
 {% block page_header %}
-<!-- Define a block for the page header section -->
+<!-- Move page content lower so it's not behind the navbar -->
 <div class="container header-container">
     <div class="row">
         <div class="col"></div>
     </div>
 </div>
+<hr>
 {% endblock %}
+
 
 {% block content %}
 <!-- Define a block for the main content of the page -->
