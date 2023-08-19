@@ -1,156 +1,154 @@
 /* Import Montserrat and Roboto fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
-/* Reset browser maring and padding */
+/* Reset browser margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
 
 html {
-    height: 100%;
-    scroll-behavior: smooth;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
 /* Body styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-    font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 400;
 }
 
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    color: #53565A;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #53565A;
 }
 
 .header-style {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Styles from Bulma */
 .icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .logo-font {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .main-logo-link {
-    width: fit-content;
+  width: fit-content;
 }
 
-.shop-now-button {
-    background: black;
-    color: white;
+.shop-now-button,
+.btn-black,
+.btn-outline-black {
+  border: 1px solid transparent;
 }
 
+.shop-now-button,
 .btn-black {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
 }
 
 .btn-outline-black {
-    background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+  background: white;
+  color: black !important; /* use important to override link colors for <a> elements */
 }
 
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
-    background: black;
-    color: white !important;
-}
-
+/* Add hover styles for buttons */
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
 .btn-black:hover,
 .btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
+.btn-black:focus,
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+  background: #222;
+  color: white !important;
 }
 
 .mobile-logo {
-    max-width: 90%; /* Ensure the image does not exceed the column width */
-    height: auto; /* Maintain the aspect ratio */
-    width: 100%; /* Occupy the entire width of the column */
+  max-width: 90%;
+  height: auto;
+  width: 100%;
 }
 
 .text-black {
-    font-size: 1.8rem;
-    color: black
+  font-size: 1.8rem;
+  color: black;
 }
 
 .text-sub {
-    color: #53565A;
-    font-size: 1.5rem;
-    line-height: 1.6rem;
+  color: #53565A;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
 }
 
 .green-check {
-    color: green;
+  color: green;
 }
 
 .red-check {
-    color: red;
+  color: red;
 }
 
 .border-black {
-    border: 1px solid black !important;
+  border: 1px solid black !important;
 }
 
 .bg-black {
-    background: #000 !important;
+  background: #000 !important;
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: white;
+  z-index: -1;
 }
 
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
-    color: #fff !important;
+  background: #212529 !important;
+  color: #fff !important;
 }
 
 .btt-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+  height: 42px;
+  width: 42px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 
 .btt-link,
 .update-link,
 .remove-item {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input[name='q']::placeholder {
-    color: #aab7c4;
+  color: #aab7c4;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -349,25 +347,25 @@ input[name='q']::placeholder {
     --star-size: 2.5rem;
     --star-color: #fff;
     --star-background: #fc0;
-  }
-  
-  .stars {
+}
+
+.stars {
     --percent: calc(var(--rating) / 5 * 100%);
     
     display: inline-block;
     font-size: var(--star-size);
     font-family: Times;
     line-height: 1;
-    
-    &::before {
-      content: '★★★★★';
-      letter-spacing: 3px;
-      background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  }
+}
+
+.stars::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
 /* Mailchimp */
 
