@@ -35,10 +35,10 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.image.url %}
-                                <img class="card-img-top" src="{{ MEDIA_URL }}placeholder.jpg">
+                                <img class="card-img-top" src="{{ MEDIA_URL }}placeholder.jpg" alt="Blog placeholder image">
                                 <!-- Display the post image or a placeholder image -->
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.image.url }}">
+                                <img class="card-img-top" src=" {{ post.image.url }}" alt="Blog image">
                                 {% endif %}
                             </div>
                             <a href="{% url 'post_detail' post.slug  %}" class="post-link">
