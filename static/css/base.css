@@ -382,6 +382,15 @@ input[name='q']::placeholder {
     width: 700px;
 }
 
+#mc-embedded-subscribe {
+    background-color: black !important;
+}
+
+#mc-embedded-subscribe:hover {
+    background-color: grey !important;
+    transform: scale(1.2);
+}
+
 /* footer */
 
 .footer-style {
