@@ -419,6 +419,10 @@ input[name='q']::placeholder {
     color: grey;
 }
 
+.disclamer-highlight {
+    color: blue;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
