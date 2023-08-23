@@ -264,6 +264,15 @@ Checkout Page:
 - The 83-point score for Best Practices is due to the scripts beyond my control (e.g. Mailchimp)
 
 ## Manual Testing
+Manual testing is presented in the table below:
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/5b7c6991-63c4-463a-be4c-bb1618841953)
+
+[Link to the table HERE](https://docs.google.com/spreadsheets/d/1C3Ni6gYPPfFCggJV_hhHWbIbZ7pAhgZ7NZpm4pp-mBA/edit?usp=sharing)
+
+## Defensive programming testing
+Defensive programming was implemented to all pages and critical user details (e.g. below):
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/dd9ec437-88c1-4914-8402-bf889230755d)
 
 
 ### Testing User Stories
@@ -275,7 +284,10 @@ Example of a user story:
 
 
 ## Outstanding Defects
+Users can select any service on the Add Review page (it's not determined by the actual service purchased in the order):
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/52372dd7-d172-42ae-a94f-a7d63bca02bb)
 
+This will be fixed in the future.
 
 ## Defects of Note
 1. Connecting the order number with the review and making it a unique value for each order completed gave me a few good days of intensive problem-solving
