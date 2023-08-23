@@ -420,7 +420,7 @@ input[name='q']::placeholder {
 }
 
 .disclamer-highlight {
-    color: blue;
+    color: darkblue;
 }
 
 /* -------------------------------- Media Queries */
