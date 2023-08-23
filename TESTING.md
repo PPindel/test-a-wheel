@@ -1,4 +1,4 @@
-# Test a Wheel - Testing Documentation
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/e5833a46-91fd-4993-b680-d9f018a0a5ee)# Test a Wheel - Testing Documentation
 
 ![TaW Devices](https://github.com/PPindel/test-a-wheel/assets/114284732/297cc3b7-e11e-4e0a-a9aa-81a7420abdf6)
 
@@ -171,4 +171,28 @@ Test a Wheel settings py:
 
 Test a Wheel urls py:
 ![test-a-wheel-urls-python-valid](https://github.com/PPindel/test-a-wheel/assets/114284732/8f1e5575-ab4e-4307-8607-827f3147b4b2)
+
+
+## Visual (UI) Testing: Cross Browser and Cross Device Testing
+- The below combination of devices, browsers, and operating systems was used to test the website. A range of viewport sizes was checked to see if users would have the same experience across multiple devices and browsers. Priority was given to mobile devices and tablets. 
+
+| **TOOL / Device**           | **BROWSER**      | **OS**   | Passed 
+|-----------------------------|------------------|----------|---------
+| dev tools: Galaxy Fold      | Chrome           | android  |Yes
+| dev tools: iPhone SE        | Safari           | iOS      |Yes
+| dev tools: Samsung S9+      | Chrome           | android  |Yes
+| browserstack: Xiaomi 12 Pro | Chrome           | android  |Yes
+| browserstack: Pixel 6 Pro   | Chrome           | android  |Yes
+| browserstack: Ipad Pro 12   | Safari           | iOS      |Yes
+| real phone: Samsung S22     | Samsung Browser  | android  |Yes
+| real phone: iPhone 11       | Safari           | iOS      |Yes
+| real laptop: Asus Vivo Book | Firefox & Chrome | Windows  |Yes
+| real desktop: 27' & 24' scr | Firefox & Chrome | Windows  |Yes
+
+Xiaomi Redmi Note 12 Pro:
+![Xiaomi Redmi Note 12 Pro](https://github.com/PPindel/test-a-wheel/assets/114284732/f9177ba1-41d9-4172-8295-dee46975b446)
+
+iPad Pro 12
+![Ipad Pro 12](https://github.com/PPindel/test-a-wheel/assets/114284732/2f766e42-4416-47fd-aa58-ec3369686d6c)
+
 
