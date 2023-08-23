@@ -218,6 +218,12 @@ Pixel 6 Pro:
 
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/e5833a46-91fd-4993-b680-d9f018a0a5ee)
 
+As the most popular browsers in Europe are Chrome and Safari, I decided to focus on these 2 browsers.
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/1f653b87-c10e-4605-a23a-7f382a1eb9be)
+
+Source: https://gs.statcounter.com/browser-market-share/all/europe
+
 ## Lighthouse
 
 For the performance, accessibility, best practices, and SEO of the site for mobile and desktop I used the Chrome Lighthouse tool:
