@@ -4,8 +4,25 @@
 
 Below is the documentation of my testing process.
 
-## Contents
->>>>>>>>>>>>>>>>    MARKDOWN TABLE HERE     <<<<<<<<<<<<<<<<<<<<<<<<<<
+## Table of contents
+- [Test a Wheel - Testing Documentation](#test-a-wheel---testing-documentation)
+  * [Table of contents](#table-of-contents)
+  * [Validation Testing](#validation-testing)
+    + [CSS](#css)
+    + [JavaScript](#javascript)
+    + [Python](#python)
+  * [Visual (UI) Testing: Cross Browser and Cross Device Testing](#visual--ui--testing--cross-browser-and-cross-device-testing)
+  * [Lighthouse](#lighthouse)
+      - [Desktop Results](#desktop-results)
+      - [Mobile Results](#mobile-results)
+  * [Manual Testing](#manual-testing)
+  * [Defensive programming testing](#defensive-programming-testing)
+    + [Testing User Stories](#testing-user-stories)
+  * [Outstanding Defects](#outstanding-defects)
+  * [Defects of Note](#defects-of-note)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Validation Testing
 [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the site. It was also used to validate the CSS. As the site is created with Django and utilizes Django templating language within the HTML, I have checked the HTML by inspecting the page source and then running this through the validator.
