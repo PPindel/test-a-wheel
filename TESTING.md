@@ -201,3 +201,82 @@ Pixel 6 Pro:
 
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/e5833a46-91fd-4993-b680-d9f018a0a5ee)
 
+## Lighthouse
+
+For the performance, accessibility, best practices, and SEO of the site for mobile and desktop I used the Chrome Lighthouse tool:
+
+#### Desktop Results
+
+Index Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/6ac84fc1-a0dc-494a-9335-aafd7a031b5d)
+
+
+Services Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/16b4f0b9-bea9-41df-9aba-8a48e237f12e)
+
+
+User Profile:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c9f45fbb-14d3-4980-b90a-07ef7f90df29)
+
+
+Blog Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7f87c0b6-54c5-48ab-91f0-98a0406414d7)
+
+
+Reviews Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/d0ed979c-84ba-4356-ab2f-a463552adf05)
+
+
+Checkout Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/0dacd201-2493-445f-8360-4104391854ff)
+
+
+- Desktop performed well on all major pages of the site.
+- The 83-point score for Best Practices is due to the scripts beyond my control (e.g. Mailchimp)
+
+#### Mobile Results
+
+Index Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/6e75fbb3-95f4-40fc-a007-a135afade965)
+
+
+Services Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/063f0293-69d3-4cb4-8b5d-f64d44aeb1e9)
+
+
+User Profile:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/a5635fbf-2b7d-41b8-bf54-52636865f78d)
+
+
+Blog Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/515248ef-64ac-46e3-8966-afaf264e2d57)
+
+
+Reviews Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/ed2f9137-865a-43a7-8d7e-16c485116747)
+
+
+Checkout Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/422b7b3d-e781-40c5-97df-2fb450d678b7)
+
+
+- Mobile performed well on all major pages of the site.
+- The 83-point score for Best Practices is due to the scripts beyond my control (e.g. Mailchimp)
+
+## Manual Testing
+
+
+### Testing User Stories
+Link to project and user stories (agile methodology and all CRUD functionalities were implemented):
+[Test a Wheel - user stories](https://github.com/users/PPindel/projects/5)
+
+Example of a user story: 
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/2a102b9d-5634-4a2e-8007-c396dd7db85c)
+
+
+## Outstanding Defects
+
+
+## Defects of Note
+1. Connecting the order number with the review and making it a unique value for each order completed gave me a few good days of intensive problem-solving
+2. Achieving acceptable Lighthouse performance on all pages wasn't an easy thing, and I know it still could be better, but I am happy with the final result
