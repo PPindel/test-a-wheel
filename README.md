@@ -81,15 +81,12 @@ Copy your readme to http://ecotrust-canada.github.io/markdown-toc/ to make a tab
 ====================================== The Sections you Fill in are below ==============================
 
 
-# PROJECT_NAME
-
-*replace the **PROJECT NAME** header with your project's name*
-- Screenshot of logo/navigation of mobile deployed site
-- Include a link to deployed project with one line explanation of project
+# Test a Wheel - used cars pre-purchase inspections
+![TaW Devices](https://github.com/PPindel/test-a-wheel/assets/114284732/3ed8ead6-c375-4969-b875-4e3107dffb92)
 
 
 ## Author
-DEVELOPER_NAME
+Przemyslaw Pindel
 
 
 ## Project Overview
@@ -470,168 +467,7 @@ Use this section to discuss plans for additional features to be implemented in t
 If you end up not developing some features you hoped to implement, you can include those in this section.
 
 # Testing
-🚨**Required**
-
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that
-the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and
-ensure that they all work as intended, with the project providing an easy and straightforward way for the users to
-achieve their goals.
-
-
-**At this point, you should use gitHub Issues Templates and Test Case** to track test cases and defects. Here's
-a [document](https://docs.google.com/document/d/1nDS5tZeMO77Dfq85IZGMSV6C41XaPm9FwcpR3k-UTVc/edit#heading=h.3kdbr3tqbzi)
-I put together for this process.
-
-You should make sure your test cases cover the following: 
-## Cross Browser and Cross Device Testing
-🚨**Required**
-
-To save time, you can create this type of table
-in [markdown table generator](https://www.tablesgenerator.com/markdown_tables)
-
-As of Feb 14, 2022 CI students can take advantage of the Student Developer Pack where you have access to great things
-like [browserstack](https://education.github.com/pack/offers/#browserstack) You should have received an email about how
-to activate your student Developer Pack, here's
-a [slack](https://code-institute-room.slack.com/archives/C0L316Z96/p1644946870567999) with details if you can't find it
-in the associated thread.
-
-Start with a brief explanation of why you chose the mixture you did. The point is to prove that you looked at the site
-across various browsers, operating systems, and viewport breakpoints. You can add a column about the spot checking path
-you took or write it out here:
-
-1. Visit https://gs.statcounter.com/browser-market-share to figure out the most popular browsers & operating system combos seen across the we for the geographic region, and platoform(s) and screen sizes you expect your users to belong to. 
-
-1. Include a sentence about why you chose the combinations you did.
-
-1. Create a table that lists out what devices, browsers, and operating system you tested your application on and a brief description of why you chose the mixture you did. The point is to prove that you looked at the site across various browsers, operating systems, and viewport breakpoints.
-
-1. if you can't find the brower/device/OS combinations you want on Browserstack with your github student webpack (or you didn't activate that in time), note what you'd ideally test on then what you ended up testing on as a compromise. 
-
-> **Example:**
-> To ensure the code was functional and looked good on varoius devices I tested a couple of generic flows though my site on using the following Tool/Device combinations. The device/browser/and OS combinations were used based on reports found at [browser market share](https://gs.statcounter.com/browser-market-share) taken on MM/DD/YYYY:
->
-> | TOOL / Device                 | BROWSER     | OS         | SCREEN WIDTH  |
-> |-------------------------------|-------------|------------|---------------|
-> | real phone: motog6            | chrome      | android    | XS 360 x 640  |
-> | browser stack: iPhone5s       | safari      | iOs        | XS 320 x 568  |
-> | dev tools emulator: pixel 2   | firefox     | android    | SM 411 x 731  |
-> | browserstack: iPhone 10x      | Chrome      | iOs        | SM 375 x 812  |
-> | browserstack: nexus 7 - vert  | Chrome      | android    | M 600 x 960   |
-> | real tablet: ipad mini - vert | safari      | iOs        | M 768 x 1024  |
-> | browserstack: nexus 7 - horiz | firefox     | android    | LG 960 x 600  |
-> | chrome emulator: ipad - horiz | safari      | iOs        | LG 1024 x 768 |
-> | browserstack                  | Chrome      | windows    | XL 1920 x 946 |
-> | real computer: mac book pro   | safari 12.1 | Mohave     | XL 1400 x 766 |
-> | browserstack                  | IE Edge 88  | windows 10 | XL 1920 x 964 |
->
-> Here is a link to the [test case](https://github.com/maliahavlicek/ci_mentor_insights/issues/9).
-
-Note, you might find it easier to create a test case for each tool/device and link to the test case in the table here.
-
-## Accessibility Testing
-🚨**Required**
-
-You should have test cases for accessibility and links to them here. Start with a brief paragraph and then link to the
-test cases. If you are ambitious you can record the screen of you using the keyboard, convert it to a gif and upload it
-to the test case too.
-
-**example**
-> To ensure that the site was accessible to people with visual impairments, I used chrome's dev tools, lighthouse audits to ensure I had a score in the green for accessibility and that I could keyboard navigate through the page.
->
-> Here are links to the test cases for each which contains the screenshot for the lighthouse audit.
-> - [home page accessibility test](https://github.com/maliahavlicek/ci_mentor_insights/issues/12)
-> - [experience page accessibility test](https://github.com/maliahavlicek/ci_mentor_insights/issues/13)
-> - [skills page accessibility test](https://github.com/maliahavlicek/ci_mentor_insights/issues/14)
-> - [recommendations page accessibility test](https://github.com/maliahavlicek/ci_mentor_insights/issues/15)
->
-> To ensure the site was accessibility to people with physical impairments, I tried to navigate the site using tabbed navigation:
-> - [site tabbed navigation test](https://github.com/maliahavlicek/ci_mentor_insights/issues/10)
-
-You can totally combine the tabbed navigation in the accessibility test and have 2 expected criteria, it's all up to
-you!
-
-## Validation Testing
-🚨**Required**
-
-You should try to ensure you code is valid and follows proper indentation. In this section you should write up any
-websites you used to validate your code so there is credit given to those sites. Then add links to the test cases you
-put into GitHub for the validation. You can copy your validation success to those tests.
-
-The following site were used to aid in validation testing:
-
-- **[CSS Validator](https://jigsaw.w3.org/css-validator/)**
-
-> If you only have one CSS file, you can just run the validator through one deployed page URL, if you have custom CSS for diffent pages, make sure you hit those different URLS
-
-- **[HTML Validator](https://validator.w3.org/)**
-
-> For each view you wrote, you should validate the HTML and have a test case for it linked to from here
-> NOTE: You may need to right-click to view the source of each page and paste that into the validator if you need to go through authentication to get to the page.
-
-- **[JS validation](https://jshint.com)**
-
-> for each .js file, copy the code and paste it into this site, and have a test case for it linked to from here. You can have warnings, but no errors.
-> if using ES6, add this before pasting in your file: `/*jshint esversion: 6 */ `, similarily you can update it to 7 if you see warnings about ES7 syntax `/*jshint esversion: 7 */ `
-
-- **[CI's pep8 tool](https://pep8ci.herokuapp.com/)** 
-
-> for each .py file you created, copy the source code and paste it into this site, and have a test case for it linked to from here.
-> include a screenshot of results in the test case showing NO ERRORS. (you should do this for all .py files in your repo)
-> 
-> **run.py**
-> 
-> ![image](https://user-images.githubusercontent.com/23039742/212106175-36b2f18a-7c75-458d-94dd-9886e81c71f3.png)
-
-> Ideally you would have no errors remaining outside of line too long which you can fix by 
-> 
-> adding
-> ```$python 
-> # noqa
-> ```
-> There is a space before the # and after it to skip the quality assurance for that line.
-> 
-> Note any errors or warnings you are ignoring and why.
-
-- **[JSON validation](https://jsonlint.com/)**
-
-> for each .json file, you should copy the code and paste it into this site, and have a test case for it linked to from here.
-
-## Automated Testing
-🚀 **merit & beyhond**
-
-**NOTE: If you want MERIT or Higher, you MUST have some automated testing**
-If you managed to write jasmine tests or some django tests, note those files out here and how to run them.
-
-https://github.com/maliahavlicek/ms4_challenger/blob/master/documentation/TESTING.md is my write up about my automated testing and how I ran them, but a simple test I'd recommend is a views test that tests authentication and any views you limit to superusers or logged in users.
-
-https://github.com/maliahavlicek/ms4_challenger/blob/master/challenges/tests/test_views.py
-
-## Defects
-🚨**Required**
-
-At this point you really should be using GITHUB's Issues to track these as it helps you with the AGILE process
-requirement as it's really easy to copy/paste screenshots in and then write up how you closed them.
-
-[Here's a brief overview](https://docs.google.com/document/d/1nDS5tZeMO77Dfq85IZGMSV6C41XaPm9FwcpR3k-UTVc/edit#heading=h.542xzc8ufx4x)
-I put together on how to do this.
-
-is what my custom tempalte looks like in the UX
-![image](https://user-images.githubusercontent.com/23039742/165650359-a352d64e-b128-473d-ab60-7df0568a44df.png)
-
-
-
-
-## Defects of Note
-🚀 **merit & beyhond**
-
-Some defects are more pesky than others. Highlight 3-5 of the bugs that drove you the most nuts and how you finally
-ended up resolving them. Just create a link to the issues/defect of note.
-
-### Outstanding Defects
-
-It's ok to not resolve all the defects you found. If you know of something that isn't quite right, list it out and
-explain why you chose not to resolve it. Again, do this in gitHub and provide a link to the defects you are not closing
-and ensure they have a comment in them.
+Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
 
 # E-commerce Business Model
 🚨**Required**
