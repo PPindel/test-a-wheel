@@ -1,4 +1,4 @@
-![image](https://github.com/PPindel/test-a-wheel/assets/114284732/e5833a46-91fd-4993-b680-d9f018a0a5ee)# Test a Wheel - Testing Documentation
+# Test a Wheel - Testing Documentation
 
 ![TaW Devices](https://github.com/PPindel/test-a-wheel/assets/114284732/297cc3b7-e11e-4e0a-a9aa-81a7420abdf6)
 
@@ -190,9 +190,14 @@ Test a Wheel urls py:
 | real desktop: 27' & 24' scr | Firefox & Chrome | Windows  |Yes
 
 Xiaomi Redmi Note 12 Pro:
+
 ![Xiaomi Redmi Note 12 Pro](https://github.com/PPindel/test-a-wheel/assets/114284732/f9177ba1-41d9-4172-8295-dee46975b446)
 
-iPad Pro 12
+iPad Pro 12:
+
 ![Ipad Pro 12](https://github.com/PPindel/test-a-wheel/assets/114284732/2f766e42-4416-47fd-aa58-ec3369686d6c)
 
+Pixel 6 Pro:
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/e5833a46-91fd-4993-b680-d9f018a0a5ee)
 
