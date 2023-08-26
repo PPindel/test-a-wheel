@@ -105,8 +105,6 @@ Przemyslaw Pindel
 - Simple and easy navigation! The process of buying the service is super-easy so people will come back, and recommend our site to friends!
 - Never miss any promo, thanks to the subscribe option!
 
-## User Stories
-
 
 ## Initial Stories
 (MOST IMPORTANT USER STORIES SO THE SITE CAN OPERATE)
@@ -124,6 +122,35 @@ ADMIN:
 - can add blog posts
 - can edit blog posts
 - can delete blog posts
+
+
+## User Stories
+All CRUD functionalities have been implemented!
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/b8dcead7-e3a9-4765-af97-7f9a7677865e)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c3d5e3d9-5d9d-41ba-a899-858a62529842)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/bc885f22-a0c7-4c48-b94e-c0effc45ee08)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/6e06a5c7-fccd-4648-89e3-2ce0ca848c00)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/af69cf32-0138-4ad2-84bf-af9d638eb6e8)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/5121a811-7477-41d2-b502-5cbecf815620)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/e5afaea9-b806-404b-927e-b00a16c30668)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/329afd40-9ea5-484d-b4bb-6072c947cf08)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/ce54adf0-6787-438b-afa3-0d293bba0551)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/ef6f8383-ea95-4d66-a653-84caca9d3dce)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/05fb6871-5133-4e6a-8bb8-31a8d75d572d)
+
+
+
 
 ## Feasibility vs Importance
 GitHub labels were used to reflect the importance of the feature, e.g.:
