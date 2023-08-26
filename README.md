@@ -207,49 +207,58 @@ Explain why you used certain icons and images on your site
 - special hover state effects
 
 ### Frameworks
-🚨**Required**
 
-- If you use bootstrap, tailwind, bulma, materialize or some other JS/CSS framework, call it out here and why you made
-  that choice. (Typically I look at the design elements I want and make sure the framework supports them)
+- Django
+- Bootstrap
 
 ### Custom Styles
-🚨**Required**
+- Fonts: Montserrat & Roboto to reflect the nature of the website
+- Lots of styles were overwritten in this project: [CSS file](https://github.com/PPindel/test-a-wheel/blob/main/static/css/base.css)
+- Visual stars implemented:
 
-- call out any overrides you did for bootstrap styles or the framework you used, even if they are fonts and colors,
-  perhaps lead assessors to the file of interest in your repo
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/2bdb76f0-d3a9-456f-ad32-5fbc8dd780e9)
+
 
 ### Custom Javascript
-🚨**Required**
+Modified script for Toasts to hide messages after 5 seconds:
 
-- call attention to any custom javascript you created to help your User Experience you can organize this by functions or
-  files
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7b748748-8771-424a-a1ed-77886f216486)
 
 ## Wireframes
 Index:
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c45fdb91-1e9d-4495-ad9e-f08de3ce8caf)
 
 About (the final site was changed, but I'm presenting everything I had in my mind at the beginning of the project):
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/db0a8fd4-60ba-44b7-8184-751b9beb1360)
 
 Services:
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c1dbdb2a-a0c2-4cb7-8faf-47d96c95399f)
 
 Car Blog:
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c22cd5c8-c8f2-48f6-890b-30ec57fc4365)
 
 Reviews:
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/384e5e6e-fe9a-44a8-9ca6-9bc27bfb6642)
 
 Contact:
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/438d92a8-e46e-48bb-9fdd-11fdd505e095)
 
 FAQ:
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/1d399b64-aebf-425b-8ba5-83473f7cb6cb)
 
 Mobile index:
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/daf4260a-c9d7-463d-a443-3a3b27de660a)
 
 Mobile services (blog and review pages are analogical):
+
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/4d12bdd2-0c41-4926-8912-9afaf9f59cb2)
 
 
