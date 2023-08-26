@@ -91,88 +91,19 @@ Przemyslaw Pindel
 
 ## Project Overview
 
-[Test a Wheel](https://test-a-wheel-8a5bbb245942.herokuapp.com/) - Link to deployed website
-[Test a Wheel GitHub repo](https://github.com/PPindel/test-a-wheel) - link to GitHub
-
-- Test a Wheel is a perfect solution for people who are looking to buy a used car, but have no idea how to approach it in the right way. Our specialists are available seven days a week to help you with the inspection of the car. There are a few packets of services to choose from. Depending on the price, we will provide you with a comprehensive report of the car and even protect your bought with the extra warranty.
-- In today's world, a lot of us need a car, but not everyone can afford a brand-new car. Secondhand market is a great idea to save some money if you choose the right car to buy. Taught by the experience, I know it's not an easy thing and can be very stressful for some people (a good friend of mine is a great example here). And that's where Test a Wheel comes to help You! Don't risk buying a crap car, entrust the inspection to professionals, and sleep well. There is nothing more important than your health, and peace of mind. With Test a Wheel buying a used car was never easier!
-
+- [Test a Wheel](https://test-a-wheel-8a5bbb245942.herokuapp.com/) - Link to deployed website
+- [Test a Wheel GitHub repo](https://github.com/PPindel/test-a-wheel) - link to GitHub
 
 # UX
-
-Your site is most likely geared to a certain audience and goals for the business owner and users of the site, and your
-design choices should tie into them. Let the assessors know your thought process.
-
-If you don't feel like the overview gave enough detail about the site, you can write up what you are expecting users to
-actually do on your site, book things, find thing then lead into the goals and target audience.
-
-## Target Audience
-🚀 **merit & beyhond**
-
-Can be a paragraph or a list
-
-> **Paragraph Example**
-> The target audience for What2do2day comes in two flavors. The revenue driving forces is children ages 12-18 who have a bit of freedom to move around unsupervised but very little means to addend costly mass entertainment complexes more than 5 miles from home. Their parents are expected to be a customer group too as they will want to ensure the site is safe and not a predatory place where their kids could be scammed into unsafe adventures. Other groups of users are the businesses that want to promote themselves as community friendly who will be hosting events for the primary customer group. The business owners will want a friendly interface to upload details of their place and events.
-
-> **List example**
-> 1. Patients who have been referred for radiology examinations by registered physicians
-> 2. External healthcare companies who have equipment to sell
-> 3. Radiology staff who want to have a more manageable and predictable workload
-
-## Goals
-🚀 **merit & beyhond**
-
-Bullet point out things from web users to website owners and other groups of people
-
-**Booking Site Example**
-> - To allow the opportunity for patients to book and manage their own radiology appointments
-> - To give patients the opportunity to educate themselves on radiation safety prior to their visit
-> - To provide a simple-to-use contact form for site visitors to use in order to contact the radiology department
-> - To provide useful information to patients about radiology and the department to reduce 'white-coat-syndrome' and anxiety during their visit
-> - To give external companies the opportunity to partner with the radiology department and share their equipment prior to potential purchases
-> - To give radiology staff the opportunity to manage their workload and see in advance the patients they will encounter during the day
-
-**Granular Goals Example**
-> **Customers**
-> Customers of What2do2day are children ages 12-18 who have a bit of freedom to move around unsupervised but a short range of mobility, approximately 5 miles from home.
->
-**Customer Goals:**
-> - Bring up the site and look for an inexpensive event to attend close to home
-> - Look at places to see how they rank without having to read much
-> - Quickly find activities that interest them without having to type much
-> - Read reviews about places that interest them
-> - See events related to places that interest them
-> - Easily know where an event they are interested in is located
-> - Join an event of interest
-> - See how many others are interested in an event
-> - Receive notification about an event they've joined
-> - Receive updates about events they've joined
->
-> **Place Owners**
-> Owners of Places would ideally have a different set of user permissions and the Update and Contribute sections of navigation would be under a strict workflow, but in the initial phase, I wanted to show off the ability to add, update and delete items from the website's view,so it's not hidden behind permissions or workflow at this point. Place owners are those that have a business or an organization that hosts free events within a community. Examples are a group that wants to play pickup soccer or a bicycle shop that leads group rides once a month.
->
-> **Place Owner Goals:**
->
-> - I want my place to be easily found on the site, so I can get more customers
-> - I want users to share community reviews, so I build trust with future customers
-> - I want to add events to my place, to build a repertoire with my clients
-> - I want users to join my events, so I can track how successful community events are to my bottom line
-> - I want the ability to update my place's details
-> - I want to update events associated with my organization
-> - I want to protect against bloated ratings
-> - I want to protect against accidental deletion of my information
->
-> **WebSite Goals**
-> The primary goal of what2do2day is to create a user-friendly app that allows customers to quickly find an event they want to attend. It's a meeting point between business/organizations and kids/parents to improve the likelihood of kids getting off their devices and interacting with others face to face at a low cost with minimal adult supervision.
-> In order to support the maintenance and development of cool features on the site, what2do2day hopes to produce monetary gains through the following means:
-> - Workflow Management Plans for Businesses around:
-    >
-- oversee approval/disapproval of reviews to ensure spamming and bad-mouthing in reviews does not occur
->   - batch event creation to help save time
->   - user account management to help with password recovery and assigning or removing roles as employees change
->   - sharing of user emails that attend events
-> - Affiliate linking - link to at-cost services provided by businesses and receive a kickback
-> - Ads - target online sales related to equipment based on activities a place or event is associated with
+## Target Audience & Goals
+- Test a Wheel is a perfect solution for people who are looking to buy a used car, but have no idea how to approach it in the right way. Our specialists are available seven days a week to help you with the inspection of the car. There are a few packets of services to choose from. Depending on the price, we will provide you with a comprehensive report of the car and even protect your bought with the extra warranty.
+- In today's world, a lot of us need a car, but not everyone can afford a brand-new car. Secondhand market is a great idea to save some money if you choose the right car to buy. Taught by the experience, I know it's not an easy thing and can be very stressful for some people (a good friend of mine is a great example here). And that's where Test a Wheel comes to help You! Don't risk buying a crap car, entrust the inspection to professionals, and sleep well. There is nothing more important than your health, and peace of mind. With Test a Wheel buying a used car was never easier!
+- Test a Wheel is a site offering professional used car inspections
+- Was created for people who don't really know how to approach the buying of a used car
+- Also contains a blog section with interesting and educational articles
+- People can share their experiences in the review section
+- Simple and easy navigation! The process of buying the service is super-easy so people will come back, and recommend our site to friends!
+- Never miss any promo, thanks to the subscribe option!
 
 ## User Stories
 🚨**Required**
