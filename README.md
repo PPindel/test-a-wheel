@@ -225,18 +225,32 @@ Explain why you used certain icons and images on your site
   files
 
 ## Wireframes
-🚨**Required**
+Index:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c45fdb91-1e9d-4495-ad9e-f08de3ce8caf)
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of
-the design process. These files should themselves either be included as a pdf file in the project itself (in a separate
-directory), or hosted elsewhere online and can be in any format that is viewable inside the browser.
+About (the final site was changed, but I'm presenting everything I had in my mind at the beginning of the project):
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/db0a8fd4-60ba-44b7-8184-751b9beb1360)
 
-- You should minimally have wireframes for desktop and mobile for the pages you are making for you register, login,
-  read(list/detail), add, update, delete functionality. Adding a Tablet view will help you get into merit and
-  distinction.
+Services:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c1dbdb2a-a0c2-4cb7-8faf-47d96c95399f)
 
-You can hand draw these, but CI posts a yearly license in the general channel for Balsamiq which is pretty easy to use.
-Here is the [2022 announcement](https://code-institute-room.slack.com/archives/C0L316Z96/p1640099614368000)
+Car Blog:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c22cd5c8-c8f2-48f6-890b-30ec57fc4365)
+
+Reviews:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/384e5e6e-fe9a-44a8-9ca6-9bc27bfb6642)
+
+Contact:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/438d92a8-e46e-48bb-9fdd-11fdd505e095)
+
+FAQ:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/1d399b64-aebf-425b-8ba5-83473f7cb6cb)
+
+Mobile index:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/daf4260a-c9d7-463d-a443-3a3b27de660a)
+
+Mobile services (blog and review pages are analogical):
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/4d12bdd2-0c41-4926-8912-9afaf9f59cb2)
 
 
 # Information Architecture
