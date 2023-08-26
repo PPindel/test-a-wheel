@@ -90,13 +90,13 @@ Przemyslaw Pindel
 
 
 ## Project Overview
-🚨**Required**
 
-- Include a picture of site that shows it in responsive states and links to deployed
-  code: https://ui.dev/amiresponsive
-- One or two paragraphs providing an overview of your project.
-- Write this as a sales pitch or commercial making users want to purchase your website.
-- Include a link to your deployed website
+[Test a Wheel](https://test-a-wheel-8a5bbb245942.herokuapp.com/) - Link to deployed website
+[Test a Wheel GitHub repo](https://github.com/PPindel/test-a-wheel) - link to GitHub
+
+- Test a Wheel is a perfect solution for people who are looking to buy a used car, but have no idea how to approach it in the right way. Our specialists are available seven days a week to help you with the inspection of the car. There are a few packets of services to choose from. Depending on the price, we will provide you with a comprehensive report of the car and even protect your bought with the extra warranty.
+- In today's world, a lot of us need a car, but not everyone can afford a brand-new car. Secondhand market is a great idea to save some money if you choose the right car to buy. Taught by the experience, I know it's not an easy thing and can be very stressful for some people (a good friend of mine is a great example here). And that's where Test a Wheel comes to help You! Don't risk buying a crap car, entrust the inspection to professionals, and sleep well. There is nothing more important than your health, and peace of mind. With Test a Wheel buying a used car was never easier!
+
 
 # UX
 
