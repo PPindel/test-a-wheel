@@ -149,7 +149,27 @@ All CRUD functionalities have been implemented!
 
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/05fb6871-5133-4e6a-8bb8-31a8d75d572d)
 
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/b8456e6e-947a-468c-8cfb-38f0ad2a3183)
 
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/6949cbaa-e0ca-43fe-94a9-88cdead51c56)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/82125e67-6b2a-461e-807f-44fa149584e0)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/3c6d622f-e31a-4cfa-add1-819031cdfadd)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9b11766e-e702-42e2-89d0-80cf9d1dede8)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7ca031c6-cd26-4665-b826-fb70cf12697d)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9ce4ae4c-eaf5-499a-ae10-dc72c104cd0f)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/165b7a96-d0cd-4da4-aaff-1aef12061f98)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/ad20dd6d-5fc4-4457-b7df-c1aad8ab61a1)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/0d1de49b-bf54-4c35-bbf8-53226c9c654d)
+
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/0b833e38-679d-4226-b322-09552ed9fa9c)
 
 
 ## Feasibility vs Importance
