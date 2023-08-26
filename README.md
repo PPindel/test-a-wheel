@@ -106,76 +106,45 @@ Przemyslaw Pindel
 - Never miss any promo, thanks to the subscribe option!
 
 ## User Stories
-🚨**Required**
 
-User stories evolve over a project's lifetime. Start with a wish list, do a feasibility analysis then move the ones you
-will work on into gitHub, so you can track their progress.
 
 ## Initial Stories
-🚨**Required**
+(MOST IMPORTANT USER STORIES SO THE SITE CAN OPERATE)
+USER:
+- can register
+- can create a profile
+- can buy services
+- can view order history
+- can review orders
 
-To start the agile process this section kicks off with a bullet list/brainstorming dump about features you'd like to
-have. EVERYTHING write them out in bullet form:
-
-- As a 'user type' I 'to perform an action' so that I can 'achieve a goal'
-
-**Examples**
-
-- [radiology booking](https://github.com/DeannaCarina/ELHTRadiology#user-stories)
-- [places/events searching site](https://github.com/maliahavlicek/what2do2day#user-stories)
+ADMIN:
+- can add service
+- can edit service
+- can delete service
+- can add blog posts
+- can edit blog posts
+- can delete blog posts
 
 ## Feasibility vs Importance
-🚀 **merit & beyhond**
+GitHub labels were used to reflect the importance of the feature, e.g.:
 
-To scope the project for a MVP (minimally viable product) a feasibility analysis was done.
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/5bd0073f-a728-4432-9271-70c175f8d1b2)
 
-The features in the table below have been taken from the user stories above. Generic features found in most websites
-will also be implemented such as nav-bar, footer, obvious website purpose etc.
-
-| Opportunity/Feature | Feasibility/Viability (score out of 5) | PurposeLevel of Importance (score out of 5) | In Or Out |
-|---------------------|----------------------------------------|---------------------------------------------|-----------|
-|                     |                                        |                                             |           |
-|                     |                                        |                                             |           |
-|                     |                                        |                                             |           |
-|                     |                                        |                                             |           |
-
-> You should discuss the outcome of what you will be dropping based on the outcome. Making a scatter plot of the scores and coloring the dot
-
-## Scope
-🚀 **merit & beyhond**
-
-Now you have to talk about the scope to reduce things more, you don't necessarily need all the bells and whistles, they
-could be beyond your skill set. Think basic stuff.
+[Click here for the full project](https://github.com/users/PPindel/projects/5)
 
 ## Design Choices
-🚀 **merit & beyhond**
-
-Now that you have let the assessors know about the target audience and users, you can go into the design choices
-
 ### Colors
-🚀 **merit & beyhond**
+Easy to read, clean and neat, high contrast colors were picked for this project:
 
-- Discuss your color pallet choices and how it ties into users' emotions or target audience.
-- include a screenshot of your pallet using a tool like coolors.co
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/a30886a8-8e99-4d80-8f7e-84304e74bc5c)
 
 ### Typography
-🚀 **merit & beyhond**
-
-- discuss font size, font types for headers vs buttons vs general text and how it ties into users' emotions or target
-  audience.
-- include screenshots of fonts used and links to the appropriate website ex) https://fonts.google.com/specimen/Raleway
+Fonts: Montserrat & Roboto to reflect the nature of the website
 
 ### Images
-🚀 **merit & beyhond**
-
-Explain why you used certain icons and images on your site
+All images in the index, blog, and services were chosen to match the car-themed content of the website.
 
 ### Design Elements
-🚀 **merit & beyhond**
-
-- list out the type of elements you want to use on your site, this will help you when choosing a framework and goes hand
-  in hand when doing the wireframes. If you did something out of the ordinary, or think something was particularly
-  clever, add a sentence and a screenshot or reference the file the code or css is in.
 
 > - desktop navigation
 > - mobile navigation
@@ -186,25 +155,25 @@ Explain why you used certain icons and images on your site
 > - textarea inputs
 > - dropdowns
 > - modals/layers
-> - check boxes
-> - switches
-> - accordions/drawers
+> - checkboxes
 > - pagination
 > - date pickers
 > - maps
 > - images
-> - tooltips
 > - icons
-> - tabbed content
 > - file pickers
-> - video players
-> - audio players
 
 ### Animations and Transitions
-🚀 **merit & beyhond**
+- Simple animation for social buttons:
 
-- discuss any special animations or transitions you've programmed
-- special hover state effects
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/d0a653ce-26ff-4911-90a0-9f4605997f20)
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/f90fa772-8580-4d54-9bee-cc4fdb3fc2c0)
+
+- Theme-matched menu icon for mobile version:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/8df0d970-9260-4109-ab91-a5723fb18152)
+
+- Hyperlinks change colors when hovered
 
 ### Frameworks
 
@@ -212,7 +181,6 @@ Explain why you used certain icons and images on your site
 - Bootstrap
 
 ### Custom Styles
-- Fonts: Montserrat & Roboto to reflect the nature of the website
 - Lots of styles were overwritten in this project: [CSS file](https://github.com/PPindel/test-a-wheel/blob/main/static/css/base.css)
 - Visual stars implemented:
 
