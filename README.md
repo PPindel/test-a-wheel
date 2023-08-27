@@ -181,7 +181,7 @@ GitHub labels were used to reflect the importance of the feature, e.g.:
 
 ## Design Choices
 ### Colors
-Easy to read, clean and neat, high contrast colors were picked for this project:
+Easy to read, clean, and neat, high-contrast colors were picked for this project:
 
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/a30886a8-8e99-4d80-8f7e-84304e74bc5c)
 
@@ -222,10 +222,37 @@ All images in the index, blog, and services were chosen to match the car-themed 
 
 - Hyperlinks change colors when hovered
 
-### Frameworks
+### Frameworks, plugins, tools used
 
 - Django
 - Bootstrap
+- req.txt:
+  - asgiref==3.7.2
+  - boto3==1.27.1
+  - botocore==1.30.1
+  - dj-database-url==0.5.0
+  - Django==3.2.19
+  - django-allauth==0.41.0
+  - django-braces==1.15.0
+  - django-countries==7.2.1
+  - django-crispy-forms==1.14.0
+  - django-model-utils==4.3.1
+  - django-storages==1.13.2
+  - django-summernote==0.8.20.0
+  - gunicorn==20.1.0
+  - jmespath==1.0.1
+  - oauthlib==3.2.2
+  - Pillow==9.5.0
+  - psycopg2==2.9.6
+  - python3-openid==3.2.0
+  - pytz==2023.3
+  - requests-oauthlib==1.3.1
+  - s3transfer==0.6.1
+  - sqlparse==0.4.4
+  - stripe==5.4.0
+  - swapper==1.3.0
+  - urllib3==1.26.16
+
 
 ### Custom Styles
 - Lots of styles were overwritten in this project: [CSS file](https://github.com/PPindel/test-a-wheel/blob/main/static/css/base.css)
@@ -278,56 +305,52 @@ Mobile services (blog and review pages are analogical):
 
 
 # Information Architecture
-As part of the requirements for this project you need to have at **least 3 custom data models**.  It's still under discussion what that means, but I'd make 1 original and then update the products to be custom to what you are selling and create another new one. It's this section that discusses your data and how each piece relates to another and draws out the CRUD functionality you built. You must have CREATE, READ, UPDATE & DELETE for at least one model.
 
 ## Entity Relationship Diagram
-🚨**Required**
 
-Wade Williams wrote a great blog about how to add a django extension to auto create an ERD. https://wadewilliams.com/technology-software/generating-erd-for-django-applications/ You can always draw one out by hand or google sheets. You can also draw this up by hand if you want or use a spreadsheet to show your data model.
+![test-a-wheel-graph](https://github.com/PPindel/test-a-wheel/assets/114284732/ff88022d-d17f-4c27-813a-e2a81fb716e4)
+
 
 ## Database Choice
-🚀 **merit & beyhond**
 
-Just state you used postgres as the database because the data is relational and heroku serves this up realitvely easily with no cost.
+- Postgres as the database because the data is relational
+- Heroku servers
 
 ## Data Models
-🚨**Required**
 
-Show the accessors you know your data. If you end up using some data models from an example project, call that out and don't be as detailed about writing those up unless you added to them.
+Admins can create, read, edit, and delete services in the store.
+Admins can create, read, edit, and delete posts in the blog section.
+Registered users can interact with the blog posts by adding likes.
+Registered users (customers) can create, read, edit, and delete their own Reviews of every purchase made (Order number is a unique value for each review).
+Every registered user has access to a personal profile, which can be read and edited.
+Every purchase made is saved and can be accessed via the profile page if the user is registered.
 
-Each data model that you created yourself should have its Fields, Field Type and any validation documented.  You should also cross-reference any code in your repository that relate to CREATE, READ, UPDATE, DELETE operations for these models.
+## Products
+Products (services) are what is the main focus of the e-commerce website. Admins can add, edit, and delete the service, select the customized options, add related image, and descriptions.
 
-*Below is an example of a write up for an Activities Data Model*
+### CRUD
+- **Create:** If the user is an authenticated superuser, they can add a new product by clicking the profile icon in the top right corner and selecting Add product
+- **Read:** All users can view the current products in the services section
+- **Update:** Only admins can edit the existing product
+- **Delete:** Only admins can delete the existing product
 
-> ### Activities Model
-> Activities is a table to hold a unique icon image and name values that users have associated with events and places. It helps with sorting events and prevents the need from carrying around two data objects in the larger Events and Places data structures. The purpose of an Activities object is to provide an imagery association to a category.
-> 
-> | DB Key 	| Data Type 	|          Purpose          	| Form Validation                        	| DB processing    	|
-> |--------	|:---------:	|:-------------------------:	|----------------------------------------	|------------------	|
-> | _id    	| ObjectId  	| unique identifier         	| None                                   	| n/a              	|
-> | name   	| String    	| Name of Activity          	| Required<br>Min 1 char<br>Max 50 chars 	| trim<br>to lower 	|
-> | icon   	| String    	| system path to image file 	| Required                               	|                  	|
-> 
-> Activity entries are used by events, places and filtering.
-> 
-> - [x] Create - An activity is potentially created when a user successfully creates a place, creates an event, updates an event, or updates a place.
-> - [x] Read - The Activities table is read when a user is adding an event, updating an event, adding a place or updating a place, to determine if a new value should be created or not. The activities table is queried for using the name and icon pair, if it is found, the ObjectId is passed to the event and places. If no match is found, a new Activity is created and that ObjectID is passed to the the place or event.
-> - [ ] Update
-> - [ ] Delete
-> 
->  This table has no deletion or updates associated with it. It's strictly create and read. Eventually, maintenance scripts should be written to delete unused/deprecated entries.
+## Reviews
+Registered users can review every order made. The option "Review me!" is added to the order history accessible via the profile page.
 
-> The reading/writing of the activities table is housed in the [what2do2day/activities/views.py](what2do2day/activities/views.py) file.
+### CRUD
+- **Create:** After the order is paid, the registered user can add a review
+- **Read:** All users can view the current reviews in the customer ratings section
+- **Update:** Only the author of the review can edit the review via frontend
+- **Delete:** Only the author of the review can delete the review via frontend
 
-### CRUD Diagrams
-🚀 **merit & beyhond**
+## Post
+Admins (superusers) can add posts in the blog sections. The reason for this is to convince potential buyers that we are reliable in what we do and that we know our stuff (all posts are related to the services we provide).
 
-This is if you want to go for distinction.  You can also have CRUD diagrams to show them visually how the model is used in your site.
-
-I used [draw.io](https://app.diagrams.net/) and hooked it up to my google drive to create the screenshot below
-
-![image](https://user-images.githubusercontent.com/23039742/154406188-c9beb57a-2fd1-4f26-a8ed-bee320e46e3d.png)
-
+### CRUD
+- **Create:** Admins can add new posts to the blog page
+- **Read:** All users can read the current posts listed in the blog section
+- **Update:** Admins can edit the existing posts on the blog page
+- **Delete:** Admins can delete existing posts on the blog page
 
 # Agile Process
 
