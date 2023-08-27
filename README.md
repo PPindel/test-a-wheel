@@ -108,6 +108,7 @@ Przemyslaw Pindel
 
 ## Initial Stories
 (MOST IMPORTANT USER STORIES SO THE SITE CAN OPERATE)
+
 USER:
 - can register
 - can create a profile
@@ -116,12 +117,12 @@ USER:
 - can review orders
 
 ADMIN:
-- can add service
-- can edit service
-- can delete service
+- can add a service
+- can edit the service
+- can delete the service
 - can add blog posts
-- can edit blog posts
-- can delete blog posts
+- can edit the blog posts
+- can delete the blog posts
 
 
 ## User Stories
@@ -201,7 +202,6 @@ All images in the index, blog, and services were chosen to match the car-themed 
 > - text input
 > - textarea inputs
 > - dropdowns
-> - modals/layers
 > - checkboxes
 > - pagination
 > - date pickers
@@ -221,8 +221,10 @@ All images in the index, blog, and services were chosen to match the car-themed 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/8df0d970-9260-4109-ab91-a5723fb18152)
 
 - Hyperlinks change colors when hovered
+- Customized rotating cog after purchase
+- Animated FAQ
 
-### Frameworks, plugins, tools used
+### Frameworks, plugins, and tools used
 
 - Django
 - Bootstrap
@@ -390,28 +392,142 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 
 
 # Features
-🚨**Required**
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so and how they tie into  your user stories.
-
 ## Implemented Features
+- Index page with navigation, search tool, and footer:
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9f4050c1-4208-4184-9d8a-af78f784686c)
 
-It's easiest to break this section down into the header, footer, and each page/layer of your website. Call out any differences for mobile vs desktop presentations, **include a screenshot of the implemented feature** and **at least 2 bullet points of their importance**.
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/604df710-00dc-4876-afc1-4834efafcfdc)
 
-**Required for passing**
-- Authentication Process
-- Custom 404 
-- Facebook Business page
-- Newsletter signup Form
+- Favicon:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/92c305b6-7f86-490f-a0b5-a865c006d6b6)
+
+- Account registration with the authentication process, customized signup, login, and logout pages:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c4604ccf-4b6d-4d7c-8090-e287bc5ed2b0)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c2eed2c3-4cc0-47c0-9fa6-423edb77ecf3)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/05e88b42-e6b4-46c8-a6e4-424a20c7c203)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/b8b085d7-151a-4107-8d5e-1a3298c7f602)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/b887b7ba-00e3-4101-b956-44556b1f8c45)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/8e917ad2-4478-428c-bfbf-222c09143132)
+
+- Contact page:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/ce254918-be2e-456a-b6b9-b785622fa414)
+
+- Animated FAQ page:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/22473466-51d3-4364-9505-cfba398b3df1)
+
+- Customer ratings page with stars-rating feature:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/06d84ec4-2845-4b07-affd-ec11009695f3)
+
+- Services page and product detail page:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/52262f2b-8c8e-47a2-836e-930e42293fe6)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/dafb3ac8-ac8b-465a-a4ea-e156625508b5)
+
+- Blog page with likes button:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/d0302866-25b0-40f2-b44a-514f7d87a241)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/8d706a7e-54ac-4436-946e-96b1e24aa589)
+
+- Profile page:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/3d05f7aa-8805-41a6-8c10-00d2e610cda3)
+
+- Cart page:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/28a6886a-b79e-4b9a-b109-85d0d315e5f0)
+
+- Checkout page:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7d4a12fc-ce49-4f77-82dd-bc0f32dcd162)
+
+- Order confirmation page:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/496de7b2-1a86-4e6a-9cdc-f763af128717)
+
+- Profile page updated with details after purchase, order history, and access to order details and add review page:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/77835e72-1229-4293-a0aa-1333c3ed437d)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/25418106-8c7c-46a2-b606-bedefe2670f1)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9927c166-e00d-43e1-9755-1a61cfde6555)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9bbafdeb-58bf-4e9a-8055-535684434d83)
+
+- Reviews must be accepted first by admin, then the author can edit or delete the review:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/3c8f5c06-728d-4a06-837d-09bd918b9546)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/001a79bc-7bbe-43a5-a9d2-be5ff355f41c)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/a4992a96-bd82-47e8-96ec-b28eb3cd60ef)
+
+- Add product and add posts to blog options for admins (admins also can edit or delete services and posts):
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/108a8fa4-4a8c-4187-bd90-6a6aeba8b3fc)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/2cda778c-55b9-4bbb-8926-553ac95f9260)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/d92771df-311a-4607-896f-55ea3a55e629)
+
+- Custom error pages (403, 404, 500 - same design, just presenting 404 below):
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/8d60ac01-862f-4c14-b817-e91f69053c0f)
+
+- Mailchimp newsletter signup form:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/3dc4abbe-0b15-4ee7-98c0-858a33bd01ee)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/aaf928da-1a28-4ffa-a679-d6e5e8657bce)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/79d281c3-0c82-40b0-a1cc-70be9ad93c1f)
+  
+- Facebook business page: [Test a Wheel Facebook](https://www.facebook.com/profile.php?id=61550205204443)
+  Screenshots:
+  
+  ![Test-a-Wheel-Facebook](https://github.com/PPindel/test-a-wheel/assets/114284732/50f75605-3e9f-4bde-8288-8859cc3a4687)
+  
+  ![Test-a-Wheel-Facebook-2](https://github.com/PPindel/test-a-wheel/assets/114284732/9dbd19f2-ffd0-44fa-a4ab-f9f09c721b83)
+  
+  ![Test-a-Wheel-Facebook-3](https://github.com/PPindel/test-a-wheel/assets/114284732/93d0e5d4-2f44-4319-aea6-38d7e759daf6)
+
+- Defensive programming implemented (all pages and functions are protected from tampering):
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7b439d7c-496b-4008-bc54-6dc98af9aab7)
+  
+- Toast messages disappearing after 5 seconds
+  
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/e1d3ea4b-db4f-417f-845c-1976cdf137a3)
+
+- Order confirmation emails:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7329c091-c604-4847-9403-3e58a6a03b15)
+
+- Search bar and sorting feature:
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/627d2ce1-009f-49cb-be16-bf8612c06f7e)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/184edd66-20c3-42d0-9dbc-1abe5b4e3a42)
+
 
 ## Future Features
-🚀 **merit & beyhond**
 
-Use this section to discuss plans for additional features to be implemented in the future:
-
-If you end up not developing some features you hoped to implement, you can include those in this section.
+- Add a forum for customers who successfully bought a car with Test a Wheel so they can share pictures of it and discuss
+- Improve the Reviews system to connect them with actual products (for now, the product rate is set by the admin), and also restrict the product selection to actually bought services
+- Add a form for the Dream service, so Customers can send all information about the wanted vehicle
 
 # Testing
 Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
