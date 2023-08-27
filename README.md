@@ -355,84 +355,39 @@ Admins (superusers) can add posts in the blog sections. The reason for this is t
 # Agile Process
 
 ## GitHub User Stories
-🚨**Required**
-
-Now you are ready to start using Git Hub Issues to write your user stories. To get to merit levels you need to show you
-have refined stories from Epics to Generic User stories.
+All user stories are marked to show their importance.
+I used MoScOw prioritization to reduce down to an MVP.
+All user stories were mentioned before - [User stories](#User-Stories)
 
 ### User Story Templates
-🚨**Required**
 
-[Here's the lesson](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+AG101+2021_T1/courseware/a4e548ca70)
-on how to create a User Story Templates.
-
-If you want a chance at **DISTINCTION**, I'd suggest the following:
-
-- Create an Epic Story template, this would have a title, the story and children stories
-- Create a User Story template, this would initially have the title, the story, and a link to the Epic. Then you'd come
-  back when you are prioritizing it to include the acceptance criteria, and story points, then again when you are
-  working on it and fill in the tasks and adjust the story points if needed.
-- Name your stories in a way that it's easy to tie the children to the EPICS by name.
-
-Example:
-EPIC: Navigation As a user, I want to have easy to see navigation on the page, so I can intuitively interact with the
-site without getting frustrated.
-
-USER STORY: Navigation: Create Template As a developer, I don't want to have copy and paste my navigation on every page.
-I want to use a template to house this information, so my code is easier to maintain.
-
-USER STORY: Navigation: Desktop As a user I want clear navigation that is up to industry standards for my desktop
-experience, so I can easily find what I need on a website.
-
-USER STORY: Navigation: Mobile As a user I want clear navigation that is up to industry standards for my mobile
-experience, so I can easily find what I need on a website without the
-
-[Here is a quick link](https://github.com/maliahavlicek/go-hrvatska/tree/master/.github/ISSUE_TEMPLATE) to some templates I set up for these
-[Here is the UX for those templates where you choose a new type of issue](https://github.com/maliahavlicek/go-hrvatska/issues/new/choose)
-
-screenshot of EPIC new issue using template
-![image](https://user-images.githubusercontent.com/23039742/165651624-7ff6c839-1824-48df-81a3-fda444f2d7f5.png)
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9c6fd76a-b3df-4c8a-8cac-e3387c5481a2)
 
 
-screenshot of USER_STORY new issue using template
-![image](https://user-images.githubusercontent.com/23039742/165651758-beac7bc6-f62f-42e5-b8a0-feeefafcd5b4.png)
+### Issues & kanban board
 
+All the issues were stored in GitHub kanban board issues with the proper label:
 
-Note: You can play around with the labels to add an EPIC one and a USER_STORY one or even ones for each MAJOR epic you have or page
-https://github.com/maliahavlicek/go-hrvatska/issues/labels 
-![image](https://user-images.githubusercontent.com/23039742/165651335-46ab8ff3-4014-4e55-a29d-35e1d998fb42.png)
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/f25632c7-b0bd-4d06-8486-81975ff74e8c)
 
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/84d0f479-245c-4df6-9ced-9e75b3a2a849)
 
-**What to keep in this section**
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/bca4f560-8020-452f-ba38-d5fc0808ac44)
 
-- include links and/or screenshots of your story template(s)
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/6abd9fca-2e07-44d8-83ce-340a0ea427b3)
 
-### Product Backlog
-🚨**Required**
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/b058263c-39b0-45ba-9046-8358957e6e46)
 
-https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+AG101+2021_T1/courseware/a4e548ca70a3473aa890ba2ab9bf612c/085f3a8e344a4cf28b5b5355399abcc1/?child=last
-This is the MILESTONE where you grab stories from the issues or USER stories you created and prioritize them and order
-them, leave the epics out.
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/82d67434-0572-4f19-b154-ef4305763fc4)
 
-**What to keep in this section**
-Include a link to your Product Catalog Milestone,
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/2fc63b22-5a32-47ef-a9b6-883f4488c1a3)
 
-an initial screenshot, mid-point and final will help document the agile process.
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/2ecc69b3-f752-46eb-b181-2c5e36209b56)
 
-## Iterations
-🚀 **merit & beyhond**
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/89c307ef-35f7-4b4d-9995-ee962476f79f)
 
-https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+AG101+2021_T1/courseware/a4e548ca70a3473aa890ba2ab9bf612c/71fe6c52cccf477688e924c9889f5fec/?child=first
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/fb04df4f-f37b-49cc-97b4-58249a32199a)
 
-Add links to iteration milestones (most people have ONE iteration since they are the solo worker, just state that here),
-it could be that you won't have all your product backlog worked in the end, and that is ok, hte MVP might morph, you
-might find other stories you want instead, it's OK.
-
-## Progress Boards
-🚀 **merit & beyhond**
-
-https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+AG101+2021_T1/courseware/a4e548ca70a3473aa890ba2ab9bf612c/7ad7f487cc6148ecb182d77feaeda269/?child=first
-Add links to Progress boards
 
 # Features
 🚨**Required**
