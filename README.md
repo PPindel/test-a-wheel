@@ -533,52 +533,49 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
 
 # E-commerce Business Model
-🚨**Required**
-
-In this section discuss your business model, how you use  SEO to get users to your site and how you hope to generate more traffic and get sponsors to back link to your site. 
+## Web Marketing Strategies
+- The following strategies for Test a Wheel have been considered and a combination of strategies can be implemented as the company grows.
+- For an online service, word of mouth will be the strongest tool alongside online support as described below.
 
 ## Facebook Business Page
-🚨**Required**
 
-- copy a screenshot of the FB page
-- add a couple of bulletpoints about the goals of what this fills for building out followers & special content
+[Test a Wheel Facebook](https://www.facebook.com/profile.php?id=61550205204443)
 
-## Newsletter Signup
-🚨**Required**
+Screenshots:
+  
+  ![Test-a-Wheel-Facebook](https://github.com/PPindel/test-a-wheel/assets/114284732/50f75605-3e9f-4bde-8288-8859cc3a4687)
+  
+  ![Test-a-Wheel-Facebook-2](https://github.com/PPindel/test-a-wheel/assets/114284732/9dbd19f2-ffd0-44fa-a4ab-f9f09c721b83)
+  
+  ![Test-a-Wheel-Facebook-3](https://github.com/PPindel/test-a-wheel/assets/114284732/93d0e5d4-2f44-4319-aea6-38d7e759daf6)
 
-- copy a screenshot of the signup 
-- add a couple of bullet oints outlining the goals of what this functionality provides for building out followers
+- The Facebook Business page for Test a Wheel will be set up as an initial entry into the social media marketing space. 
+- It would be beneficial to set up an Instagram page that can link with Facebook and allow for more engagement with the target market.
+- The content would be focused on professional car maintenance, inspections, tips and guides
+- This can allow for links to the website content, directing web traffic to the Test a Wheel website. 
+- It can also drive traffic to the newsletter to share more long-form content. 
+- Brand campaigns can be developed e.g. interviewing customers and getting testimonials.
+- Paid Instagram and Facebook ads can be used as a driver to the website.
+  
+## Newsletter Signup & Email Marketing
 
-## Links
-- sponsored links are flagged with rel="sponsored"
-- social links and other links that go outside domain have `rel="nofollower"` to signal to search engines that those links are not associated with our specific domain
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/b69ca003-6d87-48b5-8440-85a63f24cc4e)
 
-## SEO Strategy
-🚨**Required**
+- The newsletter can allow more detail and article-type content to be delivered to those who opt-in. 
+- This can begin as a monthly update and can increase to weekly once a larger audience is established.
+- The social media pages can be used as a guide to what content is interesting to followers. 
+- Testing of approaches can be easily done to see which content generates referrals and sales. 
+- If there are competitions, offers, or information accouterments this channel can assist in information sharing with customers.
 
-In this section write out the process you used to come up with short tailed and long tailed results to help refine the keywords you came up with. You should call out attention to the following:
+## SEO
+- The content of the website was written inspired by real-business operating sites with similar content without the use of keyword stuffing as a bad practice.
+- The website was designed to extend additional meta descriptions and keywords as the site grows.
+- For now, the home and services page are SEO optimised which can be reworked if Google Adwords are implemented at a later stage.
+- There is a [robots.txt](https://github.com/PPindel/test-a-wheel/blob/main/robots.txt) and [site-map.xml](https://github.com/PPindel/test-a-wheel/blob/main/sitemap.xml) for search engine crawlers and proper indexing.   
 
-### Keywords
-Describe the process you went through identifiying keywords that you want Google and other search engines to relate to your site.
+## Paid Advertising
+- For the size of this business, it would be beneficial to look at how social media advertising can drive traffic to the website with engaging content that is relatable to the customer.
 
-### Description
-Note that you have a the meat description tag and if any of the content changes based on the page.
-
-### Title
-Call out that you have this set in your base.html so it can be changed per page
-
-### Relevant Content
-Call out how you purposefully incorporated keywords into your content, H1, meta data etc. 
-
-### Sitemap
-🚨**Required**
-
-- [sitemap.xml file]() call out files that exist so browsers can easily crawl site
-
-### Robots.txt
-🚨**Required**
-
-- [robots.txt file]() to restrict pages that are should be searched by google, authentication and others are blocked to only allow relevant pages to be searched by google
 
 # Deployment
 🚨**Required** 
