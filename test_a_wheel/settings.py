@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-ppindel-testawheel-fmsy5ct7l7j.ws-eu104.gitpod.io', 'test-a-wheel-8a5bbb245942.herokuapp.com']  # noqa E501
 
