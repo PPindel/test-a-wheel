@@ -658,7 +658,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 - https://ecotrust-canada.github.io/markdown-toc/ - markdown table generator
 - Mailchimp - subscription tool
 - Stripe - payment tool
-- AWS - database
+- AWS & ElephantSQL - databases
 - Heroku - hosting
 - GitPod - IDE
 
