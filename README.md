@@ -1,86 +1,3 @@
-# OVERVIEW
-
-This template was made as a guide to ensure you cover assessment criteria in your fourth portfolio write up. It is specific to the **PORTFOLIO 5: Full-Stack Toolkit** project.
-
-## Helpful tools
-
-### Screenshots and Videos
-**Here’s a great video on how to add videos to your readme! no need to convert to gifs!!**
-
-https://www.youtube.com/watch?v=G3Cytlicv8Y
-
-> 1. record a video via slack
-> 2. download it
-> 3. in github, edit your readme via the pencil icon
-> 4. type a place holder word and highlight it
-> 5. drag and drop mp4 file over that text
-> 6. scroll down to the commit area
-> 7. update the default commit message
-> 8. click the green button
-> 9. ```git pull``` changes to your gitpod workspace
-
-**You can do the steps 3-9 for the image/screenshot uploads too!**
-
-### Cheatsheets and Auto Generation Tools
-
-Markdown's not all that easy so sometimes you may want to use some tools to make tables.
-
-- [Markdown Cheatsheet](https://guides.github.com/features/mastering-markdown/)
-- [markdown table generator](https://www.tablesgenerator.com/markdown_tables) - used to help with documentation table formatting
-- [markdown table of contents generator](https://ecotrust-canada.github.io/markdown-toc/) - used to create table of contents (be weary it does have some bugs if you have dashes or trailing spaces in your headers)
-- [readme.so](https://readme.so/) - if you don't want to learn markdown, this tool might help you
-
-# Table of Contents
-Copy your readme to http://ecotrust-canada.github.io/markdown-toc/ to make a table of contents.  This will help assessors to see the structure of your readme. Just test it out ast this tool isn't perfect. It tends to mess up with special characters like dashes.
-
-- [PROJECT_NAME](#project_name)
-  - [Author](#author)
-  - [Project Overview](#project-overview)
-- [UX](#ux)
-  - [Target Audience](#target-audience)
-  - [Goals](#goals)
-  - [User Stories](#user-stories)
-  - [Initial Stories](#initial-stories)
-  - [Feasibility vs Importance](#feasibility-vs-importance)
-  - [Scope](#scope)
-  - [Design Choices](#design-choices)
-  - [Wireframes](#wireframes)
-- [Information Architecture](#information-architecture)
-  - [Entity Relationship Diagram](#entity-relationship-diagram)
-  - [Database Choice](#database-choice)
-  - [Data Models](#data-models)
-- [Agile Process](#agile-process)
-  - [GitHub User Stories](#github-user-stories)
-  - [Iterations](#iterations)
-  - [Progress Boards](#progress-boards)
-- [Features](#features)
-  - [Implemented Features](#implemented-features)
-  - [Future Features](#future-features)
-- [Testing](#testing)
-  - [Cross Browser and Cross Device Testing](#cross-browser-and-cross-device-testing)
-  - [Accessibility Testing](#accessibility-testing)
-  - [Validation Testing](#validation-testing)
-  - [Automated Testing](#automated-testing)
-  - [Defects](#defects)
-  - [Defects of Note](#defects-of-note)
-- [E-commerce Business Model](#e-commerce-business-model)
-  - [Facebook Business Page](#facebook-business-page)
-  - [Newsletter Signup](#newsletter-signup)
-  - [Links](#links)
-  - [SEO Strategy](#seo-strategy)
-- [Deployment](#deployment)
-  - [Prerequisits](#prerequisits)
-  - [Fork and Clone the Repository](#fork-and-clone-the-repository)
-  - [Development Deployment](#development-deployment)
-  - [Production Deployment](#production-deployment)
-- [Credits](#credits)
-  - [Content](#content)
-  - [Media](#media)
-  - [Acknowledgments](#acknowledgments)
-
-====================================== The Sections you Fill in are below ==============================
-
-
 # Test a Wheel - used cars pre-purchase inspections
 ![TaW Devices](https://github.com/PPindel/test-a-wheel/assets/114284732/3ed8ead6-c375-4969-b875-4e3107dffb92)
 
@@ -93,6 +10,65 @@ Przemyslaw Pindel
 
 - [Test a Wheel](https://test-a-wheel-8a5bbb245942.herokuapp.com/) - Link to deployed website
 - [Test a Wheel GitHub repo](https://github.com/PPindel/test-a-wheel) - link to GitHub
+
+
+# Table of Contents
+- [Test a Wheel - used cars pre-purchase inspections](#test-a-wheel---used-cars-pre-purchase-inspections)
+  * [Author](#author)
+  * [Project Overview](#project-overview)
+- [Table of Contents](#table-of-contents)
+- [UX](#ux)
+  * [Target Audience & Goals](#target-audience---goals)
+  * [Initial Stories](#initial-stories)
+  * [User Stories](#user-stories)
+  * [Feasibility vs Importance](#feasibility-vs-importance)
+  * [Design Choices](#design-choices)
+    + [Colors](#colors)
+    + [Typography](#typography)
+    + [Images](#images)
+    + [Design Elements](#design-elements)
+    + [Animations and Transitions](#animations-and-transitions)
+    + [Frameworks, plugins, and tools used](#frameworks--plugins--and-tools-used)
+    + [Custom Styles](#custom-styles)
+    + [Custom Javascript](#custom-javascript)
+  * [Wireframes](#wireframes)
+- [Information Architecture](#information-architecture)
+  * [Entity Relationship Diagram](#entity-relationship-diagram)
+  * [Database Choice](#database-choice)
+  * [Data Models](#data-models)
+  * [Products](#products)
+    + [CRUD](#crud)
+  * [Reviews](#reviews)
+    + [CRUD](#crud-1)
+  * [Post](#post)
+    + [CRUD](#crud-2)
+- [Agile Process](#agile-process)
+  * [GitHub User Stories](#github-user-stories)
+    + [User Story Templates](#user-story-templates)
+    + [Issues & kanban board](#issues---kanban-board)
+- [Features](#features)
+  * [Implemented Features](#implemented-features)
+  * [Future Features](#future-features)
+- [Testing](#testing)
+- [E-commerce Business Model](#e-commerce-business-model)
+  * [Web Marketing Strategies](#web-marketing-strategies)
+  * [Facebook Business Page](#facebook-business-page)
+  * [Newsletter Signup & Email Marketing](#newsletter-signup---email-marketing)
+  * [SEO](#seo)
+  * [Paid Advertising](#paid-advertising)
+- [Deployment](#deployment)
+  * [Fork and Clone the Repository](#fork-and-clone-the-repository)
+  * [Deployment](#deployment-1)
+    + [ElephantSQL](#elephantsql)
+    + [Heroku](#heroku)
+    + [GitHub/GitPod](#github-gitpod)
+- [Credits](#credits)
+  * [Content](#content)
+  * [Media](#media)
+  * [Acknowledgments](#acknowledgments)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # UX
 ## Target Audience & Goals
@@ -679,6 +655,12 @@ DEBUG = 'DEVELOPMENT' in os.environ
 - https://github.com/Code-Institute-Org/gitpod-full-template - Code Institute Template
 - https://live.browserstack.com - live testing devices
 - https://pep8ci.herokuapp.com/ - code validation tool
+- https://ecotrust-canada.github.io/markdown-toc/ - markdown table generator
+- Mailchimp - subscription tool
+- Stripe - payment tool
+- AWS - database
+- Heroku - hosting
+- GitPod - IDE
 
 ## Content
 
@@ -691,11 +673,13 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 - https://techsini.com/multi-mockup/index.php - responsiveness testing
 - https://pexels.com - images used in this project
-- https://convertio.co/dot-png/ - Converting ERD dot to ERD png graph
+- https://convertio.co/dot-png/ - converting ERD dot to ERD png graph
 - The fonts were sourced using [Google Fonts](https://fonts.google.com/).
 - The icons were taken from [Font Awesome](https://fontawesome.com/)
 - The favicon image was converted using [Favicon.io](https://favicon.io/)
 
 ## Acknowledgments
 
-Big thanks to Malia Havlicek - Code Institute mentor for her ideas and support in this project! Also, I would like to thank all my friends for live testing the program!
+- Big thanks to Malia Havlicek - Code Institute mentor for her ideas and support in this project! Also, I would like to thank all my friends for live testing the program!
+- I greatly appreciate the tutors at Code Institute for their patience and support!
+- The Code Institute Slack community for tips and guidance!
