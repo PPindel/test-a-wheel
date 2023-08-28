@@ -180,13 +180,17 @@
     $('.qty_input').on('input', function () {
         var maxQuantity = 3; // Maximum allowed quantity
 
-        // Get the entered quantity
-        var newQuantity = parseInt($(this).val()) || 0;
+        // Get the entered quantity and remove decimal values
+        var newQuantity = parseInt($(this).val().replace(/[^0-9]/g, '')) || 0;
 
         // Ensure the new quantity is not greater than the maximum
         if (newQuantity > maxQuantity) {
-            $(this).val(maxQuantity);
+            newQuantity = maxQuantity;
         }
+
+        // Update the input field with the sanitized value
+        $(this).val(newQuantity);
     });
 </script>
+
 {% endblock %}
