@@ -579,8 +579,8 @@ Screenshots:
 
 # Deployment
 ## Fork and Clone the Repository
-To keep the main reposotory for this project clean, please fork the repostiory into your own account. GitHub has [forking directions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) but here's what you might do:
-1. login to your own gitHub account
+To keep the main repository for this project clean, please fork the repository into your own account. GitHub has [forking directions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) but here's what you might do:
+1. login to your own GitHub account
 2. navigate to [my repository](URL OF YOUR LIVE REPOSITORY)
 3. In the top right corner of the page, click fork 
 
@@ -589,35 +589,34 @@ To keep the main reposotory for this project clean, please fork the repostiory i
 4. set yourself as the owner
 5. change the name of the repo if you want
 6. add a description if you want
-7. choose what to copy, typicall the main branch only
-8. click the snazy green button
+7. choose what to copy, typically the main branch only
+8. click the snazzy green button
 
 ![image](https://user-images.githubusercontent.com/23039742/213840549-5bef12ae-198e-412b-84b6-0cc718b6fa1d.png)
 
 9. To get files to your local environment, you need to clone it: click the code button
-10. Copy the url as needed (here's gitHub instructions)[https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository}
+10. Copy the URL as needed (here are GitHub instructions)[https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository}
 
 
 ## Deployment 
-
 ### ElephantSQL
-1. Login to ElephantSQL, access the dashboard and create a new instance (input a name, choose tiny turtle, select a region).
-2. Return to the dashcoard, copy the URL.
+1. Login to ElephantSQL, access the dashboard and create a new instance (input a name, choose tiny turtle, and select a region).
+2. Return to the dashboard, and copy the URL.
 
 ### Heroku
-1. Create a new app in Heroku, choose a unique name and region.
-2. Go to settings and add a new config var of ``` DATABASE_URL ```python with the value of the URL from ElephantSQL.
-3. Add host name of the Heroku app name to ALLOWED HOSTS in settings.py:
+1. Create a new app in Heroku, and choose a unique name and region.
+2. Go to settings and add a new config var of ``` DATABASE_URL ``` python with the value of the URL from ElephantSQL.
+3. Add the hostname of the Heroku app name to ALLOWED HOSTS in settings.py:
 
 ```python
 ALLOWED_HOSTS = ['{heroku deployed site URL here}', 'localhost' ]
 ```
 
 ### GitHub/GitPod
-1. Create a new repository on GitHub, open a new workspace with GitPod.
-2. Install django ```pip3 install 'django<4```python to install Django 3.2 the LTS (Long Term Support) version.
-3. Create a new project and run the server to see if the app has installed.
-4. Run migrations, create a super-user with a username, email and password. 
+1. Create a new repository on GitHub, and open a new workspace with GitPod.
+2. Install Django ```pip3 install 'django<4```python to install Django 3.2 the LTS (Long Term Support) version.
+3. Create a new project and run the server to see if the app has been installed.
+4. Run migrations, and create a super-user with a username, email, and password. 
 5. Install ```  pip3 install dj_database_url==0.5.0 psycopg2 ``` and freeze requirements ``` pip freeze > requirements.txt```
 6. Add ``` import os``` and ```import dj_database_url``` to settings.py
 7. Connect the new database, paste in the ElephantSQL URL (do not commit at this stage):
@@ -636,7 +635,7 @@ ALLOWED_HOSTS = ['{heroku deployed site URL here}', 'localhost' ]
 ```
 8. Ensure connection to the external database, run ```python3 manage.py showmigrations``` then run ```python3 manage.py migrate```
 9. Create a new superuser for the new database, same as above.
-10. Create an if else statement to setup development and external databases:
+10. Create an if else statement to set development and external databases:
 
  ```python
  if 'DATABASE_URL' in os.environ:
@@ -653,7 +652,7 @@ else:
  ```
 11. Install ```pip3 install gunicorn``` and run ``` pip freeze > requirements.txt```
 12. Create a Procfile in the root directory and include ```web: gunicorn project_name.wsgi:applications```
-13. Generate a SECRET_KEY, add it to Heroku config vars.
+13. Generate a SECRET_KEY, and add it to Heroku config vars.
 14. Create env.py file (ensure it is included in .gitignore file) and add the SECRET_KEY & DATABASE_URL to environment variables:
 15. Edit settings.py to the below:
 ```python
@@ -663,12 +662,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
 DEBUG = 'DEVELOPMENT' in os.environ
 ```
 
-19. Add, commit and push to GitHub.
+19. Add, commit, and push to GitHub.
 20. Go to Heroku, add ```DISABLE_COLLECT_STATIC = 1``` to Heroku config vars.
-23. Connect the project to the GitHub repository using personal account login.
+23. Connect the project to the GitHub repository using a personal account login.
 24. Go to settings in Heroku and perform a manual deployment.
-25. Go to Heroku settings, enable automatic deployments.
-27. Setup AWS S3 bucket (these settings might change since time of writing these instructions).
+25. Go to Heroku settings, and enable automatic deployments.
+27. Set up AWS S3 bucket (these settings might change since the time of writing these instructions).
 
 # Credits
 🚨**Required**
