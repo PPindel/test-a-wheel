@@ -55,6 +55,7 @@ Przemyslaw Pindel
   * [Facebook Business Page](#facebook-business-page)
   * [Newsletter Signup & Email Marketing](#newsletter-signup---email-marketing)
   * [SEO](#seo)
+  * [Links](#links)
   * [Paid Advertising](#paid-advertising)
 - [Deployment](#deployment)
   * [Fork and Clone the Repository](#fork-and-clone-the-repository)
@@ -552,6 +553,8 @@ Screenshots:
 ## Paid Advertising
 - For the size of this business, it would be beneficial to look at how social media advertising can drive traffic to the website with engaging content that is relatable to the customer.
 
+## Links
+- social links and other links that go outside the domain have `rel="nofollower"` to signal to search engines that those links are not associated with our specific domain
 
 # Deployment
 ## Fork and Clone the Repository
