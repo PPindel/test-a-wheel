@@ -666,7 +666,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 - https://github.com/CaraMcAvinchey/purrfect-sitters - some readme sections
 - https://lemonsquad.com/ - Blog and Reviews
-- https://pomcar.com/ - SEO
+- https://pomcar.com/ - SEO and index page
 - https://codepen.io/FredGenkin/pen/eaXYGV - stars rating
 
 ## Media
