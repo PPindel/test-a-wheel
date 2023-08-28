@@ -670,24 +670,32 @@ DEBUG = 'DEVELOPMENT' in os.environ
 27. Set up AWS S3 bucket (these settings might change since the time of writing these instructions).
 
 # Credits
-🚨**Required**
 
-To avoid plagiarism amd copyright infringement, you should mention any other projects, stackoverflow, videos, blogs, etc that you used to gather imagery or ideas for your code even if you used it as a starting point and modified things. Giving credit to other people's efforts and ideas that saved you time acknowledges the hard work others did.
-
--[Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
-    - The Template for the GUI for this project was provided by Code Institute. This allows for the Command line to be shown and used within the browser.
+- The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
+- https://www.geeksforgeeks.org/ - code solutions
+- https://stackoverflow.com/ - code solutions
+- https://www.w3schools.com/ - code solutions
+- https://learndjango.com - code solutions
+- https://github.com/Code-Institute-Org/gitpod-full-template - Code Institute Template
+- https://live.browserstack.com - live testing devices
+- https://pep8ci.herokuapp.com/ - code validation tool
 
 ## Content
 
-Use bullet points to list out sites you copied text from and cross-reference where those show up on your site
+- https://github.com/CaraMcAvinchey/purrfect-sitters - some readme sections
+- https://lemonsquad.com/ - Blog and Reviews
+- https://pomcar.com/ - SEO
+- https://codepen.io/FredGenkin/pen/eaXYGV - stars rating
 
 ## Media
 
-Make a list of sites you used images from. If you used several sites try to match up each image to the correct site. This includes attribution for icons if they came from font awesome or other sites, give them credit.
+- https://techsini.com/multi-mockup/index.php - responsiveness testing
+- https://pexels.com - images used in this project
+- https://convertio.co/dot-png/ - Converting ERD dot to ERD png graph
+- The fonts were sourced using [Google Fonts](https://fonts.google.com/).
+- The icons were taken from [Font Awesome](https://fontawesome.com/)
+- The favicon image was converted using [Favicon.io](https://favicon.io/)
 
 ## Acknowledgments
 
-This is the section where you refer to code examples, mentors, blogs, stack overflow answers and videos that helped you accomplish your end project. Even if it's an idea that you updated you should note the site and why it was important to your completed project.
-
-If you used a CodeInstitute Instructional project as a starting point. Make note of that here too.
-
+Big thanks to Malia Havlicek - Code Institute mentor for her ideas and support in this project! Also, I would like to thank all my friends for live testing the program!
