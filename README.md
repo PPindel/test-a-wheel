@@ -578,25 +578,7 @@ Screenshots:
 
 
 # Deployment
-🚨**Required** 
-
-## Prerequisits
-🚀 **merit & beyond**
-
-If the user is required to have certain keys and credentials you should include this section with directions on how to get the necessary information. ex)
-
-1. **Gmail Account:** In order to have verification and forgot password emails sent to registered users you need a
-   google account. 
-  - [create a gmail accoount](https://accounts.google.com/signup) 
-  - [downgrade to less secure](https://myaccount.google.com/lesssecureapps?pli=1) after you are signed into the gmail account, downgrade to less secure
-2. **Couldinary URL**
-  - [create an account](https://cloudinary.com/)
-  - go to the dashboard and copy your API environmental variable
-   
-    <img width="1230" alt="image" src="https://user-images.githubusercontent.com/23039742/213839829-b4f349b3-419d-4ea2-bbca-90cf3c663bba.png">     
- 
 ## Fork and Clone the Repository
-🚀 **merit & beyond**
 To keep the main reposotory for this project clean, please fork the repostiory into your own account. GitHub has [forking directions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) but here's what you might do:
 1. login to your own gitHub account
 2. navigate to [my repository](URL OF YOUR LIVE REPOSITORY)
@@ -616,57 +598,77 @@ To keep the main reposotory for this project clean, please fork the repostiory i
 10. Copy the url as needed (here's gitHub instructions)[https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository}
 
 
+## Deployment 
 
-## Development Deployment 
-🚨**Required** 
+### ElephantSQL
+1. Login to ElephantSQL, access the dashboard and create a new instance (input a name, choose tiny turtle, select a region).
+2. Return to the dashcoard, copy the URL.
 
-This section should describe the process someone would have to go through to get the local working in GitPod, or your preferred IDE. Start from installing the chrome extension then clicking the green gitpod button in THEIR FORKED repository, the enumerate the steps to walk them through the process as if they were brand new to this proccess. **Include screenshots** where applicable.
+### Heroku
+1. Create a new app in Heroku, choose a unique name and region.
+2. Go to settings and add a new config var of ``` DATABASE_URL ```python with the value of the URL from ElephantSQL.
+3. Add host name of the Heroku app name to ALLOWED HOSTS in settings.py:
 
-**Key points to cover** 
-- Install required python packages: `pip3 install -r requirements.txt`
-- Create env.py
-- What to put in the env.py, don’t disclose real values
->  - EMAIL_HOST_PASSWORD=<YOUR_VALUE>
->  - DEFAULT_FROM_EMAIL=<YOUR_VALUE>
->  - EMAIL_USERNAME=<YOUR_VALUE>
->  - SECRET_KEY=<YOUR_VALUE>
->  - CLOUDINARY_URL=<YOUR_VALUE>
->  - DEV=True
-- Apply Database Migrations so the database starts up `python3 manage.py migrate`
-- Create a super user so you can add and inspect things via django admin  `python3 manage.py createsuperuser`
-- Preload data: Sometimes you might want to include steps to create data in the admin or preload a data dump [coderwall blog](https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata) has examples on how to dump data and load it which saves a bunch of time when deploying the application from a local database to a hosted database but you don’t  have to do this step
-- Start the server `python3 manage.py runserver`
+```python
+ALLOWED_HOSTS = ['{heroku deployed site URL here}', 'localhost' ]
+```
 
+### GitHub/GitPod
+1. Create a new repository on GitHub, open a new workspace with GitPod.
+2. Install django ```pip3 install 'django<4```python to install Django 3.2 the LTS (Long Term Support) version.
+3. Create a new project and run the server to see if the app has installed.
+4. Run migrations, create a super-user with a username, email and password. 
+5. Install ```  pip3 install dj_database_url==0.5.0 psycopg2 ``` and freeze requirements ``` pip freeze > requirements.txt```
+6. Add ``` import os``` and ```import dj_database_url``` to settings.py
+7. Connect the new database, paste in the ElephantSQL URL (do not commit at this stage):
+ 
+```python
+ # DATABASES = {
+ #     'default': {
+ #         'ENGINE': 'django.db.backends.sqlite3',
+ #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #     }
+ # }
+ 
+ DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+```
+8. Ensure connection to the external database, run ```python3 manage.py showmigrations``` then run ```python3 manage.py migrate```
+9. Create a new superuser for the new database, same as above.
+10. Create an if else statement to setup development and external databases:
 
-## Production Deployment
-🚨**Required** 
+ ```python
+ if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+      'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+      }
+    }
+ ```
+11. Install ```pip3 install gunicorn``` and run ``` pip freeze > requirements.txt```
+12. Create a Procfile in the root directory and include ```web: gunicorn project_name.wsgi:applications```
+13. Generate a SECRET_KEY, add it to Heroku config vars.
+14. Create env.py file (ensure it is included in .gitignore file) and add the SECRET_KEY & DATABASE_URL to environment variables:
+15. Edit settings.py to the below:
+```python
+SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
+```
+```python
+DEBUG = 'DEVELOPMENT' in os.environ
+```
 
-This section should describe the process you went through to deploy the project to a server where anyone can access the url without your machine running. This is typically Heroku. **Include screenshots** if you think they would make the process easier. Start with getting an heroku account and then setting up databases and other packages.
-
-If you have project settings required for Heroku, provide a table of the keys and values. Do not share your personal
-keys but either cut them out of the screenshot or say <YOUR_VALUE> and include links on how the user would obtain such
-values.
-
-**Key points to cover** 
-- cerating new app
-- setting app name
-- setting region
-- entering dreaded billing info
-- subscribing to a plan
-- setting up db
-- adding environmental values- have a list or table so user has less chance of typos
->  - EMAIL_HOST_PASSWORD
->  - DEFAULT_FROM_EMAIL
->  - EMAIL_USERNAME
->  - SECRET_KEY
->  - CLOUDINARY_URL
->  - COLLECT_STATIC
-- adding build packages
-- deploy
-- gitHub connection
-- auto vs manul deploy
-- monotior logs
-
+19. Add, commit and push to GitHub.
+20. Go to Heroku, add ```DISABLE_COLLECT_STATIC = 1``` to Heroku config vars.
+23. Connect the project to the GitHub repository using personal account login.
+24. Go to settings in Heroku and perform a manual deployment.
+25. Go to Heroku settings, enable automatic deployments.
+27. Setup AWS S3 bucket (these settings might change since time of writing these instructions).
 
 # Credits
 🚨**Required**
