@@ -3,6 +3,16 @@
 
 {% load static %}
 <!-- Load static files like CSS and JavaScript -->
+
+{% block page_header %}
+<!-- Move page content lower so it's not behind the navbar -->
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
 <!-- Define a block for the main content of the page -->
 {% load crispy_forms_tags %}

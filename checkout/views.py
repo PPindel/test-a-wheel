@@ -184,7 +184,7 @@ def checkout_success(request, order_number):
 
         messages.success(request, f'Order successfully processed! \
             Your order number is {order_number}. A confirmation \
-            email will be sent to {order.email}.')
+            email will be sent to email provided.')
         order.confirmation_sent = True
         order.save()
     else:
