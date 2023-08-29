@@ -92,14 +92,15 @@ p {
 }
 
 .text-black {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: black;
+  padding: 5px;
 }
 
 .text-sub {
   color: #53565A;
-  font-size: 1.5rem;
-  line-height: 1.6rem;
+  font-size: 1rem;
+  padding: 5px;
 }
 
 .green-check {
