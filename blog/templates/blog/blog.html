@@ -42,7 +42,7 @@
                                 {% endif %}
                             </div>
                             <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2> <!-- Display the post title -->
+                                <h2 class="card-title font-weight-bold py-2">{{ post.title }}</h2> <!-- Display the post title -->
                                 <p class="card-text">{{ post.excerpt }}</p>
                                 <!-- Display a short excerpt of the post content -->
                             </a>
