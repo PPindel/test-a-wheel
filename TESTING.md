@@ -21,6 +21,8 @@ Below is the documentation of my testing process.
   * [Outstanding Defects](#outstanding-defects)
   * [Defects of Note](#defects-of-note)
 
+[Back to README.md](https://github.com/PPindel/test-a-wheel#testing)
+
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
@@ -246,12 +248,24 @@ Blog Page:
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7f87c0b6-54c5-48ab-91f0-98a0406414d7)
 
 
+Blog Post Detail Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/5a9b7e4e-a90b-43ef-b573-f666472a9586)
+
+
 Reviews Page:
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/d0ed979c-84ba-4356-ab2f-a463552adf05)
 
 
+Review Update Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/05402e33-4810-4e1b-9708-d1a6ae0f163a)
+
+
 Checkout Page:
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/0dacd201-2493-445f-8360-4104391854ff)
+
+
+Order Confirmation Page:
+![image](https://github.com/PPindel/test-a-wheel/assets/114284732/0605d86b-3568-4a26-ae55-17c0b32f37bb)
 
 
 - Desktop performed well on all major pages of the site.
@@ -315,3 +329,5 @@ This will be fixed in the future.
 ## Defects of Note
 1. Connecting the order number with the review and making it a unique value for each order completed gave me a few good days of intensive problem-solving
 2. Achieving acceptable Lighthouse performance on all pages wasn't an easy thing, and I know it still could be better, but I am happy with the final result
+
+[Back to README.md](https://github.com/PPindel/test-a-wheel#testing)
