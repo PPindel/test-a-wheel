@@ -38,7 +38,7 @@ p {
 }
 
 .container, main { 
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -151,6 +151,13 @@ a.category-badge > span.badge:hover {
 .update-link,
 .remove-item {
   cursor: pointer;
+}
+
+.dropdown-menu.show {
+    display: block;
+    border: 1px solid gray!important;
+    border-top: none!important;
+    border-radius: 0;
 }
 
 input[name='q']::placeholder {
