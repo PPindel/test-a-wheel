@@ -38,8 +38,12 @@ p {
 }
 
 .container, main { 
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
+}
+
+a.post-link p.card-title {
+    color: #17a2b8!important;
 }
 
 /* Styles from Bulma */
