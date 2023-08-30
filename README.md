@@ -352,6 +352,8 @@ All user stories were mentioned before - [User stories](#User-Stories)
 
 ### Issues & kanban board
 
+Github was used to track [issues](https://github.com/PPindel/test-a-wheel/issues?q=is%3Aissue+is%3Aclosed) and a [kanban board](https://github.com/users/PPindel/projects/5) was used to help track stories as they were developed. Labels were used to help group stories and issues:
+
 All the issues were stored in GitHub kanban board issues with the proper label:
 
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/f25632c7-b0bd-4d06-8486-81975ff74e8c)
@@ -377,17 +379,36 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 
 # Features
 ## Implemented Features
-- Index page with navigation, search tool, and footer:
+
+- Home Page:
+   - brief overview of the company
+   - navigation (different for desktop and mobile)
+   - search tool
+   - footer
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9f4050c1-4208-4184-9d8a-af78f784686c)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/5fdbe866-2b9a-4cdf-976a-c0cd627fa545)
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/604df710-00dc-4876-afc1-4834efafcfdc)
 
 - Favicon:
+  Unique browser tab identifier that is used in the logo on the site to make the site stand out from other tabs.
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/92c305b6-7f86-490f-a0b5-a865c006d6b6)
 
-- Account registration with the authentication process, customized signup, login, and logout pages:
+- Account Registration & Authorization:
+  Flow for authentication & registration includes links for forgotten passwords and sign-up to make getting into the site as easy as possible
+  - Sign Up Page
+    - usernames must be unique
+    - email must be unique
+  - Login Page
+    - email or username
+    - matching password
+  - Email Verification
+    - we don't want the database to be full of fake users, so we have a validation email sent before the user can log in to access the system
+  - Sign Out
+    - make the user really log out so there is no question of what their actions are
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/c4604ccf-4b6d-4d7c-8090-e287bc5ed2b0)
 
@@ -402,46 +423,39 @@ All the issues were stored in GitHub kanban board issues with the proper label:
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/8e917ad2-4478-428c-bfbf-222c09143132)
 
 - Contact page:
+  - has address
+  - number
+  - interactive Google map to physical location
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/ce254918-be2e-456a-b6b9-b785622fa414)
 
 - Animated FAQ page:
+  - nice animation and answers to most common questions!
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/22473466-51d3-4364-9505-cfba398b3df1)
 
 - Customer ratings page with stars-rating feature:
+  - express what you think about our excellent service!
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/06d84ec4-2845-4b07-affd-ec11009695f3)
 
 - Services page and service (product) detail page:
+  - everyone can find the best service for their needs, honest information included on the product details page
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/52262f2b-8c8e-47a2-836e-930e42293fe6)
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/dafb3ac8-ac8b-465a-a4ea-e156625508b5)
 
 - Blog page with likes button:
-
+  - it is vital to interact with our community and provide them with useful tips, guides, and interesting articles related to cars (we love cars)
+  
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/d0302866-25b0-40f2-b44a-514f7d87a241)
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/8d706a7e-54ac-4436-946e-96b1e24aa589)
 
 - Profile page:
-
-  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/3d05f7aa-8805-41a6-8c10-00d2e610cda3)
-
-- Cart page:
-
-  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/28a6886a-b79e-4b9a-b109-85d0d315e5f0)
-
-- Checkout page:
-
-  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7d4a12fc-ce49-4f77-82dd-bc0f32dcd162)
-
-- Order confirmation page:
-
-  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/496de7b2-1a86-4e6a-9cdc-f763af128717)
-
-- Profile page updated with details after purchase, order history, and access to order details and add review page:
+  - from here, the customer can access their personal details and order history
+  - profile page updated with details after purchase, order history, and access to order details and add review page:
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/77835e72-1229-4293-a0aa-1333c3ed437d)
 
@@ -451,7 +465,26 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9bbafdeb-58bf-4e9a-8055-535684434d83)
 
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/3d05f7aa-8805-41a6-8c10-00d2e610cda3)
+
+- Cart page:
+  - save your items for later (stored in browser cache)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/28a6886a-b79e-4b9a-b109-85d0d315e5f0)
+
+- Checkout page:
+  - safe and readable, if you need more services you can easily add them from here
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7d4a12fc-ce49-4f77-82dd-bc0f32dcd162)
+
+- Order confirmation page:
+  - all order details (also sent to email address provided)
+
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/496de7b2-1a86-4e6a-9cdc-f763af128717)
+
 - Reviews must be accepted first by admin, then the author can edit or delete the review:
+  - After a successful purchase you can tell others what was your experience with Test a Wheel
+  - The company must protect its reputation and not let "trolls" write defaming "reviews" (the reason why all reviews must be accepted by admin)
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/3c8f5c06-728d-4a06-837d-09bd918b9546)
 
@@ -460,6 +493,7 @@ All the issues were stored in GitHub kanban board issues with the proper label:
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/a4992a96-bd82-47e8-96ec-b28eb3cd60ef)
 
 - Add service (product) and add blog posts to blog options for admins (admins also can edit or delete services and blog posts):
+  - simple and easy access from the profile dropdown menu (admins only)
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/108a8fa4-4a8c-4187-bd90-6a6aeba8b3fc)
 
@@ -468,10 +502,12 @@ All the issues were stored in GitHub kanban board issues with the proper label:
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/d92771df-311a-4607-896f-55ea3a55e629)
 
 - Custom error pages (403, 404, 500 - same design, just presenting 404 below):
+  - it is essential to be consistent in style, so even error pages must be customized
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/8d60ac01-862f-4c14-b817-e91f69053c0f)
 
 - Mailchimp newsletter signup form:
+  - never miss any promotions or special offers!
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/3dc4abbe-0b15-4ee7-98c0-858a33bd01ee)
 
@@ -480,7 +516,8 @@ All the issues were stored in GitHub kanban board issues with the proper label:
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/79d281c3-0c82-40b0-a1cc-70be9ad93c1f)
   
 - Facebook business page: [Test a Wheel Facebook](https://www.facebook.com/profile.php?id=61550205204443)
-  Screenshots:
+  - People these days love social media, and we are here to provide the best social media content for every potential customer
+  - Screenshots:
   
   ![Test-a-Wheel-Facebook](https://github.com/PPindel/test-a-wheel/assets/114284732/50f75605-3e9f-4bde-8288-8859cc3a4687)
   
@@ -489,19 +526,27 @@ All the issues were stored in GitHub kanban board issues with the proper label:
   ![Test-a-Wheel-Facebook-3](https://github.com/PPindel/test-a-wheel/assets/114284732/93d0e5d4-2f44-4319-aea6-38d7e759daf6)
 
 - Defensive programming implemented (all pages and functions are protected from tampering):
+  - order confirmation, order history, adding blog posts, reviews, and products (and also editing, deleting, etc.)
+  - personal details
+  - quantity inputs are protected to prevent calling 500 errors
+  - I spent a lot of time securing all the above features on my website
+  - Python user's authentication and Java event listeners have been used to achieve the final result
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7b439d7c-496b-4008-bc54-6dc98af9aab7)
   
-- Toast messages disappearing after 5 seconds
+- Toast messages disappearing after 5 seconds:
+  - short and brief information about actions performed
   
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/e1d3ea4b-db4f-417f-845c-1976cdf137a3)
 
 - Order confirmation emails:
+  - complete order details are going to the provided email address (this is especially important for users who don't want to create an account)
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/7329c091-c604-4847-9403-3e58a6a03b15)
 
 - Search bar and sorting feature:
-
+  - users can quickly find services they are looking to buy
+  
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/627d2ce1-009f-49cb-be16-bf8612c06f7e)
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/184edd66-20c3-42d0-9dbc-1abe5b4e3a42)
