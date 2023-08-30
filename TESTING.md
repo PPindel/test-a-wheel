@@ -308,8 +308,23 @@ Manual testing is presented in the table below:
 [Link to the table HERE](https://docs.google.com/spreadsheets/d/1C3Ni6gYPPfFCggJV_hhHWbIbZ7pAhgZ7NZpm4pp-mBA/edit?usp=sharing)
 
 ## Defensive programming testing
-Defensive programming was implemented to all pages and critical user details (e.g. below):
-![image](https://github.com/PPindel/test-a-wheel/assets/114284732/dd9ec437-88c1-4914-8402-bf889230755d)
+- Defensive programming was implemented to all pages and critical user details
+- When users try to hack protected flows where personal information is stored, they are greeted with a warning page as shown below:
+  ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/dd9ec437-88c1-4914-8402-bf889230755d)
+  
+Flows that have this protection are:
+  - order history - only the logged-in owner of an order can view an order history page
+  - profile - a logged-in user can only see their own profile
+  - add review - only a logged-in user that owns a given order can add a review & they can only add one review per order
+  - Update review - only a logged-in admin or the logged-in creator can update a review
+  - delete review - only a logged-in admin or the logged-in creator can update a review
+  - add, update, and delete pages are protected also for Blog and Services (products)
+
+Other defensive stuff:
+  - active listeners preventing manipulating with item quantity
+  - boolean fields checking if the order was already reviewed or the confirmation email was sent
+  - stripe mechanism for text fields (preventing injecting dangerous scripts)
+  - and there could be some more not listed here, as the project is really big...
 
 
 ### Testing User Stories
@@ -324,6 +339,7 @@ Example of a user story:
 Users can select any service on the Add Review page (it's not determined by the actual service purchased in the order):
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/52372dd7-d172-42ae-a94f-a7d63bca02bb)
 
+It was decided that fully integrated reviews were a bit of a stretch goal for an MVP project, thus it was determined low risk to allow users to select an inappropriate service at this point in time, especially since admins must approve reviews before they are shared on the site for all uses.
 This will be fixed in the future.
 
 ## Defects of Note
