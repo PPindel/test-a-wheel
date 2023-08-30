@@ -631,22 +631,31 @@ To keep the main repository for this project clean, please fork the repository i
 9. To get files to your local environment, you need to clone it: click the code button
 10. Copy the URL as needed (here are GitHub instructions)[https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository}
 
+## Requirements
+If any of the following are unfamiliar, please click on their associated links as they are necessary when setting the environmental variables required to run this application:
 
-## Deployment 
-### ElephantSQL
+ - an IDE such as [pycharm](https://www.jetbrains.com/pycharm/download) - a tool to help develop software
+ - [PIP](https://pip.pypa.io/en/stable/installing/) - coordinates python installation packages
+ - [python 3](https://www.python.org/downloads/) - Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+ - [git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) -  version control system for code source
+ - a [gmail account](https://accounts.google.com/signup) with less secure app access turned on use [this link](https://myaccount.google.com/lesssecureapps?pli=1) after you are signed into the Gmail account - allows the system to send email notifications such as password reset and user registration links
+ - a [stripe account](https://stripe.com/) - used to securely collect payments, testing API's level is fine unless you want to collect payments for real
+ - [AWS-S3 (Amazon Web Services - Simple Storage Storage Account)](https://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html) - web-based cloud storage service for online backup of website assets
+ - [S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) - a cloud storage resource that is similar to file folders on a computer's hard drive
+
+## ElephantSQL
 1. Login to ElephantSQL, access the dashboard and create a new instance (input a name, choose tiny turtle, and select a region).
 2. Return to the dashboard, and copy the URL.
 
-### Heroku
-1. Create a new app in Heroku, and choose a unique name and region.
-2. Go to settings and add a new config var of ``` DATABASE_URL ``` python with the value of the URL from ElephantSQL.
-3. Add the hostname of the Heroku app name to ALLOWED HOSTS in settings.py:
+## Stripe
+1. Create a Stripe account, access the dashboard, and generate your secret keys using an environment for developers
+2. [STRIPE Support](https://support.stripe.com/questions/getting-started-with-stripe-create-or-connect-an-account) - refer to this page in case of any problems with setting the account
 
-```python
-ALLOWED_HOSTS = ['{heroku deployed site URL here}', 'localhost' ]
-```
+## AWS
+1. Create an AWS account, and connect to the project
+2. Please refer to this link [AWS Create your first S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) for more details
 
-### GitHub/GitPod
+## GitHub/GitPod
 1. Create a new repository on GitHub, and open a new workspace with GitPod.
 2. Install Django ```pip3 install 'django<4```python to install Django 3.2 the LTS (Long Term Support) version.
 3. Create a new project and run the server to see if the app has been installed.
@@ -688,7 +697,23 @@ else:
 12. Create a Procfile in the root directory and include ```web: gunicorn project_name.wsgi:applications```
 13. Generate a SECRET_KEY, and add it to Heroku config vars.
 14. Create env.py file (ensure it is included in .gitignore file) and add the SECRET_KEY & DATABASE_URL to environment variables:
-15. Edit settings.py to the below:
+15. Copy the following into the env.py file:
+    ```python
+    import os
+
+    os.environ['SECRET_KEY'] = '<your value>'
+    os.environ["STRIPE_PUBLIC_KEY"] = '<your value>'
+    os.environ["STRIPE_SECRET_KEY"] = '<your value>'
+    os.environ["STRIPE_WH_SECRET"] = '<your value>'
+    os.environ["DATABASE_URL"] = '<your value>'
+    os.environ["DEVELOPMENT"]
+    os.environ["EMAIL_HOST_USER"] = '<your value>'
+    os.environ["EMAIL_HOST_PASS"] = '<your value>'
+    os.environ["USE_AWS"] = ''
+    ```
+    
+   Replace <your value> with the values from your own accounts
+16. Edit settings.py to the below:
 ```python
 SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
 ```
@@ -702,6 +727,59 @@ DEBUG = 'DEVELOPMENT' in os.environ
 24. Go to settings in Heroku and perform a manual deployment.
 25. Go to Heroku settings, and enable automatic deployments.
 27. Set up AWS S3 bucket (these settings might change since the time of writing these instructions).
+
+## Heroku
+To run this application in a cloud environment to allow visibility to external users, you can deploy the code to Heroku. If you wish to do the same, follow the steps below. Please note this section assumes you have succeeded at running the application in your local environment first.
+
+1. Login to Heroku and set up a new app with a unique name (something like ```<yourname>-<appname>```)
+2. Be sure that you "freezed" all tools required in requirements.txt file!
+3. In Heroku for your newly created app, go back to the Settings tab, and click Reveal Config Vars. This time you will be copying the values from your env.py file into heroku. Make sure you load the following:
+    
+    |           Key           |      Value     |
+    |:-----------------------:|:--------------:|
+    | AWS_ACCESS_KEY_ID       | < your value > |
+    | AWS_SECRET_ACCESS_KEY   | < your value > |
+    | DATABASE_URL            | < your value > |
+    | EMAIL_HOST_PASS         | < your value > |
+    | EMAIL_HOST_USER         | < your value > |
+    | SECRET_KEY              | < your value > |
+    | STRIPE_PUBLIC_KEY       | < your value > |
+    | STRIPE_SECRET_KEY       | < your value > |
+    | STRIPE_WH_SECRET        | < your value > |
+    | USE_AWS                 |      True      |
+    | DISABLE_COLLECTSTATIC   |       1        |
+    | PORT                    |      8000      |
+
+4. Because this is a new database, you will have to set up the databases by running the following management command in your terminal:
+    ```bash
+    python manage.py migrate
+    ```
+   > If you restarted your machine to activate your environment variables, do not forget to reactivate your virtual environment with the command used at step 4.
+5. Create the superuser for the postgres database so you can have access to the django admin, follow the steps necessary to set up the username, email and password by running the following management command in your terminal:
+    ```bash
+    python manage.py createsuperuser
+    ```
+6. In the event packages have been updated, it's best to re-create the requirements.txt file using the terminal command prompt: 
+    ```bash
+    pip freeze > requirements.txt
+    ```
+7. Create a Procfile:
+    ```bash
+    echo web: gunicorn ms4_challenger.wsgi:application > Procfile
+    ```
+8. Add the files if they changed and push to GitHub:
+    ```bash
+   git commit add Procfile
+   git commit add requirements.txt
+   git commit-m 'getting ready to deploy to heroku'
+   git push -u origin
+   ``` 
+9. From the Heroku dashboard of your newly created application, click on the "Deploy" tab, then scroll down to the "Deployment method" section and select GitHub.
+10. Use the GitHub linking and type in the name of the repository e.g.: test-a-wheel and click the search button. Then connect the Heroku app to the desired GitHub repository.
+11. On the Deployment Tab, scroll a bit further down to the "Manual Deploy" section, select the main branch then click "Deploy Branch".
+12. If you have errors, look at the logs for your application, the most common errors are forgetting to add the hostname and  disabling collectstatic.
+13. Once your application is running, you may want to update the Deployment method from Manual to Automatic.
+
 
 # Credits
 
@@ -723,6 +801,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ## Content
 
 - https://github.com/CaraMcAvinchey/purrfect-sitters - some readme sections
+- https://github.com/maliahavlicek/ms4_challenger/blob/master/README.md - some readme sections
 - https://lemonsquad.com/ - Blog and Reviews
 - https://pomcar.com/ - SEO and index page
 - https://codepen.io/FredGenkin/pen/eaXYGV - stars rating
