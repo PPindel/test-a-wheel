@@ -287,7 +287,7 @@ Mobile services (blog and review pages are analogical):
 
 ## Entity Relationship Diagram
 
-![test-a-wheel-graph](https://github.com/PPindel/test-a-wheel/assets/114284732/ff88022d-d17f-4c27-813a-e2a81fb716e4)
+![output(1)](https://github.com/PPindel/test-a-wheel/assets/114284732/759cc906-c133-4d73-b422-2d252618a130)
 
 
 ## Database Choice
