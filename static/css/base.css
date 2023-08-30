@@ -112,6 +112,10 @@ a.post-link p.card-title {
   padding: 5px;
 }
 
+.link-color {
+    color: #17a2b8 !important;
+}
+
 .green-check {
   color: green;
 }
@@ -438,10 +442,6 @@ input[name='q']::placeholder {
 .footer-style a:hover i {
     transform: rotate(-15deg) scale(1.5);
     color: grey;
-}
-
-.disclamer-highlight {
-    color: darkblue;
 }
 
 /* -------------------------------- Media Queries */

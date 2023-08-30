@@ -29,7 +29,9 @@
                     important, financially significant car buying decision.
                 </p>
                 <p class="text-left font-weight-light">
-                    We rely on our expirience and <a href="https://www.carfax.eu/" target="_blank" class="text-info" rel="noopener nofollow" aria-label="Link to CARFAX website">CARFAX Reports</a> every day to help you decide whether or not to buy a
+                    We rely on our expirience and <a href="https://www.carfax.eu/" target="_blank"
+                        rel="noopener nofollow" class="link-color" aria-label="Link to CARFAX website">CARFAX Reports</a> every day to help
+                    you decide whether or not to buy a
                     used
                     car. Each report contains information about whether the car in question has been in an accident, has
                     any
@@ -42,15 +44,18 @@
                     much the vehicle is worth. Do not hesitate, call us now on +353 860 123 444 !
                 </p>
                 <p class="text-left font-weight-light">
-                    <strong class="font-weight-bold">HOW IT WORKS?</strong> Simply, buy a service of your choice, then we will contact you via email to
-                    collect details of the car you are considering buying (link to the ad, contact to seller, your expectations, etc.).
+                    <strong class="font-weight-bold">HOW IT WORKS?</strong> Simply, buy a service of your choice, then
+                    we will contact you via email to
+                    collect details of the car you are considering buying (link to the ad, contact to seller, your
+                    expectations, etc.).
                     Our expert inspector will contact your seller to verify the availability of the vehicle and set up
                     an appointment to inspect your automobile. The inspector will go directly to the vehicle to perform
                     the inspection.
                 </p>
                 <hr>
                 <div class="text-center">
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3" aria-label="Book your test now button - go to the shop page">
+                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3"
+                        aria-label="Book your test now button - go to the shop page">
                         Book your test now!
                     </a>
                 </div>
@@ -71,6 +76,9 @@
             <img src="{% static 'images/index_mechanic.jpg' %}" alt="Service Image" aria-label="Man fixing a car"
                 class="img-fluid w-100 index-image rounded">
         </div>
+    </div>
+    <div class="card row text-center">
+        <strong>Still not sure? Check our <a href="{% url 'reviews' %}" class="text-danger">REVIEWS!</a></strong>
     </div>
 </div>
 {% endblock %}
