@@ -557,6 +557,9 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 - Add a forum for customers who successfully bought a car with Test a Wheel so they can share pictures of it and discuss
 - Improve the Reviews system to connect them with actual services (products) (for now, the service rate is set by the admin), and also restrict the service selection to actually bought services
 - Add a form for the Dream service, so Customers can send all information about the wanted vehicle
+- Hook up FAQs to database for admin management so code doesn't have to be deployed if more FAQs are needed
+- Add a contact us form to the database and have a management page to allows customer service see and provide feedback to curious customers to improve business
+- Hook up with car part affiliates or [Donut](https://www.youtube.com/channel/UCL6JmiMXKoXS6bpP1D3bk8g) Youtuber and generate more $$
 
 # Testing
 Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
