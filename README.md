@@ -36,11 +36,11 @@ Przemyslaw Pindel
   * [Entity Relationship Diagram](#entity-relationship-diagram)
   * [Database Choice](#database-choice)
   * [Data Models](#data-models)
-  * [Products](#products)
+  * [Services](#services)
     + [CRUD](#crud)
   * [Reviews](#reviews)
     + [CRUD](#crud-1)
-  * [Post](#post)
+  * [Blog](#blog)
     + [CRUD](#crud-2)
 - [Agile Process](#agile-process)
   * [GitHub User Stories](#github-user-stories)
@@ -289,6 +289,7 @@ Mobile services (blog and review pages are analogical):
 
 ![output(1)](https://github.com/PPindel/test-a-wheel/assets/114284732/759cc906-c133-4d73-b422-2d252618a130)
 
+Please refer to the [output.pdf](output.pdf) file.
 
 ## Database Choice
 
@@ -297,21 +298,27 @@ Mobile services (blog and review pages are analogical):
 
 ## Data Models
 
-Admins can create, read, edit, and delete services in the store.
-Admins can create, read, edit, and delete posts in the blog section.
-Registered users can interact with the blog posts by adding likes.
-Registered users (customers) can create, read, edit, and delete their own Reviews of every purchase made (Order number is a unique value for each review).
-Every registered user has access to a personal profile, which can be read and edited.
-Every purchase made is saved and can be accessed via the profile page if the user is registered.
+- **Services**: 
+  - Admins can create, read, edit, and delete services in the store.
+- **Blog Posts**: 
+  - Admins can create, read, edit, and delete blog posts in the blog section. 
+  - Registered users can interact with the blog posts by adding/removing likes.
+- **Reviews**: 
+  - Registered users (customers) can create, read, edit, and delete their own Reviews of every purchase made (Order number is a unique value for each review).
+  - Admins can update, delete, and approve reviews (there is a workflow to prevent inappropriate content)
+- **Profiles**: 
+  - Every registered user has access to a personal profile, which can be read and edited.
+- **Orders**:
+  - Every purchase made is saved and can be read via the profile page if the user is registered.
 
-## Products
-Products (services) are what is the main focus of the e-commerce website. Admins can add, edit, and delete the service, select the customized options, add related image, and descriptions.
+## Services
+Services (products) are what is the main focus of the e-commerce website. Admins can add, edit, and delete the service, select the customized options, add related image, and descriptions.
 
 ### CRUD
-- **Create:** If the user is an authenticated superuser, they can add a new product by clicking the profile icon in the top right corner and selecting Add product
-- **Read:** All users can view the current products in the services section
-- **Update:** Only admins can edit the existing product
-- **Delete:** Only admins can delete the existing product
+- **Create:** If the user is an authenticated superuser, they can add a new service by clicking the profile icon in the top right corner and selecting Add service
+- **Read:** All users can view the current services in the services section
+- **Update:** Only admins can edit the existing service
+- **Delete:** Only admins can delete the existing service
 
 ## Reviews
 Registered users can review every order made. The option "Review me!" is added to the order history accessible via the profile page.
@@ -322,14 +329,14 @@ Registered users can review every order made. The option "Review me!" is added t
 - **Update:** Only the author of the review can edit the review via frontend
 - **Delete:** Only the author of the review can delete the review via frontend
 
-## Post
-Admins (superusers) can add posts in the blog sections. The reason for this is to convince potential buyers that we are reliable in what we do and that we know our stuff (all posts are related to the services we provide).
+## Blog
+Admins (superusers) can add blog posts in the blog sections. The reason for this is to convince potential buyers that we are reliable in what we do and that we know our stuff (all posts are related to the services we provide).
 
 ### CRUD
-- **Create:** Admins can add new posts to the blog page
-- **Read:** All users can read the current posts listed in the blog section
-- **Update:** Admins can edit the existing posts on the blog page
-- **Delete:** Admins can delete existing posts on the blog page
+- **Create:** Admins can add new blog posts to the blog page
+- **Read:** All users can read the current blog posts listed in the blog section
+- **Update:** Admins can edit the existing blog posts on the blog page
+- **Delete:** Admins can delete existing blog posts on the blog page
 
 # Agile Process
 
@@ -406,7 +413,7 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/06d84ec4-2845-4b07-affd-ec11009695f3)
 
-- Services page and product detail page:
+- Services page and service (product) detail page:
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/52262f2b-8c8e-47a2-836e-930e42293fe6)
 
@@ -452,7 +459,7 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/a4992a96-bd82-47e8-96ec-b28eb3cd60ef)
 
-- Add product and add posts to blog options for admins (admins also can edit or delete services and posts):
+- Add service (product) and add blog posts to blog options for admins (admins also can edit or delete services and blog posts):
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/108a8fa4-4a8c-4187-bd90-6a6aeba8b3fc)
 
@@ -503,7 +510,7 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 ## Future Features
 
 - Add a forum for customers who successfully bought a car with Test a Wheel so they can share pictures of it and discuss
-- Improve the Reviews system to connect them with actual products (for now, the product rate is set by the admin), and also restrict the product selection to actually bought services
+- Improve the Reviews system to connect them with actual services (products) (for now, the service rate is set by the admin), and also restrict the service selection to actually bought services
 - Add a form for the Dream service, so Customers can send all information about the wanted vehicle
 
 # Testing
