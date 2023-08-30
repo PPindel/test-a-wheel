@@ -37,6 +37,11 @@ p {
   align-items: center;
 }
 
+.container, main { 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* Styles from Bulma */
 .icon {
   align-items: center;
@@ -243,6 +248,10 @@ input[name='q']::placeholder {
     height: 20vw;
     overflow: hidden;
     vertical-align: top;
+}
+
+.card-text-top p {
+    line-height: 40px !important;
 }
 
 #map {
