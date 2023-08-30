@@ -1,10 +1,8 @@
 # Test a Wheel - used cars pre-purchase inspections
 ![TaW Devices](https://github.com/PPindel/test-a-wheel/assets/114284732/3ed8ead6-c375-4969-b875-4e3107dffb92)
 
-
 ## Author
 Przemyslaw Pindel
-
 
 ## Project Overview
 
@@ -55,14 +53,16 @@ Przemyslaw Pindel
   * [Facebook Business Page](#facebook-business-page)
   * [Newsletter Signup & Email Marketing](#newsletter-signup---email-marketing)
   * [SEO](#seo)
-  * [Links](#links)
   * [Paid Advertising](#paid-advertising)
+  * [Links](#links)
 - [Deployment](#deployment)
   * [Fork and Clone the Repository](#fork-and-clone-the-repository)
-  * [Deployment](#deployment-1)
-    + [ElephantSQL](#elephantsql)
-    + [Heroku](#heroku)
-    + [GitHub/GitPod](#github-gitpod)
+  * [Requirements](#requirements)
+  * [ElephantSQL](#elephantsql)
+  * [Stripe](#stripe)
+  * [AWS](#aws)
+  * [GitHub/GitPod](#github-gitpod)
+  * [Heroku](#heroku)
 - [Credits](#credits)
   * [Content](#content)
   * [Media](#media)
@@ -82,7 +82,6 @@ Przemyslaw Pindel
 - Simple and easy navigation! The process of buying the service is super-easy so people will come back, and recommend our site to friends!
 - Never miss any promo, thanks to the subscribe option!
 
-
 ## Initial Stories
 (MOST IMPORTANT USER STORIES SO THE SITE CAN OPERATE)
 
@@ -100,7 +99,6 @@ ADMIN:
 - can add blog posts
 - can edit the blog posts
 - can delete the blog posts
-
 
 ## User Stories
 All CRUD functionalities have been implemented!
@@ -149,7 +147,6 @@ All CRUD functionalities have been implemented!
 
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/0b833e38-679d-4226-b322-09552ed9fa9c)
 
-
 ## Feasibility vs Importance
 GitHub labels were used to reflect the importance of the feature, e.g.:
 
@@ -170,7 +167,6 @@ Fonts: Montserrat & Roboto to reflect the nature of the website
 All images in the index, blog, and services were chosen to match the car-themed content of the website.
 
 ### Design Elements
-
 > - desktop navigation
 > - mobile navigation
 > - footer
@@ -202,7 +198,6 @@ All images in the index, blog, and services were chosen to match the car-themed 
 - Animated FAQ
 
 ### Frameworks, plugins, and tools used
-
 - Django
 - Bootstrap
 - req.txt:
@@ -232,13 +227,11 @@ All images in the index, blog, and services were chosen to match the car-themed 
   - swapper==1.3.0
   - urllib3==1.26.16
 
-
 ### Custom Styles
 - Lots of styles were overwritten in this project: [CSS file](https://github.com/PPindel/test-a-wheel/blob/main/static/css/base.css)
 - Visual stars implemented:
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/2bdb76f0-d3a9-456f-ad32-5fbc8dd780e9)
-
 
 ### Custom Javascript
 Modified script for Toasts to hide messages after 5 seconds:
@@ -284,7 +277,6 @@ Mobile services (blog and review pages are analogical):
 
 
 # Information Architecture
-
 ## Entity Relationship Diagram
 
 ![output(1)](https://github.com/PPindel/test-a-wheel/assets/114284732/759cc906-c133-4d73-b422-2d252618a130)
@@ -292,12 +284,10 @@ Mobile services (blog and review pages are analogical):
 Please refer to the [output.pdf](output.pdf) file.
 
 ## Database Choice
-
 - Postgres as the database because the data is relational
 - Heroku servers
 
 ## Data Models
-
 - **Services**: 
   - Admins can create, read, edit, and delete services in the store.
 - **Blog Posts**: 
@@ -339,7 +329,6 @@ Admins (superusers) can add blog posts in the blog sections. The reason for this
 - **Delete:** Admins can delete existing blog posts on the blog page
 
 # Agile Process
-
 ## GitHub User Stories
 All user stories are marked to show their importance.
 I used MoScOw prioritization to reduce down to an MVP.
@@ -348,7 +337,6 @@ All user stories were mentioned before - [User stories](#User-Stories)
 ### User Story Templates
 
 ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/9c6fd76a-b3df-4c8a-8cac-e3387c5481a2)
-
 
 ### Issues & kanban board
 
@@ -551,9 +539,7 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 
   ![image](https://github.com/PPindel/test-a-wheel/assets/114284732/184edd66-20c3-42d0-9dbc-1abe5b4e3a42)
 
-
 ## Future Features
-
 - Add a forum for customers who successfully bought a car with Test a Wheel so they can share pictures of it and discuss
 - Improve the Reviews system to connect them with actual services (products) (for now, the service rate is set by the admin), and also restrict the service selection to actually bought services
 - Add a form for the Dream service, so Customers can send all information about the wanted vehicle
@@ -563,6 +549,7 @@ All the issues were stored in GitHub kanban board issues with the proper label:
 
 # Testing
 Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
+
 
 # E-commerce Business Model
 ## Web Marketing Strategies
@@ -782,7 +769,6 @@ To run this application in a cloud environment to allow visibility to external u
 
 
 # Credits
-
 - The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
 - https://www.geeksforgeeks.org/ - code solutions
 - https://stackoverflow.com/ - code solutions
@@ -799,7 +785,6 @@ To run this application in a cloud environment to allow visibility to external u
 - GitPod - IDE
 
 ## Content
-
 - https://github.com/CaraMcAvinchey/purrfect-sitters - some readme sections
 - https://github.com/maliahavlicek/ms4_challenger/blob/master/README.md - some readme sections
 - https://lemonsquad.com/ - Blog and Reviews
@@ -807,7 +792,6 @@ To run this application in a cloud environment to allow visibility to external u
 - https://codepen.io/FredGenkin/pen/eaXYGV - stars rating
 
 ## Media
-
 - https://techsini.com/multi-mockup/index.php - responsiveness testing
 - https://pexels.com - images used in this project
 - https://convertio.co/dot-png/ - converting ERD dot to ERD png graph
@@ -816,7 +800,6 @@ To run this application in a cloud environment to allow visibility to external u
 - The favicon image was converted using [Favicon.io](https://favicon.io/)
 
 ## Acknowledgments
-
 - Big thanks to Malia Havlicek - Code Institute mentor for her ideas and support in this project! Also, I would like to thank all my friends for live testing the program!
 - I greatly appreciate the tutors at Code Institute for their patience and support!
 - The Code Institute Slack community for tips and guidance!
