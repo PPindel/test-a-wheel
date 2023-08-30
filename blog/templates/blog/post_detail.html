@@ -37,7 +37,8 @@
                     {{ post.title }}
                 </h2>
                 <p class="post-subtitle text-white-50">{{ post.created_on}}</p> <!-- Display the post's created date -->
-                <p class="post-subtitle text-white-50">{{ post.section }}</p> <!-- Display the post's section/category -->
+                <p class="post-subtitle text-white-50">{{ post.section }}</p>
+                <!-- Display the post's section/category -->
             </div>
         </div>
     </div>
@@ -48,30 +49,28 @@
         <div class="col mb-4 mt-3 left top">
             <div class="card-body">
                 <!-- Display the post content inside the card-text, use the | safe filter to render HTML -->
-                <p class="card-text">{{ post.content | safe }}</p>
+                <div class="card-text">{{ post.content | safe }}</div>
                 <div class="row">
                     <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                <!-- Form for liking/unliking the post -->
-                                {% csrf_token %}
-                                {% if liked %}
-                                <!-- Display the like button with appropriate icon based on whether the user has liked the post -->
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="fa-solid fa-thumbs-up"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="fa-regular fa-thumbs-up"></i></button>
-                                {% endif %}
-                            </form>
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                            <!-- Form for liking/unliking the post -->
+                            {% csrf_token %}
+                            {% if liked %}
+                            <!-- Display the like button with appropriate icon based on whether the user has liked the post -->
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                    class="fa-solid fa-thumbs-up"></i></button>
                             {% else %}
-                            <span class="text-secondary"><i class="fa-regular fa-thumbs-up"></i></span>
-                            <!-- Display a like icon for unauthenticated users -->
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                    class="fa-regular fa-thumbs-up"></i></button>
                             {% endif %}
-                            <span class="text-secondary">{{ post.number_of_likes }}</span>
-                            <!-- Display the number of likes for the post -->
-                        </strong>
+                        </form>
+                        {% else %}
+                        <span class="text-secondary"><i class="fa-regular fa-thumbs-up"></i></span>
+                        <!-- Display a like icon for unauthenticated users -->
+                        {% endif %}
+                        <span class="text-secondary">{{ post.number_of_likes }}</span>
+                        <!-- Display the number of likes for the post -->
                     </div>
                 </div>
             </div>
