@@ -1,131 +1,173 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- HEADER -->
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
+<!-- MAIN CONTENT -->
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
-                    {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                        </a>
-                    {% endif %}
-                </div>
+<!-- Display an overlay -->
+<div class="overlay"></div>
+
+<!-- Create a container for product details -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Define column layout for product image -->
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="image-container my-5">
+                {% if product.image %}
+                <!-- If product image exists, display it with a link to a larger version -->
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <!-- If no product image exists, display a default image -->
+                <a href="">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+                {% endif %}
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0 text-black">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                        <hr>
-                    {% else %}
-                        <small class="text-muted">No Rating</small>
-                        <hr>
-                    {% endif %}
-                    <div class="row">
-                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Detailed check of the car by our expert</div>
-                    </div>
-                    <hr>
-                    {% if product.history_check %}
-                    <div class="row">
-                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Full history check</div>
-                    </div>
-                    <hr>
-                    {% endif %}
-                    {% if product.garage_check %}
-                    <div class="row">
-                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Proffesional garage inspection</div>
-                    </div>
-                    <hr>
-                    {% endif %}
-                    {% if product.premium_check %}
-                    <div class="row">
-                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Additional points of check, extra photos</div>
-                    </div>
-                    <hr>
-                    {% endif %}
-                    {% if product.extra_warranty %}
-                    <div class="row">
-                        <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div><div class="text-sub col-10">Additional warranty for a car bought with us!</div>
-                    </div>
-                    <hr>
-                    {% endif %}
-                    {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                        </small>
-                    {% endif %}
-                    <p class="mt-3">{{ product.description }}</p>
-                    <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-row">
-                            {% with product.has_sizes as s %}
-                            <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
-                                <div class="form-group w-50">
-                                    <div class="input-group input-group-{{ product.id }}">
-                                        <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
-                                                data-item_id="{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-minus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
-                                            name="quantity" value="1" min="1" max="3"
+        </div>
+
+        <!-- Define column layout for product details -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-details-container mb-5 mt-md-5">
+                <!-- Display product name -->
+                <p class="mb-0 text-black">{{ product.name }}</p>
+                <!-- Display product price -->
+                <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+
+                <!-- Display product rating if available -->
+                {% if product.rating %}
+                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                <hr>
+                {% else %}
+                <!-- Display "No Rating" if no rating is available -->
+                <small class="text-muted">No Rating</small>
+                <hr>
+                {% endif %}
+
+                <!-- Display various product features with checkmarks -->
+                <div class="row">
+                    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="text-sub col-10">Detailed check of the car by our expert</div>
+                </div>
+                <hr>
+
+                <!-- Display history check if available -->
+                {% if product.history_check %}
+                <div class="row">
+                    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="text-sub col-10">Full history check</div>
+                </div>
+                <hr>
+                {% endif %}
+
+                <!-- Display garage inspection if available -->
+                {% if product.garage_check %}
+                <div class="row">
+                    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="text-sub col-10">Professional garage inspection</div>
+                </div>
+                <hr>
+                {% endif %}
+
+                <!-- Display additional check points and photos if available -->
+                {% if product.premium_check %}
+                <div class="row">
+                    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="text-sub col-10">Additional points of check, extra photos</div>
+                </div>
+                <hr>
+                {% endif %}
+
+                <!-- Display additional warranty if available -->
+                {% if product.extra_warranty %}
+                <div class="row">
+                    <div class="green-check col-2"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="text-sub col-10">Additional warranty for a car bought with us!</div>
+                </div>
+                <hr>
+                {% endif %}
+
+                <!-- Display edit and delete options for superusers -->
+                {% if request.user.is_superuser %}
+                <small class="ml-3">
+                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                </small>
+                {% endif %}
+
+                <!-- Display product description -->
+                <p class="mt-3">{{ product.description }}</p>
+
+                <!-- Create a form to add the product to the cart -->
+                <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <!-- Display quantity input field with increment and decrement buttons -->
+                        {% with product.has_sizes as s %}
+                        <div class="col-12">
+                            <p class="mt-3"><strong>Quantity:</strong></p>
+                            <div class="form-group w-50">
+                                <div class="input-group input-group-{{ product.id }}">
+                                    <div class="input-group-prepend">
+                                        <button
+                                            class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}"
                                             data-item_id="{{ product.id }}">
-                                        <div class="input-group-append">
-                                            <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
-                                                data-item_id="{{ product.id }}" aria-label="Increment quantity button">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
+                                            <span class="icon">
+                                                <i class="fas fa-minus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
+                                        name="quantity" value="1" min="1" max="3" data-item_id="{{ product.id }}">
+                                    <div class="input-group-append">
+                                        <button
+                                            class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
+                                            data-item_id="{{ product.id }}" aria-label="Increment quantity button">
+                                            <span class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to cart">
-                            </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            {% endwith %}
+                        <div class="col{% if s %}-12 mt-2{% endif %}">
+                            <!-- Display a link to keep shopping and a button to add to the cart -->
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5"
+                                value="Add to cart">
                         </div>
-                    </form>
-                    <hr>
-                    <div class="container text-center">
-                        <div class="row">
-                            <strong>Still not sure? Check our <a href="{% url 'reviews' %}" class="text-danger">REVIEWS!</a></strong>
-                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        {% endwith %}
+                    </div>
+                </form>
+                <hr>
+                <!-- Display a link to check reviews -->
+                <div class="container text-center">
+                    <div class="row">
+                        <strong>Still not sure? Check our <a href="{% url 'reviews' %}"
+                                class="text-danger">REVIEWS!</a></strong>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}

@@ -63,20 +63,27 @@
 </head>
 
 <body>
+    <!-- This is the header section that is fixed to the top of the page -->
     <header class="container-fluid fixed-top">
+        <!-- This row contains the top navigation bar for larger screens (lg and above) -->
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <!-- This column contains the main logo and links to the home page -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                    <!-- Display the company logo and name -->
                     <h2 class="logo-font text-black my-0"><strong><i class="fa-solid fa-car-burst"></i> TEST A
                             WHEEL</strong></h2>
                 </a>
             </div>
+            <!-- This column contains the search bar -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <!-- Create a search form with an input field -->
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q"
                             placeholder="Search our site">
                         <div class="input-group-append">
+                            <!-- Add a search button -->
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit"
                                 aria-label="Search the site">
                                 <span class="icon">
@@ -87,38 +94,51 @@
                     </div>
                 </form>
             </div>
+            <!-- This column contains user-related links and icons -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <!-- Dropdown menu for user options -->
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
+                                <!-- Display a user icon -->
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
+                        <!-- Dropdown menu content -->
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <!-- Check if the user is authenticated -->
                             {% if request.user.is_authenticated %}
+                            <!-- Check if the user is a superuser (admin) -->
                             {% if request.user.is_superuser %}
+                            <!-- Display links for adding a product and a blog post for superusers -->
                             <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                             <a href="{% url 'post_add' %}" class="dropdown-item">Add Post to Blog</a>
                             {% endif %}
+                            <!-- Display links for the user's profile and logout -->
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            <!-- If the user is not authenticated, display registration and login links -->
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
                         </div>
                     </li>
+                    <!-- Cart icon and link to the shopping cart -->
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="{% url 'view_cart' %}">
                             <div class="text-center">
+                                <!-- Display a shopping cart icon -->
                                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                                 <p class="my-0">
+                                    <!-- Display the total price in the shopping cart -->
                                     {% if grand_total %}
                                     ${{ grand_total|floatformat:2 }}
+                                    <!-- If the cart is empty, display $0.00 -->
                                     {% else %}
                                     $0.00
                                     {% endif %}
@@ -129,19 +149,25 @@
                 </ul>
             </div>
         </div>
+        <!-- This row contains the main navigation bar for smaller screens (md and below) -->
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <!-- Toggle button for collapsing the navigation menu -->
                 <button class="navbar-toggler border-0 col-3" type="button" data-toggle="collapse"
                     data-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
                     aria-label="Toggle navigation">
+                    <!-- Display a road icon for the toggle button -->
                     <span class="navbar-icon text-black col-3"><i class="fa-solid fa-road"></i></span>
                 </button>
+                <!-- Logo for smaller screens -->
                 <div class="col-9 d-md-none">
                     <a href="{% url 'home' %}">
+                        <!-- Display the mobile logo -->
                         <img class="mobile-logo" src="{% static 'images/test-a-wheel-logo-mobile.png' %}"
                             alt="Test a Wheel logo" aria-label="Company logo">
                     </a>
                 </div>
+                <!-- Include mobile top header and main navigation -->
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>

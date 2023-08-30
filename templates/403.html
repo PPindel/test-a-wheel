@@ -1,25 +1,38 @@
+<!-- Extending the base.html template to inherit its structure -->
 {% extends 'base.html' %}
+
+<!-- Loading static files, such as CSS stylesheets -->
 {% load static %}
+
+<!-- Defining the content block that will be included in the base.html template -->
 {% block content %}
+    <!-- Container for the header section -->
     <div class="container header-container">
         <div class="row">
+            <!-- Placeholder column for layout -->
             <div class="col"></div>
         </div>
     </div>
+
+    <!-- Container for the main content -->
     <div class="container h-100">
         <div class="row h-100">
+            <!-- Column for displaying the error message -->
             <div class="col-7 col-md-6 my-auto">
+                <!-- Displaying a large error heading -->
                 <h2 class="display-4 logo-font text-black">
                     403 error
                 </h2>
+                <!-- Displaying an error message -->
                 <h2 class="display-4 logo-font text-black">
                     You're not allowed to access this page
                 </h2>
                 <div class="my-5">
                     <h3>
+                        <!-- Providing a link to return to the shop -->
                         <a href="{% url 'products' %}" 
                             class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
-                                Return to shop
+                            Return to shop
                         </a>
                     </h3>
                 </div>
